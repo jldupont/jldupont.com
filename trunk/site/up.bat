@@ -1,0 +1,1 @@
+appcfg.py update --email=jeanlou.dupont@gmail.com app/

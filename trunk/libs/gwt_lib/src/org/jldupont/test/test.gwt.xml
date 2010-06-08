@@ -1,0 +1,9 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.http.HTTP"/>
+	<inherits name="com.google.gwt.gears.Gears"/>
+	
+	<inherits name="org.jldupont.Lib"/>
+	
+	<entry-point class="org.jldupont.test.client.test"/>
+</module>

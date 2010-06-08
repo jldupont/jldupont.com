@@ -1,0 +1,70 @@
+{{Extension
+|name        = AmazonS3
+|status      = beta
+|type        = other
+|hook1       = RecentChange_save
+|author      = [[user:jldupont|Jean-Lou Dupont]]
+|image       =
+|version     = See SVN ($Id: AmazonS3.doc.wikitext 910 2009-05-22 16:46:07Z JeanLou.Dupont $)
+|update      =
+|mediawiki   = tested on 1.10 but probably works with a earlier versions
+|download    = [http://bizzwiki.googlecode.com/svn/trunk/BizzWiki/extensions/AmazonS3/ SVN]
+|readme      =
+|changelog   =
+|description = 
+|parameters  =
+|rights      =
+|example     =
+}}
+<!--@@
+{{#autoredirect: Extension|{{#noext:{{SUBPAGENAME}} }} }}
+== File Status ==
+This section is only valid when viewing the page in a BizzWiki environment.
+<code>(($#extractmtime|@@mtime@@$))  (($#extractfile|@@file@@$))</code>
+
+Status: (($#comparemtime|<b>File system copy is newer - [{{fullurl:{{NAMESPACE}}:{{PAGENAME}}|action=reload}} Reload] </b>|Up to date$))
+@@-->
+== Purpose ==
+
+== Features ==
+=== Operations ===
+* <b>Bucket</b>
+** PUT     (aka 'create bucket')
+** PUT ACL
+** GET     (aka 'list objects')(with options e.g. prefix)
+** GET ACL
+** DELETE
+* <b>Object</b>
+** PUT
+** PUT ACL
+** GET
+** GET ACL
+** DELETE
+** HEAD
+
+== Usage ==
+
+
+== Theory Of Operation ==
+
+== Dependancies ==
+* PHP 'HTTP_Request' module
+* PHP 'Crypt_HMAC' module
+
+== Installation ==
+To install independantly from BizzWiki:
+* Install the 'Crypt_HMAC' PHP module (through Pear)
+* Install the 'HTTP_Request' module (through Pear)
+* Download & Install [[Extension:StubManager]] extension
+* Dowload all this extension's files and place in the desired directory
+* Apply the following changes to 'LocalSettings.php' after the statements of [[Extension:StubManager]]:
+<source lang=php>
+require('extensions/AmazonS3/AmazonS3.php');
+</source>
+
+== Notes ==
+
+== History ==
+
+== See Also ==
+This extension is part of the [[Extension:BizzWiki|BizzWiki Platform]].

@@ -1,0 +1,18 @@
+{
+  "content_scripts": [
+    {
+      "js": [
+        "gears_test.js"
+      ], 
+      "matches": [
+        "http://*/*", 
+        "https://*/*"
+      ]
+    }
+  ], 
+  "description": "Gears Test", 
+  "format_version": 1, 
+  "id": "44A2B037BD2C835A4EE8C0D44BE29456CC624591", 
+  "name": "GearsTest", 
+  "version": "0.1"
+}

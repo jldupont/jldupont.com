@@ -1,0 +1,35 @@
+#YAML messages for 'trns.py' command-line
+#@author: Jean-Lou Dupont
+
+#CONFIGURATION
+#=============
+config_syslog: enable system logging
+config_server: configure the http URI of the server (registry)
+config_port: configure the HTTP port of the server (registry)
+config_eventmgr: configure "EventManager script" path (registry)
+config_export: enable export status (.completed file for each torrent)
+config_autostop: configure auto-stopping of completed torrent(s)
+
+#ERRORS
+#======
+error_invalid_command: invalid command [$cmd]
+error_missing_dependency: error missing dependency [$dep]. Get it from [$location] using "easy_install $dep"
+error_load_file: error loading file [$path] 
+
+#REPORTING
+#=========
+config_header: Configuration
+config_footer: ==END==
+config_tableheader: =============
+
+list_header: Torrent List
+list_tableheader: Name
+list_footer: ==END==
+
+report_header: Report
+report_footer: ==END==
+report_tableheader: ======
+
+#LOGGING
+#=======
+log_report_status: Completed[$completed] Stopped[$stopped] Exported[$exported] Download_dir[$download_dir]

@@ -1,0 +1,240 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file
+	Jean-Lou Dupont
+	$Id: build.xml 253 2007-11-15 19:30:42Z JeanLou.Dupont $
+
+	Builds a PEAR package & PHP Docs
+
+	PART I:
+	*(T11) Reads information from PEAR package.xml [name, version, stability, summary, description]
+	*(T12) Reads information from build.properties [category]
+	*(T13) Updates package.xml [date, time]
+	*(T14) Creates archive [TAR + GZIP] with name $package-$version.tgz
+	*(T15) Copies archive in /tags/$package
+	*(T16) Copies package files in /tags/$package-$version
+	PART II: (/c)
+	*(T21) Add category directory to /c
+	*(T22) Add category to categories.xml file in /c
+	*(T23) Add package to /c/$category/info.xml  [if !exist, create]
+	*(T24) Add package release to /c/$category/packagesinfo.xml [if !exist, create]
+	PART III: (/p)
+	*(T31) Add package's directory to REST structure
+	*(T32) Add package's info.xml file to REST structure
+	*(T33) Update /p/packages.xml
+	PART IV:
+	*(T41) Add package's releases directory to REST structure
+	*(T42) Copy package.xml to $package-$version.xml to /r/$package
+	*(T43) Add $version.xml to /r/$package
+	*(T44) Create deps.$version.txt serialized dependencies from $package-$version.xml
+	*(T45) Update 'allrelease.xml' file
+
+	PART V:
+	* creates docs
+-->
+
+<project name="JLD/Directory" basedir="." default='all'>
+
+	<!--
+		The package is located 1 level 'down' from the build file.
+	-->
+	<target name='Config'>
+		<resolvepath propertyName="project.path" file="${project.basedir}/../" /> <!-- 1 level down -->
+		<property name='package.file' value='${project.path}/package.xml' />
+		<echo>Package path: ${project.path}</echo>
+	</target>
+
+	<!-- 
+		It is imperative that this task should run first;
+		this task searches the 'root' of the channel in the filesystem.
+	-->
+	<target name='FindChannelRoot' depends='Config'>
+		<taskdef classname='JLD.PearTools.phing.ChannelFindTask' name='channelfind' />
+		<channelfind RootPath='channel.root' StartPath='${project.basedir}' />
+		<echo>Channel root path: ${channel.root}</echo>
+	</target>
+	<!--
+		This task initializes the base variables for the PEAR channel.
+	-->
+	<target name='InitChannel' depends='FindChannelRoot'>
+		<taskdef classname='JLD.PearTools.phing.ChannelTask' name='channel' />
+		<echo>Initializing Channel</echo>
+		<channel path="${channel.root}" />
+		<echo>Channel name:      "${channel.name}"</echo>
+		<echo>Channel alias:     "${channel.alias}"</echo>
+		<echo>Channel TAGS path: "${channel.tags}"</echo>
+		<echo>Channel REST path: "${channel.rest}"</echo>
+	</target>
+
+	<!--
+		Package level initialization:
+	-->
+	<target name='ReadPackageXML' depends='InitChannel'>
+		<!-- T12 -->
+		<property file="./build.properties" />
+		<taskdef classname='JLD.PearTools.phing.PackageReadTask' name='packageread' />
+		<!-- T11 -->
+		<packageread	propertyPackageFile="${package.file}"
+						propertyPackageName='package.name' 
+						propertyPackageNameL='package.namel' 
+						propertyPackageVersion='package.version' 
+						propertyPackageStability='package.stability' 
+						propertyPackageSummary='package.summary' 
+						propertyPackageDescription='package.description'
+						propertyPackageDeps='package.dependencies'
+		/>
+		<echo>Package name:        ${package.name}</echo>
+		<echo>Package category:    ${package.category}</echo>
+		<echo>Package version:     ${package.version}</echo>
+		<echo>Package stability:   ${package.stability}</echo>
+		<echo>Package summary:     ${package.summary}</echo>
+		<echo>Package description: ${package.description}</echo>
+
+		<!-- verifies the existence of the requested package version in the REST structure -->
+	 	<taskdef classname='JLD.PearTools.phing.ReleaseExistsTask' name='release_exists' />
+		<release_exists	
+					channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}" 
+					
+					packagename="${package.name}" 
+					packageversion="${package.version}" 
+					packagestability="${package.stability}" 
+					packagereleasestatus="package.releasestatus"  />
+
+		<echo>Package release status: ${package.releasestatus}</echo>
+	</target>
+
+
+	<target name='ValidatePackage' depends="ReadPackageXML">
+		<if>
+			<equals arg1="1" arg2="${package.releasestatus}" />
+			<then>
+				<echo>RELEASE ALREADY EXISTS IN REST STRUCTURE... failing now</echo>
+				<fail message="This REST structure already contains a release of the requested version!" />
+			</then>
+		</if>
+	</target>
+
+	<!--
+		Package level processing.
+	-->
+	<target name='DoPackage' depends='ValidatePackage'>
+		<echo>Processing package</echo>
+		<taskdef classname='JLD.PearTools.phing.PackageUpdateTask' name='packageupdate' />
+		<echo>Updating package</echo>
+		<!-- T13 -->
+		<packageupdate propertyPackageFile="${package.file}" />
+
+		<!-- T14 -->
+		<echo>Creating archive file</echo>
+		<!-- this step requires creating a temporary directory
+		-->
+		<copy todir="${project.path}/${package.name}-${package.version}" overwrite='true'>
+			<fileset dir="${project.path}/.">
+				<include name="**/**" />
+				<exclude name="package.xml" />
+				<exclude name="${project.path}/${package.name}-${package.version}/**" />
+			</fileset>
+		</copy>
+		<tar destfile="${project.path}/${package.name}-${package.version}.tgz" compression='gzip'>
+			<fileset dir='${project.path}/.'>
+				<include name="${package.name}-${package.version}/**" />
+				<include name="package.xml"/>
+			</fileset>
+		</tar>
+
+		<delete dir="${project.path}/${package.name}-${package.version}" failonerror="true" verbose="true" includeemptydirs="true" />
+
+		<!-- T15 -->
+		<echo>Moving archive to TAGS directory</echo>
+		<move	file="${project.path}/${package.name}-${package.version}.tgz" 
+				todir="${channel.root}/${channel.tags}/${package.name}" 
+				overwrite="true"
+		/>
+		<!-- T16 -->
+		<echo>Copying release files to TAGS directory</echo>
+		<copy	todir="${channel.root}/${channel.tags}/${package.name}/${package.version}" 
+				overwrite="true">
+			<fileset dir="${project.path}/.">
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<!-- T21 -->
+		<echo>Creating the package's category directory in the /c REST structure</echo>
+		<mkdir dir="${channel.root}/${channel.rest}/c/${package.category}"/>
+		<echo>Processing categories</echo>
+		<!-- T22, T23 -->
+		<echo>Adding package's category and release information to REST categories</echo>
+		<taskdef classname='JLD.PearTools.phing.ChannelCategoriesTask' name='categories' />
+		<categories	channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}"
+
+					categoryname="${package.category}" 
+					packagename="${package.name}"
+					packagereleaseversion="${package.version}" 
+					packagereleasestability="${package.stability}" />
+
+		<!-- T31 -->
+		<echo>Creating the package's package directory in the /p REST structure</echo>
+		<mkdir dir="${channel.root}/${channel.rest}/p/${package.namel}"/>
+
+		<!-- T32 -->
+		<echo>Adding package's directory and info.xml file in REST packages</echo>
+		<taskdef classname='JLD.PearTools.phing.ChannelPackagesTask' name='packages' />
+		<packages	channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}"
+
+					categoryname="${package.category}" 
+					packagename="${package.name}" />
+
+		<!-- T41 -->
+		<echo>Creating package's releases directory in /r REST structure</echo>
+		<mkdir dir="${channel.root}/${channel.rest}/r/${package.namel}"/>
+		<!-- T42 -->
+		<echo>Copying "package.xml" to package-${package.version}.xml in REST directory</echo>
+		<copy	file="${project.path}/package.xml"
+				tofile="${channel.root}/${channel.rest}/r/${package.name}/package.${package.version}.xml" 
+				overwrite="true" />
+		<!-- T43, T44, T45 -->
+		<echo>Adding package's releases directory in REST packages</echo>
+		<taskdef classname='JLD.PearTools.phing.ChannelReleasesTask' name='releases' />
+		<releases	channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}" 
+
+					packagename="${package.name}" 
+					packageversion="${package.version}" 
+					packagestability="${package.stability}" 
+					packagedependencies="${package.dependencies}" />
+	</target>
+
+	<!-- TODO !!! -->
+	<target name='docs' depends="ReadPackageXML">
+		<phpdoc title="Documentation for package ${package.name}"
+				destdir="./docs"
+				output="HTML:Smarty:PHP">
+			<fileset dir="${project.path}/.">
+				<include name="**/**" />
+				<exclude name="**/build*.*" />
+				<exclude name=".build/**" />
+			</fileset>
+		</phpdoc>
+	</target>
+
+	<target name='all' depends='DoPackage, docs'>
+		<echo>Building all</echo>
+	</target>
+
+</project>

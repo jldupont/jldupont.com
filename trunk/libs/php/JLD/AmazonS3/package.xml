@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<package packagerversion="1.4.0a9" version="2.0" 
+	xmlns="http://pear.php.net/dtd/package-2.0" 
+	xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+ <name>AmazonS3</name>
+
+ <!-- customize here -->
+ <channel>jldupont.googlecode.com/svn</channel>	
+ 
+ <summary>$summary</summary>
+ <description>$description</description>
+
+<!-- list of lead maintainers {{ --> 
+ <lead>
+  <name>Jean-Lou Dupont</name>
+  <user>jldupont</user>		<!-- e.g. jldupont -->
+  <email>jldupont@jldupont.com</email>
+  <active>yes</active>
+ </lead>
+<!-- }} -->
+
+ <date>2007-11-07</date>
+ <time>15:27:46</time>
+
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ 
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+
+ <license uri="http://www.php.net/license">PHP License</license>
+ 
+ <notes>$notes</notes>
+ 
+ <contents>
+  <dir name="/">
+
+	<!-- file list begin {{ -->
+	<!-- baseinstalldir: the target directory on the target machine -->
+   <file baseinstalldir="AmazonS3" name="AmazonS3.php" role="php" />
+    <!-- }} -->
+
+  </dir>
+ </contents>
+ 
+ <dependencies>
+  <required>
+
+   <php>
+    <min>5.0.0</min>
+    <max>6.0.0</max>
+   </php>
+
+   <pearinstaller>
+    <min>1.6.2</min>
+   </pearinstaller>
+   
+   <package>
+    <name>Crypt_HMAC</name>
+    <channel>pear.php.net</channel>
+    <min>1.0.1</min>
+   </package>
+
+   <package>
+    <name>HTTP_Request</name>
+    <channel>pear.php.net</channel>
+    <min>1.4.1</min>
+   </package>
+
+  </required>
+ </dependencies>
+
+ <phprelease>
+  <installconditions>
+   <os>
+    <name>*</name>
+   </os>
+  </installconditions>
+ </phprelease>
+
+<!-- 
+CHANGELOG 
+Just a copy of the previous <release> sections
+-->
+
+</package>

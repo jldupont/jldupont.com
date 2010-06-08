@@ -1,0 +1,470 @@
+<gm:page title="Demo - Tags" authenticate="false">
+  
+  <div class="gm-app-header">
+    <h2> Demonstration of Template Tags  <h2>
+  </div>        
+  
+  <table><tr valign="top" class="blue-theme">
+   <td>
+    <gm:tabs target="cont" class="gm-section-tabs-left"/>
+  </td>
+   <td>
+     <gm:container id="cont">                     
+                                                            
+               
+          <gm:section id="0" title="gm:html">
+              <div class="gm-app-header">
+                <h3> The gm:html tag displays the HTML content of a feed element bound via an XPath
+                    statement. The feed element must be either atom:title, atom:summary, or atom:content.
+                    Below is an example to demonstrate it. <h3>
+               </div>
+            <gm:list id="listhtml" data="http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStore.woa/wpa/MRSS/topsongs/limit=10/rss.xml" template="TempHTML"/> 
+          </gm:section> 
+           
+          <gm:section id="1" title="gm:video">  
+              <div class="gm-app-header">
+                <h3>  The gm:video tag displays the video content of a feed element bound via a XPath statement,
+                 below is an example to demonstrate it.</h3>   </div>
+              <gm:list id="listvideo" data="http://www.youtube.com/rss/user/s3lokchand/videos.rss" template="TempVideo"/>
+           </gm:section>       
+        
+          <gm:section id="2" title="gm:link">
+               <div class="gm-app-header">
+                 <h3> The gm:link tag creates a link using an element in the data source,
+                      below is an example to demonstrate it. <h3>
+               </div>
+            <gm:list id="listlink" data="http://googleblog.blogspot.com/feeds/posts/default" template="TempLINK" pageSize="10"/>
+          </gm:section>                           
+      
+       
+         <gm:section id="3" title="gm:image"> 
+           <div class="gm-app-header">
+                 <h3> The gm:image tag displays the image content of a feed element bound via an XPath
+                      statement, below is an example to demonstrate it.   <h3>
+               </div>
+                 <gm:list id="listimage" data="http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStore.woa/wpa/MRSS/topsongs/limit=10/rss.xml" template="TempIMAGE" pagesize="5"/>
+         </gm:section>
+        
+        
+         <gm:section id="4" title="gm:select">
+               <div class="gm-app-header">
+                 
+               <h3> The gm:select tag is used to create a drop down menu with Dynamic/Static options, below is an example to demonstrate it. <h3> 
+                   <h3> You will need to sign into the application to use this part of the demo. <h3>
+                                             
+                                     
+               </div>
+           <gm:list id="listselect" data="${app}/test" template="TempSelect"/>
+         </gm:section>
+         
+           <gm:section id="5" title="gm:number">
+               <div class="gm-app-header">
+                 <h3> The gm:number tag displays the numeric content of a feed element bound via a XPath
+                    statement, below is an example to demonstrate it. <h3>
+               </div>
+               <gm:list id="listnumber" data="http://digg.com/rss/index.xml" template="TempNumber"/>
+                               
+           </gm:section>
+       
+           <gm:section id="6" title="gm:text">
+            <div class="gm-app-header">
+                 <h3>  The gm:text tag displays the text content of a feed element bound via an XPath
+                    statement. Below is an example to demonstrate it. <h3>
+                                         <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+              <gm:list id="listtext" data="${app}/text" template="TempText"/>
+            </gm:section> 
+         
+           <gm:section id="7" title="gm:textarea">             
+                 <div class="gm-app-header">
+                   <h3>  The gm:textarea tag displays the text content of a feed element bound via an XPath statement
+                          in a textarea, below is an example to demonstrate it. <h3>
+                 </div>
+                <gm:list id="listtextarea" data="http://googleblog.blogspot.com/feeds/posts/default" template="TempTextArea"/>
+          </gm:section>
+    
+          <gm:section id="8" title="gm:debug">
+                 <div class="gm-app-header">
+                   <h3> The gm:debug tag is used to display the feed contents of a given data source,
+                        below is an example to demonstrate it.  <h3>
+                 </div>
+                <gm:list id="listdebug" data="${test}" template="TempDebug" pagesize="10"/>
+           </gm:section>
+          
+             
+           <gm:section id="9" title="gm:toggle">
+                 <div class="gm-app-header">
+                   <h3> The gm:toggle tag toggles the display of another tag when placed around that tag. The
+                      element to be toggled must have the "gm-toggled" class attribute 
+                       assigned to it, below is an example to demonstrate it.  <h3>
+                 </div>
+                <gm:list id="listtog" data="${test}" template="TempToggle" pagesize="10"/>
+           </gm:section>
+         
+             
+          <gm:section id="10" title="gm:pager">
+                 <div class="gm-app-header">
+                   <h3> The gm:pager tag displays paging links for lists with multiple pages of data,
+                        below is an example to demonstrate it.  <h3>
+                 </div>
+                 <gm:list id="listpager" data="${test}" template="TempPager" pagesize="10"/>
+          </gm:section>
+             
+          <gm:section id="11" title="gm:autoComplete">
+              <div class="gm-app-header">
+                 <h3> The gm:autoComplete tag creates an editable text box. When the user types two characters or
+                      more, the application tries to automatically completes the entry, based
+                      on elements in the given feed. Below is an example to demonstrate it.  <h3>
+                                           <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+             <gm:list id="listauto" data="${app}/auto" template="TempAuto"/>                               
+          </gm:section>                               
+                      
+                                                        
+          <gm:section id="12" title="gm:create">
+            <div class="gm-app-header">
+                 <h3> The gm:create tag displays a template for the user to type a new entry. This tag
+                      can only be used with write-enabled feeds, below is an example to demonstrate it. <h3>
+                                           <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+              <gm:list id="listcreate" data="${app}/create" template="TempCreate"/>
+          </gm:section> 
+          
+          <gm:section id="13" title="gm:checkbox">
+            <div class="gm-app-header">
+                 <h3> The gm:checkbox tag creates a checkbox bound to the feed element assigned via an
+                      XPath statement. Below is an example to demonstrate it. <h3>
+                                           <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+              <gm:list id="listcheck" data="${app}/check" template="TempCheckBox"/>
+          </gm:section> 
+       
+        
+          <gm:section id="14" title="gm:editButtons">
+            <div class="gm-app-header">
+                 <h3> The gm:editButtons tag displays an edit and delete button for each entry
+                    in a list. Below is an example to demonstrate it. <h3>
+                                         <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+              <gm:list id="listedit" data="${app}/buttons" template="TempeditButtons"/>
+          </gm:section>  
+          
+          <gm:section id="15" title="gm:rating">
+            <div class="gm-app-header">
+                 <h3> The gm:rating tag Displays the rating content of a feed element bound via a
+                    XPath statement. Below is an example to demonstrate it. <h3>
+                                         <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+              <gm:list id="listrating" data="${app}/rating" template="TempRating"/>
+          </gm:section>
+          
+          <gm:section id="16" title="gm:header">
+              <div class="gm-app-header">
+                <h3>  The gm:header tag is used in a template to enable sorting of a column header. 
+                    Below is an example to demonstrate it.  <h3>
+                                         <h3> You will need to sign into the application to use this part of the demo. <h3>
+              </div>
+               <gm:list id="listhead" data="${app}/tmp1" template="TempHeader">          
+                <gm:sort ref="gd:status/@value" name="Done"/>
+                <gm:sort ref="atom:title" name="Title" reverse="false"/>
+                <gm:sort ref="gd:when/@startTime" name="Date"/>
+                <gm:sort ref="gd:rating" name="Priority"/>
+              </gm:list>
+          </gm:section>
+        
+                    
+          <gm:section id="17" title="gm:date">
+            <div class="gm-app-header">
+                 <h3> The gm:date tag creates a textbox bound to a date picker to allow users to
+                easily select a date. Below is an example to demonstrate it. <h3>
+                                     <h3> You will need to sign into the application to use this part of the demo. <h3>
+               </div>
+              <gm:list id="listdate" data="${app}/date" template="TempDate"/>
+          </gm:section>         
+                                                             
+     </gm:container>
+    </td>
+   </tr>
+  </table>
+  
+  <!-- ************************************************************************************************************** -->
+  
+  <gm:template id="TempDate">
+      <gm:create label="Add New Task"/>
+        <table style="width: 100%" class="blue-theme">          
+          <thead class="gm-header">
+            <tr>              
+              <td><gm:header> Done</gm:header></td>
+              <td><gm:header> Title</gm:header></td>
+              <td><gm:header> Start Date</gm:header></td>
+              <td><gm:header> End Date</gm:header></td>
+             <td><gm:header> Priority</gm:header></td> 
+            </tr>
+          </thead>            
+        <tbody>
+          <tr repeat="true">
+            <td> <gm:checkbox ref="gd:status/@value"/> </td>        
+            <td> <gm:text ref="atom:title"/></td>               
+            <td> <gm:date ref="gd:when/@startTime"/> </td>
+            <td> <gm:date ref="gd:when/@endTime"/> </td>
+            <td> <gm:rating ref="gd:rating"/> </td> 
+            <td> <gm:editButtons text="true"/> </td>                      
+           </tr>
+      </tbody>        
+    </table>    
+  </gm:template>
+  
+  <gm:template id="TempText">
+    <gm:create label="New Text"/>
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        <td>
+          <gm:text ref="atom:title"/>
+        </td>        
+        <td>
+          <gm:editButtons text="true"/>
+        </td>
+      </tr>
+    </table>
+  </gm:template>
+  
+  <gm:template id="TempRating">
+    <gm:create label="Ratings"/>
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        <td>
+          <gm:text ref="atom:title"/>
+        </td>
+        <td>
+          <gm:rating ref="atom:title"/>
+        </td>
+        <td>
+          <gm:editButtons text="true"/>
+        </td>
+      </tr>
+    </table>
+  </gm:template>
+  
+  <gm:template id="TempeditButtons">
+    <gm:create label="New Task"/>
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        
+        <td>
+          <gm:text ref="atom:title"/>
+        </td>
+        <td>
+          <gm:editButtons text="true"/>
+        </td>
+      </tr>
+    </table>
+  </gm:template>
+  
+  <gm:template id="TempCheckBox">
+    <gm:create label="New CheckBox"/>
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        <td>
+          <gm:checkbox ref="gd:status/@value"/>
+        </td>
+        <td>
+          <gm:text ref="atom:title"/>
+        </td>
+        <td>
+          <gm:editButtons text="true"/>
+        </td>
+      </tr>
+    </table>
+  </gm:template>
+  
+  <gm:template id="TempCreate">
+    <gm:create label="New Title"/>
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        <td>
+          <gm:text ref="atom:title"/>
+        </td>
+        <td>
+          <gm:editButtons text="true"/>
+        </td>
+      </tr>
+    </table>
+  </gm:template>
+  
+  <gm:template id="TempAuto">
+    <gm:create label="Upcoming Movies"/>
+    <table style="width: 100%" class="blue-theme">
+      <thead>
+       
+        <tr>
+          <td> <gm:header> Movie </gm:header>
+          <td> <gm:header> Rating </gm:header>
+          </tr>
+        </thead>
+      <tbody>
+      <tr repeat="true">
+        <td> <gm:autoComplete ref="atom:title" data="http://movies.go.com/xml/rss/upcoming.xml" value="atom:title"/> </td>        
+        <td> <gm:rating ref="gd:rating"/>  
+        <td> <gm:editButtons text="true"/> </td>
+      </tr>
+      </tbody>
+    </table>
+  </gm:template>
+  
+  <gm:template id="TempPager">
+    <gm:pager/>
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        <td>
+          <gm:text ref="atom:title"/>
+        </td>
+      </tr>
+    </table>
+    <gm:pager/>
+  </gm:template>
+  
+  <gm:template id="TempToggle">
+    <table style="width: 100%" class="blue-theme">
+      <tr repeat="true">
+        <td>
+            <gm:toggle/><gm:text ref="atom:title"/>
+            <gm:debug ref="." class="gm-toggled"/>
+          </td>
+      </tr>
+    </table>
+  </gm:template>
+  
+    <gm:template id="TempDebug">
+      <table style="width: 100%" class="blue-theme">
+        <tr repeat="true">
+          <td>
+            <gm:toggle/><gm:text ref="atom:title"/>
+            <gm:debug ref="." class="gm-toggled"/>
+          </td>
+        </tr>
+      </table>
+    </gm:template> 
+       
+    <gm:template id="TempTextArea">
+       <table style="width: 100%" class="blue-theme">
+        <tr repeat="true">
+          <td>
+            <gm:toggle/><gm:text ref="atom:title"/>
+            <gm:textarea ref="atom:content" class="gm-toggled"/>
+          </td>
+        </tr>
+      </table>
+    </gm:template>
+    
+    <gm:template id="TempVideo">
+      <table style="width: 100%" class="blue-theme">
+        <tr repeat="true">
+          <td><gm:html ref="atom:title"/> </td>
+          <td><gm:video ref="atom:link[@rel='enclosure']/@href"/></td>
+        </tr>
+      </table>
+    </gm:template>
+    
+    
+    <gm:template id="TempNumber">
+      <table style="width: 100%" class="blue-theme">
+        <thead class="gm-header">
+            <tr>              
+              <td><gm:header>Digg Link</gm:header></td>
+              <td><gm:header>Digg Count</gm:header></td>
+              </tr>
+          </thead>
+          <tbody>    
+        <tr repeat="true">
+          
+          <td>
+            <gm:link ref="atom:link/@href" labelref="atom:title" />
+            </td>
+          <td>
+            <gm:number ref="digg:commentCount"/>  
+          </td>
+        </tr>
+          <tbody>
+      </table>
+      <gm:pager/>
+    </gm:template>
+
+    <gm:template id="TempSelect">
+       <table class="blue-theme" width="100%">
+      <tr repeat="true">
+      <td width="50%"><gm:text ref="atom:title"/></td>
+        <td width="50%"><gm:select data="http://mapnut.com/calstatepark.xml" ref="gmd:location" labelref="atom:title"/></td>
+        </tr>
+        <tfoot>
+          <tr>
+        <td colspan="2"><gm:create label="New"/></td>
+  
+       </tr>
+      </tfoot>
+     </table>    
+      
+    </gm:template>
+
+           <gm:template id="TempIMAGE">
+             <table style="width: 100%" class="blue-theme">
+               <tr repeat="true">
+                 <td>
+                   <gm:image ref="itms:coverArt " width="50" height="50"/>
+                  </td>
+               </tr>
+             </table>
+             <gm:pager/>
+           </gm:template>
+           
+           
+                    
+    <gm:template id="TempLINK">
+         <gm:pager/>
+         <table style="width: 100%" class="blue-theme">
+           <tr repeat="true">
+             <td>
+               <gm:link ref="atom:link/@href" labelref="atom:title"/>
+             </td>
+           </tr>
+         </table>
+         <gm:pager/>
+       </gm:template>   
+               
+    <gm:template id="TempHTML">
+      <table style="width: 100%" class="blue-theme">
+        <tr repeat="true">          
+          <td>
+            <gm:html ref="atom:content"/>
+          </td>          
+        </tr>
+      </table>
+      <gm:pager/>
+    </gm:template>
+         
+    <gm:template id="TempHeader">
+      <gm:create label="Add Task"/>
+        <table style="width: 100%" class="blue-theme">          
+          <thead class="gm-header">
+            <tr>              
+              <td><gm:header sort="Done">Done</gm:header></td>
+              <td><gm:header sort="Title">Title</gm:header></td>
+              <td><gm:header sort="Date">Date</gm:header></td>
+             <td><gm:header sort="Priority">Priority</gm:header></td> 
+            </tr>
+          </thead>            
+        <tbody>
+          <tr repeat="true">
+            <td> <gm:checkbox ref="gd:status/@value"/> </td>        
+            <td> <gm:text ref="atom:title"/></td>               
+            <td> <gm:date ref="gd:when/@startTime"/> </td>
+            <td> <gm:rating ref="gd:rating"/> </td> 
+            <td> <gm:editButtons text="true"/> </td>                      
+           </tr>
+      </tbody>        
+    </table>
+    <gm:create label="Add Task"/>
+    <gm:pager/>
+  </gm:template>
+
+  
+</gm:page>

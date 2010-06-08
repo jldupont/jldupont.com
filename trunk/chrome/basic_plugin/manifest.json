@@ -1,0 +1,14 @@
+{
+	"name": "basic_plugin",
+	"version": "1",
+	"description": "Basic Plugin Test",
+	"plugins": [ 
+		{ "path":"npbasicplugin.so", "public":true}
+	],
+	 
+	"permissions": [
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+	]
+}

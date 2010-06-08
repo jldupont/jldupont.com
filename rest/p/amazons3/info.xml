@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<p xmlns="http://pear.php.net/dtd/rest.package"    
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"    
+	xsi:schemaLocation="http://pear.php.net/dtd/rest.package    http://pear.php.net/dtd/rest.package.xsd">
+ <n>AmazonS3</n>
+ <c>jldupont.googlecode.com/svn</c>
+ <ca xlink:href="/rest/c/Amazon">Amazon</ca>
+ <l></l>
+ <s>Class for handling REST requests to Amazon S3</s>
+ <d></d>
+ <r xlink:href="/rest/r/amazons3"/>
+</p>

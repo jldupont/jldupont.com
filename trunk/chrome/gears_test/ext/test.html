@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<script>
+		(function() {
+			  // We are already defined. Hooray!
+			  if (window.google && google.gears) {
+			    return;
+			  }
+
+			  var factory = null;
+
+			  // Firefox
+			  if (typeof GearsFactory != 'undefined') {
+			    factory = new GearsFactory();
+			  } else {
+			    // IE
+			    try {
+			      factory = new ActiveXObject('Gears.Factory');
+			      // privateSetGlobalObject is only required and supported on IE Mobile on
+			      // WinCE.
+			      if (factory.getBuildInfo().indexOf('ie_mobile') != -1) {
+			        factory.privateSetGlobalObject(this);
+			      }
+			    } catch (e) {
+			      // Safari
+			      if ((typeof navigator.mimeTypes != 'undefined')
+			           && navigator.mimeTypes["application/x-googlegears"]) {
+			        factory = document.createElement("object");
+			        factory.style.display = "none";
+			        factory.width = 0;
+			        factory.height = 0;
+			        factory.type = "application/x-googlegears";
+			        document.documentElement.appendChild(factory);
+			      }
+			    }
+			  }
+
+			  // *Do not* define any objects if Gears is not installed. This mimics the
+			  // behavior of Gears defining the objects in the future.
+			  if (!factory) {
+			    return;
+			  }
+
+			  // Now set up the objects, being careful not to overwrite anything.
+			  //
+			  // Note: In Internet Explorer for Windows Mobile, you can't add properties to
+			  // the window object. However, global objects are automatically added as
+			  // properties of the window object in all browsers.
+			  if (!window.google) {
+			    google = {};
+			  }
+
+			  if (!google.gears) {
+			    google.gears = {factory: factory};
+			  }
+			})();
+		</script>
+		<script>
+		function init_db() {
+				
+			var db = google.gears.factory.create('beta.database');
+			db.open('database-sites');
+			db.execute('create table if not exists Sites' +
+			           ' (domain text, Enable int)');
+		}
+
+		function db_get_status(domain) {
+
+			var enabled = 0;
+			
+			var db = google.gears.factory.create('beta.database');
+			db.open('database-sites');
+			var rs = db.execute('select Enable from Sites where domain='+domain);
+			if (rs.isValidRow()) {
+				enabled = rs.field(0);
+			}
+			rs.close();
+			return enabled;
+		}
+
+		function db_set_status(domain, enable) {
+
+			var db = google.gears.factory.create('beta.database');
+			db.open('database-sites');	
+			db.execute('INSERT OR REPLACE into Sites values (?, ?)', [domain, enable]);
+		}
+
+		function test_start() {
+			
+			init_db();
+			var enabled = db_get_status(document.domain);
+			var cid = document.getElementById("site_enabled");
+			cid.checked = enabled;
+		}
+
+		function test_checkbox_clicked() {
+			var cid = document.getElementById("site_enabled");
+			enabled = cid.checked;
+			db_set_status( document.domain, enabled );
+		}
+		
+		</script>
+	</head>
+	<body onload="window.setTimeout(test_start, 0)">
+		<div class="toolstrip-button">
+		  <form>
+		    <input type="checkbox" id="site_enabled" name="enabled" value="Enabled" onclick="test_checkbox_clicked"></input>
+		  </form>
+		</div>
+	</body>
+</html>

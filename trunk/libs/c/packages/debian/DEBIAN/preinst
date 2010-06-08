@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+"""
+	@author: Jean-Lou Dupont
+"""
+
+import os
+import sys
+
+cwd     = os.getcwd()
+id      = "$Id: preinst 915 2009-05-22 17:50:49Z JeanLou.Dupont $"
+
+print "LITM: cwd[%s] id[%s]" % (cwd, id)
+
+try:
+	command = sys.argv[1]
+	version = sys.argv[2]
+	
+	print "LITM: preinst: command[%s] version[%s]" % (command, version)
+except:
+	pass
+	
+
+sys.exit(0)

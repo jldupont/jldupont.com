@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+<<<<<<< .mine
+	<classpathentry kind="lib" path="C:/Program Files/Google/gwt-gears/gwt-google-apis.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Google/gwt/gwt-user.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Program Files/Google/gwt-windows-1.5.1/gwt-user.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Google/gwt-gears-1.1.0/gwt-gears.jar"/>
+>>>>>>> .r536
+	<classpathentry kind="output" path="bin"/>
+</classpath>

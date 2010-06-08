@@ -1,0 +1,7 @@
+#Default values
+#@author: Jean-Lou Dupont
+
+config_server: server
+config_port: 9091
+config_export: False
+config_eventmgr: ~/trns/eventmgr

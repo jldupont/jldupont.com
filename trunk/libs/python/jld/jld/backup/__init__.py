@@ -1,0 +1,1 @@
+__dependencies__ = ['sqlobject>=0.10.2']

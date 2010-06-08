@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Main</title>
+
+	<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+	<script src='jld2.js' type='text/javascript'></script>
+	<script>
+		google.load("jquery", '1.2.6' );
+	</script>
+</head>
+<body>
+
+	Some text should appear below:
+	<div class="JLD_FETCH" src="test.html"></div>
+
+	The same text should appear below here:
+	<div class="JLD_FETCH" src="test2.html"></div>
+
+	<script>
+	
+		google.setOnLoadCallback(JLD.init);
+		
+	</script>	
+
+</body>
+
+</html>

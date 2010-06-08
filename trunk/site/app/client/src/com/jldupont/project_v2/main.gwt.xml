@@ -1,0 +1,10 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	
+	<inherits name="org.jldupont.Lib"/>
+	<inherits name="com.web_bloks.LIB"/>
+	
+	<inherits name="com.jldupont.pages.Pages"/>
+	
+	<entry-point class="com.jldupont.project.client_v2.main"/>
+</module>

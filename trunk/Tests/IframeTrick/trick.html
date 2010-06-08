@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>trick</title>
+
+	<script src="http://www.google.com/jsapi"></script>
+</head>
+<body>
+
+	<div id="content">
+		Some content here.
+		<table border="1">
+			<tboby>
+				<tr><td>1st</td><td>2nd</td></tr>
+			</tboby>
+		</table>
+	</div>
+
+	<script>
+		// Load jQuery
+		google.load("jquery", "1.2.6");
+		
+		google.setOnLoadCallback(function() {
+		
+			// the name of this document i.e. the <title> element in the <head> section
+			title = window.document.title;
+		
+			// locate parent document
+			pdoc = window.parent.document;
+			
+			// get all the iframes from the parent window
+			iframes = pdoc.getElementsByTagName("iframe");
+			
+			// find the matching iframe in the parent window
+			iframe = findMatchingIframe( pdoc, title );
+			if ( iframe == undefined)
+				return;
+
+			// get target element id
+			tid = getTargetElementId( iframe.src );
+			if ( tid == undefined )
+				return;
+
+			// get the element per-se
+			target = pdoc.getElementById( tid );
+
+			// get the content to copy from this document
+			c = $("#content").html();
+			
+			target.innerHTML = c;
+			
+
+		});
+		/**
+		 * Locates the iframe that loaded this document
+		 */
+		function findMatchingIframe( doc, title ) {
+		
+			result = undefined;
+			
+			iframes = doc.getElementsByTagName("iframe");
+			for (i=0; i<iframes.length; i++ ) {
+				iframe = iframes[i];
+				if ( iframe.src.match( title )) {
+					result = iframe;
+					break;
+				}
+			}
+			return result;
+		}
+		/**
+		 * Retrieves the element id from the src element of the iframe
+		 * i.e. after the ? delimiter
+		 */
+		function getTargetElementId( src ) {
+		
+			parts = src.split("?");
+			if ( parts.length < 2 )
+				return undefined;
+			
+			return parts[1];	
+		}
+	</script>
+ 
+</body>
+</html>

@@ -1,0 +1,11 @@
+Package: litm
+Version: 0.4
+Priority: optional
+Architecture: i386
+Depends: python (>= 2.5)
+Section: Other
+Maintainer: Jean-Lou Dupont <litm@jldupont.com>
+Description: Lightweight Inter-Thread Messaging library
+ LITM is a cross-platform Lightweight Inter-Thread Messaging library
+ written in C.
+ .

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<a xmlns="http://pear.php.net/dtd/rest.allcategories"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://pear.php.net/dtd/rest.allcategories
+    http://pear.php.net/dtd/rest.allcategories.xsd">
+
+<!-- DO NOT EDIT BELOW HERE -->
+<ch>jldupont.googlecode.com/svn</ch> <!-- not read by list-all command -->
+	<c xlink:href="/rest/c/Amazon/info.xml">Amazon</c>
+	<c xlink:href="/rest/c/Delicious/info.xml">Delicious</c>
+	<c xlink:href="/rest/c/Filesystem/info.xml">Filesystem</c>
+	<c xlink:href="/rest/c/MyTools/info.xml">MyTools</c>
+	<c xlink:href="/rest/c/OnlineTools/info.xml">OnlineTools</c>
+	<c xlink:href="/rest/c/Pear/info.xml">Pear</c>
+	<c xlink:href="/rest/c/Phing/info.xml">Phing</c>
+	<c xlink:href="/rest/c/System/info.xml">System</c>
+	<c xlink:href="/rest/c/Validate/info.xml">Validate</c>
+
+</a>

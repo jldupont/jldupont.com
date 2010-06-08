@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<f xmlns="http://pear.php.net/dtd/rest.categorypackageinfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://pear.php.net/dtd/rest.categorypackageinfo     http://pear.php.net/dtd/rest.categorypackageinfo.xsd">
+		<pi>
+			<p>
+				<n>Validate</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/Validate">Validate</ca>
+				<l>$license$</l>
+				<s>PHING tools</s>
+				<d>Parameter validation</d>
+				<r xlink:href="/rest/r/Validate">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.0</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+</f>

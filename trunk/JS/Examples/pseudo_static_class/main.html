@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Example - Pseudo Static Class</title>
+	<script type="text/javascript" src="pseudo_static_class.js"></script>
+</head>
+<body>
+
+	<script>
+	
+		JLD();
+	
+		JLD.fnc1();
+		
+		JLD2();
+		
+		try {
+			JLD2.fnc1();
+		} catch( e ) {
+			alert( "can't access JLD2.fnc1 from here" );
+		}
+
+	</script>
+	
+</body>
+</html>

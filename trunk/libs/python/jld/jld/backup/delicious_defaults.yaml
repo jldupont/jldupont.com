@@ -1,0 +1,10 @@
+# Delicious Backup
+# Default Configuration
+# @author: Jean-Lou Dupont
+#
+# The '~' will be evaluated to $HOME or $HOMEDRIVE+$HOMEPATH under Windows environment
+# ====================================================================================
+
+db_path: ~/delicious/db/delicious.sqlite
+export_path: ~/delicious
+export_maxnum: 100

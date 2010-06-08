@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file for releasing the code associated with a package
+	for building the 'latest' documentation tree.
+
+	@author Jean-Lou Dupont
+	@version $Id: build.xml 253 2007-11-15 19:30:42Z JeanLou.Dupont $
+-->
+<project name="PackageReleaseDocs" basedir="." default='all'>
+
+	<!--
+		The package is located 1 level 'down' from the original build file.
+	-->
+	<target name='Config'>
+		<resolvepath propertyName="project.path" file="${project.basedir}/../" /> <!-- 1 level down -->
+		<property name='package.file' value='${project.path}/package.xml' />
+		<echo>Package path: ${project.path}</echo>
+	</target>
+
+	<!-- create the top level directory... just in case -->
+	<mkdir dir='${channel.root}/latest' />
+	<mkdir dir='${channel.root}/latest/${package_name}' />
+
+	<target name='all' depends="Config">
+		<copy todir='${channel.root}/latest/${package_name}'
+				overwrite="true">
+			<fileset dir="${project.path}/.">
+				<exclude name="**/build*.*" />
+				<exclude name=".build*/**" />
+				<include name="**/**" />
+			</fileset>
+		</copy>
+	</target>
+
+</project>

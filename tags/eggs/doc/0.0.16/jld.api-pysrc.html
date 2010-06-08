@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jld.api</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="jld-module.html">Package&nbsp;jld</a> ::
+        Package&nbsp;api
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="jld.api-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="jld.api-module.html">Package jld.api</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">""" API tools</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">    @author: Jean-Lou Dupont</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">"$Id: jld.api-pysrc.html 747 2008-12-16 02:03:51Z JeanLou.Dupont $"</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable jld.__author__=jld-module.html#__author__,Variable jld.api.__author__=jld.api-module.html#__author__,Variable jld.api.delicious.__author__=jld.api.delicious-module.html#__author__,Variable jld.api.delicious_objects.__author__=jld.api.delicious_objects-module.html#__author__,Variable jld.backup.delicious.__author__=jld.backup.delicious-module.html#__author__,Variable jld.backup.delicious_db.__author__=jld.backup.delicious_db-module.html#__author__,Variable jld.backup.delicious_defaults.__author__=jld.backup.delicious_defaults-module.html#__author__,Variable jld.backup.delicious_printer.__author__=jld.backup.delicious_printer-module.html#__author__,Variable jld.backup.delicious_ui.__author__=jld.backup.delicious_ui-module.html#__author__,Variable jld.backup.mindmeister_db.__author__=jld.backup.mindmeister_db-module.html#__author__,Variable jld.backup.mindmeister_defaults.__author__=jld.backup.mindmeister_defaults-module.html#__author__,Variable jld.backup.mindmeister_logger.__author__=jld.backup.mindmeister_logger-module.html#__author__,Variable jld.backup.mindmeister_printer.__author__=jld.backup.mindmeister_printer-module.html#__author__,Variable jld.backup.mindmeister_ui.__author__=jld.backup.mindmeister_ui-module.html#__author__,Variable jld.backup.mmd.__author__=jld.backup.mmd-module.html#__author__,Variable jld.cmd.__author__=jld.cmd-module.html#__author__,Variable jld.gdata.docs.__author__=jld.gdata.docs-module.html#__author__,Variable jld.tools.cmd_ui.__author__=jld.tools.cmd_ui-module.html#__author__,Variable jld.tools.daemon.__author__=jld.tools.daemon-module.html#__author__,Variable jld.tools.date.__author__=jld.tools.date-module.html#__author__,Variable jld.tools.db.__author__=jld.tools.db-module.html#__author__,Variable jld.tools.klass.__author__=jld.tools.klass-module.html#__author__,Variable jld.tools.logger.__author__=jld.tools.logger-module.html#__author__,Variable jld.tools.mos.__author__=jld.tools.mos-module.html#__author__,Variable jld.tools.printer.__author__=jld.tools.printer-module.html#__author__,Variable jld.tools.process.__author__=jld.tools.process-module.html#__author__"><a title="jld.__author__
+jld.api.__author__
+jld.api.delicious.__author__
+jld.api.delicious_objects.__author__
+jld.backup.delicious.__author__
+jld.backup.delicious_db.__author__
+jld.backup.delicious_defaults.__author__
+jld.backup.delicious_printer.__author__
+jld.backup.delicious_ui.__author__
+jld.backup.mindmeister_db.__author__
+jld.backup.mindmeister_defaults.__author__
+jld.backup.mindmeister_logger.__author__
+jld.backup.mindmeister_printer.__author__
+jld.backup.mindmeister_ui.__author__
+jld.backup.mmd.__author__
+jld.cmd.__author__
+jld.gdata.docs.__author__
+jld.tools.cmd_ui.__author__
+jld.tools.daemon.__author__
+jld.tools.date.__author__
+jld.tools.db.__author__
+jld.tools.klass.__author__
+jld.tools.logger.__author__
+jld.tools.mos.__author__
+jld.tools.printer.__author__
+jld.tools.process.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Jean-Lou Dupont"</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable jld.__dependencies__=jld-module.html#__dependencies__,Variable jld.api.__dependencies__=jld.api-module.html#__dependencies__,Variable jld.backup.__dependencies__=jld.backup-module.html#__dependencies__,Variable jld.cmd.__dependencies__=jld.cmd-module.html#__dependencies__,Variable jld.gdata.__dependencies__=jld.gdata-module.html#__dependencies__,Variable jld.registry.__dependencies__=jld.registry-module.html#__dependencies__,Variable jld.tools.__dependencies__=jld.tools-module.html#__dependencies__"><a title="jld.__dependencies__
+jld.api.__dependencies__
+jld.backup.__dependencies__
+jld.cmd.__dependencies__
+jld.gdata.__dependencies__
+jld.registry.__dependencies__
+jld.tools.__dependencies__" class="py-name" href="#" onclick="return doclink('link-1', '__dependencies__', 'link-1');">__dependencies__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">urllib</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">types</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"> </tt>
+<a name="alphaOrderParams"></a><div id="alphaOrderParams-def"><a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="alphaOrderParams-toggle" onclick="return toggle('alphaOrderParams');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api-module.html#alphaOrderParams">alphaOrderParams</a><tt class="py-op">(</tt><tt class="py-param">liste</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="alphaOrderParams-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="alphaOrderParams-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-docstring">""" Orders a dictionary based parameters list </tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">        by alphabetical key order.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">        @param liste: input dictionary </tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">        @return: the resulting list</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt class="py-name">keys</tt> <tt class="py-op">=</tt> <tt class="py-name">liste</tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt class="py-name">keys</tt><tt class="py-op">.</tt><tt class="py-name">sort</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">key</tt> <tt class="py-keyword">in</tt> <tt class="py-name">keys</tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">        <tt class="py-name">result</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">,</tt> <tt class="py-name">liste</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="concatenateParams"></a><div id="concatenateParams-def"><a name="L26"></a><tt class="py-lineno"> 26</tt> <a class="py-toggle" href="#" id="concatenateParams-toggle" onclick="return toggle('concatenateParams');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api-module.html#concatenateParams">concatenateParams</a><tt class="py-op">(</tt><tt class="py-param">liste</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="concatenateParams-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="concatenateParams-expanded"><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-docstring">"""Concatenates list of tuples of the form (key,value)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">       into the form I{key=value}</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">       @param liste: input list of tuples(key,value)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">key</tt><tt class="py-op">,</tt><tt class="py-name">value</tt> <tt class="py-keyword">in</tt> <tt class="py-name">liste</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">     </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="makeList"></a><div id="makeList-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="makeList-toggle" onclick="return toggle('makeList');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api-module.html#makeList">makeList</a><tt class="py-op">(</tt><tt class="py-param">liste</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="makeList-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="makeList-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-docstring">""" Makes an url encoded list</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        item1+item2+...</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        @param liste: input item list</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        @return: string of the form I{item1+item2+...}</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">item</tt> <tt class="py-keyword">in</tt> <tt class="py-name">liste</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt> <tt class="py-name">item</tt> <tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'+'</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">         </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt><tt class="py-op">.</tt><tt class="py-name">rstrip</tt><tt class="py-op">(</tt><tt class="py-string">'+'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">  </tt>
+<a name="formatParams"></a><div id="formatParams-def"><a name="L49"></a><tt class="py-lineno"> 49</tt> <a class="py-toggle" href="#" id="formatParams-toggle" onclick="return toggle('formatParams');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api-module.html#formatParams">formatParams</a><tt class="py-op">(</tt><tt class="py-param">liste</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="formatParams-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="formatParams-expanded"><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-docstring">""" Formats the parameters list for usage in an</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">        HTTP method. Performs URI encoding.</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt>      </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">urlencode</tt><tt class="py-op">(</tt> <tt class="py-name">liste</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="versaUrlEncode"></a><div id="versaUrlEncode-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="versaUrlEncode-toggle" onclick="return toggle('versaUrlEncode');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api-module.html#versaUrlEncode">versaUrlEncode</a><tt class="py-op">(</tt><tt class="py-param">liste</tt><tt class="py-op">,</tt> <tt class="py-param">RemoveNone</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="versaUrlEncode-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="versaUrlEncode-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-docstring">""" Versatile URL encoder. Handles the following cases:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        1. list of key</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">        2. list of tuple (key,value)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        3. list of tuple (key, [values])</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">        4. dictionary of the form { 'key1': 'value1', 'key2':['v1', 'v2'] , 'some_key':None } </tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        @param RemoveNone: affects 'some_key' in the use case #4 above</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        @return: url encoded string</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">liste</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">DictType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">keys</tt> <tt class="py-op">=</tt> <tt class="py-name">liste</tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">key</tt> <tt class="py-keyword">in</tt> <tt class="py-name">keys</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">             </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">            <tt class="py-name">right_side</tt> <tt class="py-op">=</tt> <tt class="py-name">liste</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">             </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt class="py-comment">#key</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">right_side</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">NoneType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>               </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-name">RemoveNone</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt> <tt class="py-name">key</tt> <tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-string">'&amp;'</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">            <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt> <tt class="py-name">key</tt> <tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">             </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-comment">#key=int value</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">right_side</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">IntType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-string">'='</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt> <tt class="py-name">liste</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'&amp;'</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">             </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-comment">#key=value</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">right_side</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">StringType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-string">'='</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt><tt class="py-name">liste</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'&amp;'</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">             </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-comment">#key=[]</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-comment"></tt>            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">right_side</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">ListType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-string">'='</tt> <tt class="py-op">+</tt> <tt id="link-2" class="py-name" targets="Function jld.api.makeList()=jld.api-module.html#makeList"><a title="jld.api.makeList" class="py-name" href="#" onclick="return doclink('link-2', 'makeList', 'link-2');">makeList</a></tt><tt class="py-op">(</tt> <tt class="py-name">liste</tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">'&amp;'</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                 </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">result</tt><tt class="py-op">.</tt><tt class="py-name">rstrip</tt><tt class="py-op">(</tt><tt class="py-string">'&amp;'</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">     </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">item</tt> <tt class="py-keyword">in</tt> <tt class="py-name">liste</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">StringType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">         </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">TupleType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-keyword">assert</tt><tt class="py-op">(</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">StringType</tt> <tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt> <tt class="py-name">item</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"="</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">ListType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt id="link-3" class="py-name"><a title="jld.api.makeList" class="py-name" href="#" onclick="return doclink('link-3', 'makeList', 'link-2');">makeList</a></tt><tt class="py-op">(</tt> <tt class="py-name">item</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-keyword">assert</tt><tt class="py-op">(</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-keyword">is</tt> <tt class="py-name">StringType</tt> <tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-name">urllib</tt><tt class="py-op">.</tt><tt class="py-name">quote</tt><tt class="py-op">(</tt> <tt class="py-name">item</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                        </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">result</tt> <tt class="py-op">+</tt> <tt class="py-string">'&amp;'</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">         </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt><tt class="py-op">.</tt><tt class="py-name">rstrip</tt><tt class="py-op">(</tt><tt class="py-string">'&amp;'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">             </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-comment"># =========================================================================</tt> </tt>
+<a name="ErrorGeneric"></a><div id="ErrorGeneric-def"><a name="L117"></a><tt class="py-lineno">117</tt> <a class="py-toggle" href="#" id="ErrorGeneric-toggle" onclick="return toggle('ErrorGeneric');">-</a><tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorGeneric-class.html">ErrorGeneric</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorGeneric-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorGeneric-expanded"><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-docstring">""" Exception base class which accept parameters.</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="ErrorGeneric.__init__"></a><div id="ErrorGeneric.__init__-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="ErrorGeneric.__init__-toggle" onclick="return toggle('ErrorGeneric.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.ErrorGeneric-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorGeneric.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ErrorGeneric.__init__-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">Exception</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method jld.api.ErrorGeneric.__init__()=jld.api.ErrorGeneric-class.html#__init__,Method jld.api.delicious.Api.__init__()=jld.api.delicious.Api-class.html#__init__,Method jld.api.delicious.Client.__init__()=jld.api.delicious.Client-class.html#__init__,Method jld.api.delicious.Waiter.__init__()=jld.api.delicious.Waiter-class.html#__init__,Method jld.api.mindmeister.MM.__init__()=jld.api.mindmeister.MM-class.html#__init__,Method jld.api.mindmeister.MM_Client.__init__()=jld.api.mindmeister.MM_Client-class.html#__init__,Method jld.api.mindmeister_response.MM_ResponseBase.__init__()=jld.api.mindmeister_response.MM_ResponseBase-class.html#__init__,Method jld.api.mindmeister_response.MM_ResponseBasic.__init__()=jld.api.mindmeister_response.MM_ResponseBasic-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getAuthToken.__init__()=jld.api.mindmeister_response.MM_Response_getAuthToken-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getFrob.__init__()=jld.api.mindmeister_response.MM_Response_getFrob-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getList.__init__()=jld.api.mindmeister_response.MM_Response_getList-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getMapExport.__init__()=jld.api.mindmeister_response.MM_Response_getMapExport-class.html#__init__,Method jld.backup.delicious_backup.Backup.__init__()=jld.backup.delicious_backup.Backup-class.html#__init__,Method jld.backup.delicious_db.Db.__init__()=jld.backup.delicious_db.Db-class.html#__init__,Method jld.backup.delicious_defaults.Delicious_Defaults.__init__()=jld.backup.delicious_defaults.Delicious_Defaults-class.html#__init__,Method jld.backup.delicious_messages.Delicious_Messages.__init__()=jld.backup.delicious_messages.Delicious_Messages-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer.__init__()=jld.backup.delicious_printer.Delicious_Printer-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer_Config.__init__()=jld.backup.delicious_printer.Delicious_Printer_Config-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer_Posts.__init__()=jld.backup.delicious_printer.Delicious_Printer_Posts-class.html#__init__,Method jld.backup.mindmeister_backup.Backup.__init__()=jld.backup.mindmeister_backup.Backup-class.html#__init__,Method jld.backup.mindmeister_db.Db.__init__()=jld.backup.mindmeister_db.Db-class.html#__init__,Method jld.backup.mindmeister_defaults.MM_Defaults.__init__()=jld.backup.mindmeister_defaults.MM_Defaults-class.html#__init__,Method jld.backup.mindmeister_messages.MM_Messages.__init__()=jld.backup.mindmeister_messages.MM_Messages-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer.__init__()=jld.backup.mindmeister_printer.MM_Printer-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Config.__init__()=jld.backup.mindmeister_printer.MM_Printer_Config-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Export.__init__()=jld.backup.mindmeister_printer.MM_Printer_Export-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Maps.__init__()=jld.backup.mindmeister_printer.MM_Printer_Maps-class.html#__init__,Method jld.backup.mmd.mmdCmd.__init__()=jld.backup.mmd.mmdCmd-class.html#__init__,Method jld.backup.mmd.mmdDaemon.__init__()=jld.backup.mmd.mmdDaemon-class.html#__init__,Method jld.backup.mmd.mmdMessages.__init__()=jld.backup.mmd.mmdMessages-class.html#__init__,Method jld.cmd.BaseCmd.__init__()=jld.cmd.BaseCmd-class.html#__init__,Method jld.gdata.docs.RawDoc.__init__()=jld.gdata.docs.RawDoc-class.html#__init__,Method jld.gdata.docs.ResultDoc.__init__()=jld.gdata.docs.ResultDoc-class.html#__init__,Method jld.registry.Registry.__init__()=jld.registry.Registry-class.html#__init__,Method jld.registry.exception.RegistryException.__init__()=jld.registry.exception.RegistryException-class.html#__init__,Method jld.registry.linux.LinuxRegistry.__init__()=jld.registry.linux.LinuxRegistry-class.html#__init__,Method jld.registry.windows.WindowsRegistry.__init__()=jld.registry.windows.WindowsRegistry-class.html#__init__,Method jld.tools.cmd_ui.UIBase.__init__()=jld.tools.cmd_ui.UIBase-class.html#__init__,Method jld.tools.daemon.BaseDaemon.__init__()=jld.tools.daemon.BaseDaemon-class.html#__init__,Method jld.tools.defaults.Defaults.__init__()=jld.tools.defaults.Defaults-class.html#__init__,Method jld.tools.messages.Messages.__init__()=jld.tools.messages.Messages-class.html#__init__,Method jld.tools.printer.BasePrettyPrinter.__init__()=jld.tools.printer.BasePrettyPrinter-class.html#__init__,Method jld.tools.template.ExTemplate.__init__()=jld.tools.template.ExTemplate-class.html#__init__"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_backup.Backup.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.mindmeister_backup.Backup.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.backup.mmd.mmdCmd.__init__
+jld.backup.mmd.mmdDaemon.__init__
+jld.backup.mmd.mmdMessages.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.linux.LinuxRegistry.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.defaults.Defaults.__init__
+jld.tools.messages.Messages.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-4', '__init__', 'link-4');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">msg</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt class="py-name">msg</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-name">params</tt> </tt>
+</div></div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">         </tt>
+<a name="ErrorFile"></a><div id="ErrorFile-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="ErrorFile-toggle" onclick="return toggle('ErrorFile');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorFile-class.html">ErrorFile</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorFile-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorFile-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic filesystem error eg  can't write to filepath</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">         </tt>
+<a name="ErrorDb"></a><div id="ErrorDb-def"><a name="L129"></a><tt class="py-lineno">129</tt> <a class="py-toggle" href="#" id="ErrorDb-toggle" onclick="return toggle('ErrorDb');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorDb-class.html">ErrorDb</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorDb-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorDb-expanded"><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic Db error eg  can't open database file</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="ErrorNetwork"></a><div id="ErrorNetwork-def"><a name="L133"></a><tt class="py-lineno">133</tt> <a class="py-toggle" href="#" id="ErrorNetwork-toggle" onclick="return toggle('ErrorNetwork');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorNetwork-class.html">ErrorNetwork</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorNetwork-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorNetwork-expanded"><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-docstring">""" Error at the network layer eg  DNS error, no connection etc. </tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="ErrorAuth"></a><div id="ErrorAuth-def"><a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="ErrorAuth-toggle" onclick="return toggle('ErrorAuth');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorAuth-class.html">ErrorAuth</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorAuth-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorAuth-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic Authentication error</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"> </tt>
+<a name="ErrorAccess"></a><div id="ErrorAccess-def"><a name="L141"></a><tt class="py-lineno">141</tt> <a class="py-toggle" href="#" id="ErrorAccess-toggle" onclick="return toggle('ErrorAccess');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorAccess-class.html">ErrorAccess</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorAccess-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorAccess-expanded"><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic Access error eg  restricted access</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="ErrorObject"></a><div id="ErrorObject-def"><a name="L145"></a><tt class="py-lineno">145</tt> <a class="py-toggle" href="#" id="ErrorObject-toggle" onclick="return toggle('ErrorObject');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorObject-class.html">ErrorObject</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorObject-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorObject-expanded"><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic object error eg  object not found</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="ErrorMethod"></a><div id="ErrorMethod-def"><a name="L149"></a><tt class="py-lineno">149</tt> <a class="py-toggle" href="#" id="ErrorMethod-toggle" onclick="return toggle('ErrorMethod');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorMethod-class.html">ErrorMethod</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorMethod-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorMethod-expanded"><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic method error eg  unavailable method for API end-point etc.</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"> </tt>
+<a name="ErrorValidation"></a><div id="ErrorValidation-def"><a name="L153"></a><tt class="py-lineno">153</tt> <a class="py-toggle" href="#" id="ErrorValidation-toggle" onclick="return toggle('ErrorValidation');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorValidation-class.html">ErrorValidation</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorValidation-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorValidation-expanded"><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic validation error eg  invalid parameter</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="ErrorProperty"></a><div id="ErrorProperty-def"><a name="L157"></a><tt class="py-lineno">157</tt> <a class="py-toggle" href="#" id="ErrorProperty-toggle" onclick="return toggle('ErrorProperty');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorProperty-class.html">ErrorProperty</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorProperty-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorProperty-expanded"><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic property error eg  feature X not available</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt>
+<a name="ErrorProtocol"></a><div id="ErrorProtocol-def"><a name="L161"></a><tt class="py-lineno">161</tt> <a class="py-toggle" href="#" id="ErrorProtocol-toggle" onclick="return toggle('ErrorProtocol');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorProtocol-class.html">ErrorProtocol</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorProtocol-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorProtocol-expanded"><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic protocol error eg  expecting parameter X but not found</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="ErrorInvalidCommand"></a><div id="ErrorInvalidCommand-def"><a name="L165"></a><tt class="py-lineno">165</tt> <a class="py-toggle" href="#" id="ErrorInvalidCommand-toggle" onclick="return toggle('ErrorInvalidCommand');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorInvalidCommand-class.html">ErrorInvalidCommand</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorInvalidCommand-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorInvalidCommand-expanded"><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic command error eg  invalid command from cmd-line utility </tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="ErrorDaemon"></a><div id="ErrorDaemon-def"><a name="L169"></a><tt class="py-lineno">169</tt> <a class="py-toggle" href="#" id="ErrorDaemon-toggle" onclick="return toggle('ErrorDaemon');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorDaemon-class.html">ErrorDaemon</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorDaemon-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorDaemon-expanded"><a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic daemon error eg  can't os.fork</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+</div><a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"> </tt>
+<a name="ErrorConfig"></a><div id="ErrorConfig-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="ErrorConfig-toggle" onclick="return toggle('ErrorConfig');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.ErrorConfig-class.html">ErrorConfig</a><tt class="py-op">(</tt><tt class="py-base-class">ErrorGeneric</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ErrorConfig-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ErrorConfig-expanded"><a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic configuration error eg  can't load configuration from filesystem</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt>  </tt>
+</div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">     </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-comment"># =========================================================================</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">    <tt class="py-name">liste</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> <tt class="py-string">'k2'</tt><tt class="py-op">:</tt><tt class="py-string">'v2'</tt><tt class="py-op">,</tt> <tt class="py-string">'xyz'</tt><tt class="py-op">:</tt><tt class="py-string">'v?xyz'</tt><tt class="py-op">,</tt> <tt class="py-string">'abc'</tt><tt class="py-op">:</tt><tt class="py-string">'vabc'</tt><tt class="py-op">,</tt> <tt class="py-string">'k1'</tt><tt class="py-op">:</tt><tt class="py-string">'v1'</tt> <tt class="py-op">}</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">     </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'alpha order:'</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">    <tt class="py-name">sorted_list</tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name" targets="Function jld.api.alphaOrderParams()=jld.api-module.html#alphaOrderParams"><a title="jld.api.alphaOrderParams" class="py-name" href="#" onclick="return doclink('link-5', 'alphaOrderParams', 'link-5');">alphaOrderParams</a></tt><tt class="py-op">(</tt> <tt class="py-name">liste</tt> <tt class="py-op">)</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-name">sorted_list</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">     </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'concatenate params:'</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt id="link-6" class="py-name" targets="Function jld.api.concatenateParams()=jld.api-module.html#concatenateParams"><a title="jld.api.concatenateParams" class="py-name" href="#" onclick="return doclink('link-6', 'concatenateParams', 'link-6');">concatenateParams</a></tt><tt class="py-op">(</tt> <tt class="py-name">sorted_list</tt> <tt class="py-op">)</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">     </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"============"</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt id="link-7" class="py-name" targets="Function jld.api.formatParams()=jld.api-module.html#formatParams"><a title="jld.api.formatParams" class="py-name" href="#" onclick="return doclink('link-7', 'formatParams', 'link-7');">formatParams</a></tt><tt class="py-op">(</tt> <tt class="py-name">sorted_list</tt> <tt class="py-op">)</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"============"</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt id="link-8" class="py-name"><a title="jld.api.formatParams" class="py-name" href="#" onclick="return doclink('link-8', 'formatParams', 'link-7');">formatParams</a></tt><tt class="py-op">(</tt> <tt class="py-name">liste</tt> <tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"============"</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">     </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt class="py-name">liste2</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'tag1'</tt><tt class="py-op">,</tt> <tt class="py-string">'tag2'</tt><tt class="py-op">,</tt> <tt class="py-string">'tag3'</tt><tt class="py-op">,</tt> <tt class="py-string">'tag4\special'</tt><tt class="py-op">]</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt id="link-9" class="py-name"><a title="jld.api.makeList" class="py-name" href="#" onclick="return doclink('link-9', 'makeList', 'link-2');">makeList</a></tt><tt class="py-op">(</tt><tt class="py-name">liste2</tt><tt class="py-op">)</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"============"</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">    <tt class="py-comment">#liste3 = { 'key1':'value1', 'key2':['value2a', 'value2b'] }</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-name">liste3</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-string">'first'</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-string">'key1'</tt><tt class="py-op">,</tt><tt class="py-string">'value1'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-string">'key2'</tt><tt class="py-op">,</tt><tt class="py-op">[</tt><tt class="py-string">"value2a"</tt><tt class="py-op">,</tt> <tt class="py-string">"value2b\special"</tt><tt class="py-op">,</tt> <tt class="py-string">"value2c"</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-string">'key3'</tt><tt class="py-op">,</tt><tt class="py-string">'value3'</tt><tt class="py-op">)</tt> <tt class="py-op">]</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt id="link-10" class="py-name" targets="Function jld.api.versaUrlEncode()=jld.api-module.html#versaUrlEncode"><a title="jld.api.versaUrlEncode" class="py-name" href="#" onclick="return doclink('link-10', 'versaUrlEncode', 'link-10');">versaUrlEncode</a></tt><tt class="py-op">(</tt><tt class="py-name">liste3</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"============"</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">    <tt class="py-name">liste4</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> <tt class="py-string">'first'</tt><tt class="py-op">:</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-string">'key1'</tt><tt class="py-op">:</tt><tt class="py-string">'value1'</tt><tt class="py-op">,</tt> <tt class="py-string">'key2'</tt><tt class="py-op">:</tt><tt class="py-op">[</tt><tt class="py-string">"value2a"</tt><tt class="py-op">,</tt> <tt class="py-string">"value2b\special"</tt><tt class="py-op">,</tt> <tt class="py-string">"value2c"</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'key3'</tt><tt class="py-op">:</tt><tt class="py-string">'value3'</tt> <tt class="py-op">}</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt id="link-11" class="py-name"><a title="jld.api.versaUrlEncode" class="py-name" href="#" onclick="return doclink('link-11', 'versaUrlEncode', 'link-10');">versaUrlEncode</a></tt><tt class="py-op">(</tt><tt class="py-name">liste4</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Dec 15 21:00:52 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

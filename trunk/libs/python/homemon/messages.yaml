@@ -1,0 +1,15 @@
+#YAML messages for 'homemon.py' command-line
+#@author: Jean-Lou Dupont
+
+config_syslog: configure syslog filepath [default; $default_syslog]
+config_configfile: configuration filepath [default; $default_configfile]
+
+# ERRORS
+# ======
+error_load_configfile: Error loading configuration file ( $path )
+
+error_configfile_missing_devices: Missing 'devices' in configuration file.
+error_configfile_missing_default_device: Missing 'default device' in configuration file.
+error_configfile_missing_ios: Missing I/O definition for device($device) in configuration file.
+error_configfile_missing_inputs: Missing inputs definition for device($device)
+error_configfile_missing_outputs: Missing outputs definition for device($device)

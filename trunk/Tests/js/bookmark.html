@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function prepareBookmarklets() {
+
+				var es = document.getElementsByTagName( "a" );
+				
+				for (var i=0;i<es.length;i++) {
+
+					if ( es[i].className != "bookmarklet" )
+						continue;
+					
+					var bid = es[i].id;
+					var ss = document.getElementById( bid );
+
+					var t = ss.innerHTML.replace(/[\t\n]*/gm,"");
+
+					es[i].onClick = "javascript: "+bid+".inject();";
+
+					var t2 = "javascript:"+t+";"+bid+".inject();void(0);";
+					es[i].href = t2;
+
+					alert( t2 );
+				}
+				
+			}
+
+		</script>
+	</head>
+	<body>
+		<script id="book1" type="text/javascript">
+			var book1 = {
+				inject: function() {
+					var script = document.createElement('script');
+		
+					script.setAttribute('src', '/test/com.web_bloks.test.dialog_bookmarklet.ImageViewer.nocache.js');
+					script.setAttribute('type', 'text/javascript');
+			       
+					document.getElementsByTagName('head')[0].appendChild(script);
+				}
+			}			
+		</script>
+		
+		<a class="bookmarklet" id="book1" href="#" title="bookmarklet">
+			<img src="home.gif" title="bookmarklet">
+		</a>
+		
+		<script type="text/javascript">
+			prepareBookmarklets();		
+		</script>
+
+
+			
+	</body>
+</html>

@@ -1,0 +1,11 @@
+<module>
+
+	<inherits name="com.google.gwt.user.User"/>
+	
+	<inherits name="org.jldupont.browser"/>
+	<inherits name="org.jldupont.delicious"/>
+	<source path="widget/" />
+	
+	<public path="widget/public/" />
+	
+</module>

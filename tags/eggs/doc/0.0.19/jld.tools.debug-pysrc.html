@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jld.tools.debug</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="jld-module.html">Package&nbsp;jld</a> ::
+        <a href="jld.tools-module.html">Package&nbsp;tools</a> ::
+        Module&nbsp;debug
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="jld.tools.debug-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="jld.tools.debug-module.html">Module jld.tools.debug</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-docstring">""" Debug related tools</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">    @author: Jean-Lou Dupont</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable jld.__author__=jld-module.html#__author__,Variable jld.api.__author__=jld.api-module.html#__author__,Variable jld.api.delicious.__author__=jld.api.delicious-module.html#__author__,Variable jld.api.delicious_objects.__author__=jld.api.delicious_objects-module.html#__author__,Variable jld.api.gliffy.__author__=jld.api.gliffy-module.html#__author__,Variable jld.backup.delicious.__author__=jld.backup.delicious-module.html#__author__,Variable jld.backup.delicious_db.__author__=jld.backup.delicious_db-module.html#__author__,Variable jld.backup.delicious_defaults.__author__=jld.backup.delicious_defaults-module.html#__author__,Variable jld.backup.delicious_printer.__author__=jld.backup.delicious_printer-module.html#__author__,Variable jld.backup.delicious_ui.__author__=jld.backup.delicious_ui-module.html#__author__,Variable jld.backup.gliffy.__author__=jld.backup.gliffy-module.html#__author__,Variable jld.backup.gliffy_db.__author__=jld.backup.gliffy_db-module.html#__author__,Variable jld.backup.gliffy_defaults.__author__=jld.backup.gliffy_defaults-module.html#__author__,Variable jld.backup.gliffy_printer.__author__=jld.backup.gliffy_printer-module.html#__author__,Variable jld.backup.gliffy_ui.__author__=jld.backup.gliffy_ui-module.html#__author__,Variable jld.backup.mindmeister_db.__author__=jld.backup.mindmeister_db-module.html#__author__,Variable jld.backup.mindmeister_defaults.__author__=jld.backup.mindmeister_defaults-module.html#__author__,Variable jld.backup.mindmeister_printer.__author__=jld.backup.mindmeister_printer-module.html#__author__,Variable jld.backup.mindmeister_ui.__author__=jld.backup.mindmeister_ui-module.html#__author__,Variable jld.backup.mmd.__author__=jld.backup.mmd-module.html#__author__,Variable jld.cmd.__author__=jld.cmd-module.html#__author__,Variable jld.cmd.pypre.__author__=jld.cmd.pypre-module.html#__author__,Variable jld.gdata.docs.__author__=jld.gdata.docs-module.html#__author__,Variable jld.template.__author__=jld.template-module.html#__author__,Variable jld.tools.cmd_ui.__author__=jld.tools.cmd_ui-module.html#__author__,Variable jld.tools.daemon.__author__=jld.tools.daemon-module.html#__author__,Variable jld.tools.date.__author__=jld.tools.date-module.html#__author__,Variable jld.tools.db.__author__=jld.tools.db-module.html#__author__,Variable jld.tools.debug.__author__=jld.tools.debug-module.html#__author__,Variable jld.tools.klass.__author__=jld.tools.klass-module.html#__author__,Variable jld.tools.logger.__author__=jld.tools.logger-module.html#__author__,Variable jld.tools.mos.__author__=jld.tools.mos-module.html#__author__,Variable jld.tools.printer.__author__=jld.tools.printer-module.html#__author__,Variable jld.tools.process.__author__=jld.tools.process-module.html#__author__"><a title="jld.__author__
+jld.api.__author__
+jld.api.delicious.__author__
+jld.api.delicious_objects.__author__
+jld.api.gliffy.__author__
+jld.backup.delicious.__author__
+jld.backup.delicious_db.__author__
+jld.backup.delicious_defaults.__author__
+jld.backup.delicious_printer.__author__
+jld.backup.delicious_ui.__author__
+jld.backup.gliffy.__author__
+jld.backup.gliffy_db.__author__
+jld.backup.gliffy_defaults.__author__
+jld.backup.gliffy_printer.__author__
+jld.backup.gliffy_ui.__author__
+jld.backup.mindmeister_db.__author__
+jld.backup.mindmeister_defaults.__author__
+jld.backup.mindmeister_printer.__author__
+jld.backup.mindmeister_ui.__author__
+jld.backup.mmd.__author__
+jld.cmd.__author__
+jld.cmd.pypre.__author__
+jld.gdata.docs.__author__
+jld.template.__author__
+jld.tools.cmd_ui.__author__
+jld.tools.daemon.__author__
+jld.tools.date.__author__
+jld.tools.db.__author__
+jld.tools.debug.__author__
+jld.tools.klass.__author__
+jld.tools.logger.__author__
+jld.tools.mos.__author__
+jld.tools.printer.__author__
+jld.tools.process.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt>  <tt class="py-op">=</tt> <tt class="py-string">"Jean-Lou Dupont"</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">"$Id: jld.tools.debug-pysrc.html 776 2009-01-07 03:14:20Z JeanLou.Dupont $"</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">inspect</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="lineno"></a><div id="lineno-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="lineno-toggle" onclick="return toggle('lineno');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.tools.debug-module.html#lineno">lineno</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="lineno-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="lineno-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns the current line number"""</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">inspect</tt><tt class="py-op">.</tt><tt class="py-name">currentframe</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">f_back</tt><tt class="py-op">.</tt><tt class="py-name">f_lineno</tt> </tt>
+</div><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jan 06 22:12:08 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

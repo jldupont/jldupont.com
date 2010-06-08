@@ -1,0 +1,37 @@
+<html>
+	<head>
+	</head>
+
+	Simple Test - Js Object Model
+	
+	<script>
+		// constructor
+		function obj(){
+		}
+
+		// properties
+		obj.prototype.p = {
+			var1: true,
+			var2: false // no comma for last element
+		}
+		
+		// methods
+		obj.prototype.method1 = function(){
+			alert( "obj::method1"+this.p.var1 );
+		}
+		obj.prototype.method2 = function(){
+			alert( "obj::method2"+this.p.var2 );
+		}
+
+		
+		var o = new obj;
+		o.method1();
+		o.method2();
+				
+		var o2 = new obj;		
+		o2.p.var1 = "allo";		
+		o2.method1();
+		
+	</script>
+
+</html>

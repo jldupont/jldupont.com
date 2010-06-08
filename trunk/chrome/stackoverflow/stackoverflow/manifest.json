@@ -1,0 +1,25 @@
+{
+	"name": "Stackoverflow",
+	"version": "0.1",
+	"description": "Stackoverflow tweaks", 
+	"icons": {"16": "icon-stackoverflow.png"},
+	"update_url":"http://jldupont.googlecode.com/svn/trunk/chrome/stackoverflow/updates.xml",
+	"background_page": "background.html",
+	"content_scripts": [{
+      "js": [
+        "content.js"
+      ], 
+      "matches": [
+        "http://*.stackoverflow.com/*" 
+      ]
+    }],
+    "page_actions": [{
+    	"id":    "stackoverflow",
+    	"name":  "Stackoverflow Tweaks",
+    	"icons": ["icon-stackoverflow.png"]
+    }],
+	"permissions": [
+		"tabs",
+		"http://*.stackoverflow.com/*"
+	]
+}

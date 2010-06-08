@@ -1,0 +1,11 @@
+# MindMeister Backup
+# Default Configuration
+# @author: Jean-Lou Dupont
+#
+# The '~' will be evaluated to $HOME or $HOMEDRIVE+$HOMEPATH under Windows environment
+# ====================================================================================
+
+db_path: ~/mm/db/maps.sqlite
+export_path: ~/mm
+export_maxnum: 5
+eventmgr_path: ~/mm/eventmgr

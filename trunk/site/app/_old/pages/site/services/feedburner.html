@@ -1,0 +1,36 @@
+<h2>Feedburner Awareness Data as RSS feed</h2>
+ <p>A simple service where your Feedburner Awareness data is made available as an RSS feed.</p>
+
+ <script type="text/javascript">
+  var awRss = "http://www.jldupont.com/services/feedburner/aw/";
+  function update() {
+	  var srcValue = document.getElementById('feedid').value;
+	  var dest = document.getElementById('r_feedid');
+	  dest.value = srcValue;
+
+	  var dRss = document.getElementById('dRss');
+	  dRss.href= awRss + srcValue;
+  }
+ </script>
+  
+ <form action="void(0)">
+	 <table>
+	  <tbody>
+	   <tr>
+	   	<td align="right">http://feeds.feedburner.com/</td>
+	   	<td><input id="feedid" type="text" name="feedid" onchange='update()'></td>
+	   </tr>
+	   <tr><td></td><td></td></tr>	   
+	   <tr>
+	    <td>http://www.jldupont.com/services/feedburner/aw/</td>
+	    <td><input id="r_feedid" type="text" name="r_feedid"></td>
+	    <td>
+	     <a id="dRss" href="/page/services/feedburner" title="FeedBurner AWD RSS">
+	      <img src="/res/img/rss.png">
+	     </a>
+	    </td>
+	   </tr>
+	  </tbody>
+	 </table> 
+ </form>
+ 

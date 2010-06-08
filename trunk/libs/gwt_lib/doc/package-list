@@ -1,0 +1,10 @@
+org.jldupont.browser
+org.jldupont.command
+org.jldupont.delicious
+org.jldupont.delicious.mocks
+org.jldupont.localstore
+org.jldupont.system
+org.jldupont.test.client
+org.jldupont.web
+org.jldupont.widget
+org.jldupont.widget_commands

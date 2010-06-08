@@ -1,0 +1,157 @@
+"""
+CJLD
+
+scons build file
+
+@author: Jean-Lou Dupont
+"""
+import os
+import shutil
+from string import Template
+try:
+	from pyjld.os import recursive_chmod, safe_copytree
+except:
+	print "*** Missing package: use easy_install pyjld.os"
+	exit(1)
+
+
+Help("""\
+ Type:	
+   'scons' to build the libraries (release and debug),
+   'scons deb' to build the .deb package
+   'scons release' to release the package to tags/debian repository
+   'scons install' to install on local machine
+""")
+
+
+env_release = Environment(CPPPATH='#include')
+SConscript('#src/SConscript', build_dir='.release', exports={'env':env_release})
+
+
+env_debug   = Environment(CPPPATH='#include', CPPFLAGS="-D_DEBUG -g")
+SConscript('#src/SConscript', build_dir='.debug', exports={'env':env_debug})
+
+
+
+# INSTALLING on LOCAL MACHINE
+if 'install' in COMMAND_LINE_TARGETS:
+	print "scons: INSTALLING LOCALLY"
+	shutil.copy('./includes/cjld.h', '/usr/include')
+	shutil.copy('./.release/libcjld.so', '/usr/lib/libcjld.so')
+	shutil.copy('./.debug/libcjld.so', '/usr/lib/libcjld_debug.so')
+
+
+def read_version():
+	file = open('./project/VERSION')
+	version = file.read()
+	file.close()
+	return version
+
+def generate_control(version):
+	"""
+	Reads in ./project/control
+		updates the $version$ and
+		places the result in ./packages/debian/DEBIAN/control
+	"""
+	file_src=open("./project/control")
+	content = file_src.read()
+	file_src.close()
+	updated=Template(content)
+	c=updated.substitute(version=version)
+	
+	file_target=open("./packages/debian/DEBIAN/control","w")
+	file_target.write(c)
+	file_target.close()
+
+def replace_params(path_src, path_dest, params):
+	"""
+	Replace the parameters in the target path
+	"""
+	file = open(path_src,"r")
+	contents = file.read()
+	file.close()
+	
+	tpl=Template(contents)
+	updated_content = tpl.safe_substitute( **params )
+	
+	file = open(path_dest, "w")
+	file.write(updated_content)
+	file.close()
+	
+	
+
+
+# BUILDING .deb PACKAGE
+# =====================
+if 'deb' in COMMAND_LINE_TARGETS:
+	print "Preparing .deb package"
+	try:
+		version = read_version()
+		print """scons: building release [%s]""" % version
+		
+		print """scons: cloning release lib""" 
+		shutil.copy('./.release/libcjld.so', "./packages/debian/usr/lib/libcjld-%s.so" % version)
+		
+		print """scons: cloning debug lib"""
+		shutil.copy('./.debug/libcjld.so', './packages/debian/usr/lib/libcjld_debug-%s.so' % version)
+		
+		print """scons: cloning header files & adjusting version"""
+		h_path = './packages/debian/usr/include/cjld.h'
+		shutil.copy('./include/cjld.h', h_path)
+		replace_params(h_path, h_path, {'version':version} )
+		
+		print """scons: removing temporary package build dir in /tmp"""
+		shutil.rmtree('/tmp/cjld', ignore_errors=True)
+
+		print """scons: updating debian 'control' with version[%s]""" % version
+		generate_control(version)
+		
+		print """scons: cloning ./packages/debian to /tmp dir"""
+		safe_copytree('./packages/debian', '/tmp/cjld', skip_dirs=['.svn',], dir_mode=0775, make_dirs=True)
+
+		print """scons: adjusting permissions for `dkpg-deb` command-line"""
+		recursive_chmod("/tmp/cjld", mode=0775)
+
+
+	except Exception,e:
+		print "*** ERROR [%s] ***" % e
+	
+env_release.Command("deb", "/tmp/cjld", "dpkg-deb --build $SOURCE")
+
+	
+
+# RELEASING
+#
+#  The 'deb' command is assumed to have been performed.
+#  The 'deb' package is assumed to be sitting in /tmp as litm.deb 
+#
+# =========
+if 'release' in COMMAND_LINE_TARGETS:
+
+	# extract "version"
+	version = read_version()
+	print "scons: RELEASING version %s" % version
+	
+	name = "cjld_%s-1_i386.deb" % version
+	path = "/tmp/%s" % name
+	print "scons: renaming debian package: %s" % name
+	shutil.copy('/tmp/cjld.deb', path)
+
+	print "scons: copying [%s] to repo in dists/main/binary-i386" % path
+	deb_dir = "../../tags/deb/dists/stable/main/binary-i386"
+	shutil.copy(path, deb_dir)
+	
+	print "scons: running dpkg-scanpackages"
+	os.system("./do_release")
+	
+
+if 'docs' in COMMAND_LINE_TARGETS:
+	print "scons: generating docs"
+	os.system("doxygen doxygen.config")
+	
+	path = "./docs/html/main.html"
+	version = read_version()
+		
+	print "scons: adjusting $version [%s] in html docs [%s]" % (version, path)
+	
+	replace_params( path, path, {'version':version})

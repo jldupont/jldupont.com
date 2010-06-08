@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.0" 
+		version="2.0" 
+		xmlns="http://pear.php.net/dtd/package-2.0" 
+		xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd 
+		http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+
+  <!-- $Id -->
+ <name>PearTools</name>
+ <channel>jldupont.googlecode.com/svn</channel>
+ <summary>PEAR tools</summary>
+ <description>PHING tasks, PEAR REST channel objects etc.</description>
+
+ <lead>
+  <name>Jean-Lou Dupont</name>
+  <user>jldupont</user>
+  <email>jldupont@jldupont.com</email>
+  <active>yes</active>
+ </lead>
+
+ <date>2007-11-22</date>
+ <time>01:34:02</time>
+
+ <version>
+  <release>1.0.7</release>
+  <api>1.0.0</api>
+ </version>
+ 
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+
+ <license uri="http://www.php.net/license">PHP License</license>
+
+ <notes>$notes$</notes>
+
+ <contents>
+  <dir name="/">
+
+	<!-- file list begin {{ -->
+	<!-- baseinstalldir: the target directory on the target machine -->
+   <file baseinstalldir="JLD/PearTools" name="Channel.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="ChannelCategories.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="ChannelPackages.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="ChannelReleases.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Package.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="PearObject.php" role="php" />
+
+   <file baseinstalldir="JLD/PearTools" name="phing/ChannelCategoriesTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/ChannelFindTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/ChannelPackagesTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/ChannelReleasesTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/ChannelTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/PackageReadTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/PackageUpdateTask.php" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="phing/ReleaseExistsTask.php" role="php" />
+
+   <file baseinstalldir="JLD/PearTools" name="Templates/allreleases.xml.tpl" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/categories.xml.tpl" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/categories.xml.tpl2" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/channel.xml.tpl" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/info.xml.tpl" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/info.xml.tpl2" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/packages.xml.tpl" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/packagesinfo.xml.tpl" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/packagesinfo.xml.tpl2" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/packagesinfo.xml.tpl3" role="php" />
+   <file baseinstalldir="JLD/PearTools" name="Templates/version.xml.tpl" role="php" />
+    <!-- }} -->
+
+  </dir>
+ </contents>
+ 
+ <dependencies>
+  <required>
+
+   <php>
+    <min>5.0.0</min>
+    <max>6.0.0</max>
+   </php>
+
+   <pearinstaller>
+    <min>1.6.2</min>
+   </pearinstaller>
+ 
+	<package>
+		<name>Directory</name>
+		<channel>jldupont.googlecode.com/svn</channel>
+		<min>1.0.1</min>
+	</package>
+
+	<package>
+		<name>PhingTools</name>
+		<channel>jldupont.googlecode.com/svn</channel>
+		<min>1.0.1</min>
+	</package>
+
+  </required>
+ </dependencies>
+
+ <phprelease>
+  <installconditions>
+   <os>
+    <name>*</name>
+   </os>
+  </installconditions>
+ </phprelease>
+
+<changelog>
+	<release>
+		<license uri="http://www.php.net/license">PHP License</license>
+		<notes>
+		* Enhanced build process
+		</notes>
+	</release>
+</changelog>
+
+</package>

@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file for creating a PEAR 'package'
+	Jean-Lou Dupont
+	$Id: build.xml 253 2007-11-15 19:30:42Z JeanLou.Dupont $
+-->
+<project name="CreatePackage" basedir="." default='all'>
+
+	<property file="${build.root.path}/build.create.package.properties.xml" />
+
+	<taskdef classname='JLD.PhingTools.SvnStatusTask' name='svn_status' />
+	<taskdef classname='JLD.PhingTools.SvnAddTask' name='svn_add' />
+	<taskdef classname='JLD.PhingTools.SvnPropsetTask' name='svn_propset' />
+	<taskdef classname='JLD.PhingTools.SortTask' name='sort' />
+	<taskdef classname='JLD.PhingTools.FileSet2PropertyTask' name='fs2prop' />
+
+	<!--
+		The package is located 1 level 'down' from the build file.
+	-->
+	<target name='Config'>
+		<resolvepath propertyName="project.path" file="${project.basedir}/../" /> <!-- 1 level down -->
+		<property name='package.file' value='${project.path}/package.xml' />
+		<echo>Project path: ${project.path}</echo>
+
+		<fileset dir="${project.path}" id='allfiles'>
+			<include pattern='**/**' />
+			<exclude name='.build/**' />
+			<exclude name='**/package.xml' />
+		</fileset>
+	
+		<fs2prop fsid='allfiles' prop='liste' />
+
+		<copy file="${build.root.path}/package.template.xml" tofile="${package.file}" overwrite="true" />
+
+		<reflexive>
+			<fileset dir="${project.path}/">
+				<include name="package.xml"/>
+			</fileset>
+			<filterchain>
+				<expandproperties />		
+			</filterchain>
+		</reflexive>
+
+	</target>
+
+	<target name="doListe">
+		<foreach list="${liste}" param="base_name" target="doOneElement" />
+
+		<!-- erase the trailing @@file-element@@ token -->
+		<echo>Clean-up</echo>
+		<reflexive>
+			<fileset dir="${project.path}/">
+				<include name="package.xml"/>
+			</fileset>
+			<filterchain>
+			  <replacetokens begintoken="@@" endtoken="@@">
+			    <token key="file-element" value="" />
+			  </replacetokens>		  
+			</filterchain>
+		</reflexive>
+
+	</target>
+
+	<target name="doOneElement">
+
+		<echo>File: ${base_name}</echo>
+
+		<!-- only include files, not dirs! -->
+		<available file="${project.path}/${base_name}" property="is.dir" type='dir' />
+		<available file="${project.path}/${base_name}" property="is.file" type='file' />
+
+		<echo>is.dir: ${is.dir}</echo>
+		<echo>is.file: ${is.file}</echo>
+
+		<if>
+			<equals arg1="${is.dir}" arg2="true" />
+			<then>
+				<echo>Directory... skipping</echo>
+			</then>
+			<else>
+				<reflexive>
+				  <fileset dir="${project.path}/">
+				    <include name="package.xml"/>
+				  </fileset>
+				  <filterchain>
+					  <replacetokens begintoken="@@" endtoken="@@">
+					    <token key="file-element" value="${file.element.template} ${file.element.template2}" />
+					  </replacetokens>		  
+				</filterchain>
+				</reflexive>
+				<reflexive>
+				  <fileset dir="${project.path}/">
+				    <include name="package.xml"/>
+				  </fileset>
+				  <filterchain>
+					  <replacetokens begintoken="@@" endtoken="@@">
+					    <token key="package-element" value="${base_name}" />
+					  </replacetokens>		  
+				</filterchain>
+				</reflexive>
+			</else>
+		</if>
+	</target>
+
+	<target name='all' depends="Config, doListe">
+		<echo>Creating package.xml file</echo>
+	</target>
+
+</project>

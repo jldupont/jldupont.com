@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<database name="test_propel" defaultIdMethod="native">
+
+	<table name="user" description="User Table">
+		<column name="id" required="true" primaryKey="true"
+			autoIncrement="true" type="INTEGER" description="User Id" />
+
+		<column name="name" type="VARCHAR" required="true"
+			description="User Name" />
+
+	</table>
+
+</database>

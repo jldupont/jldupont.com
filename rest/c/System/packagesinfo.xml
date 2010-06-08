@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<f xmlns="http://pear.php.net/dtd/rest.categorypackageinfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://pear.php.net/dtd/rest.categorypackageinfo     http://pear.php.net/dtd/rest.categorypackageinfo.xsd">
+		<pi>
+			<p>
+				<n>Cache</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/System">System</ca>
+				<l>$license$</l>
+				<s>Memory based cache using either APC or eAccelerator</s>
+				<d>This package offers a simple interface to a memory base cache</d>
+				<r xlink:href="/rest/r/Cache">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.3</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+		<pi>
+			<p>
+				<n>Cache</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/System">System</ca>
+				<l>$license$</l>
+				<s>Memory based cache using either APC or eAccelerator</s>
+				<d>This package offers a simple interface to a memory base cache</d>
+				<r xlink:href="/rest/r/Cache">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.2</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+		<pi>
+			<p>
+				<n>Cache</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/System">System</ca>
+				<l>$license$</l>
+				<s>Memory based cache using either APC or eAccelerator</s>
+				<d>This package offers a simple interface to a memory base cache</d>
+				<r xlink:href="/rest/r/Cache">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.1</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+		<pi>
+			<p>
+				<n>Cache</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/System">System</ca>
+				<l>$license$</l>
+				<s></s>
+				<d></d>
+				<r xlink:href="/rest/r/Cache">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.0</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+		<pi>
+			<p>
+				<n>Object</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/System">System</ca>
+				<l>$license$</l>
+				<s>$summary$</s>
+				<d>$description$</d>
+				<r xlink:href="/rest/r/Object">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.2</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+		<pi>
+			<p>
+				<n>System</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/System">System</ca>
+				<l>$license$</l>
+				<s>$summary$</s>
+				<d>$description$</d>
+				<r xlink:href="/rest/r/System">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.1</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+</f>

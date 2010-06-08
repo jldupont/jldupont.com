@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <!--
+ 	@title  Auto-Reload
+ 	@author Jean-Lou Dupont
+ 	@desc   Background page for Auto-Reload
+  -->
+	<head>
+		<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.0.0/build/cssfonts/fonts-min.css" /> 
+		<script type="text/javascript" src="http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js"></script>
+		
+		<!-- DEFAULTS -->
+		<script>
+			var defaults={};
+			defaults.min = 30;
+			defaults.max = 300;
+		</script> 
+ 	</head>
+	<body class=" yui-skin-sam">
+		<div class="content" > 
+			<h1>Configuration</h1> 
+			<h1>Auto-Reload</h1>
+			<br/>
+
+	    	<p id="horiz_value">Timeout</p> 
+	    	<div class="horiz_slider"></div>
+	    	<br/>
+	    	<form>
+	    		<input type="button" value="Apply" onclick="doApply()"/>
+	    	</form>
+ 		</div>	
+		<script>
+		var timeout=localStorage["timeout"];
+		console.log("initial timeout: "+timeout);
+		var hv=document.getElementById("horiz_value");
+		hv.innerHTML = "Timeout (seconds): "+ timeout;
+		
+		// Create a YUI instance and request the slider module and its dependencies
+		YUI({combine: true, timeout: 10000}).use("slider", function (Y) {
+		 
+			// instantiate the horizontal Slider, render it, and subscribe to its
+			// valueChange event via method chaining.  No need to store the created Slider
+			// in this case.
+			new Y.Slider({
+					max: defaults.max,
+					min: defaults.min,
+			        railSize: '200px',
+			        value: parseInt(timeout),
+			        thumbImage: 'http://yui.yahooapis.com/3.0.0/build/slider/assets/skins/sam/thumb-classic-x.png'
+			    }).
+			    render('.horiz_slider').
+			    after('valueChange',function (e) {
+			        Y.one('#horiz_value').set('innerHTML', 'Timeout (seconds): ' + e.newVal);
+			        timeout=e.newVal;
+			    });
+		
+		});
+		
+		var doApply=function() {
+			console.log("Timeout:" + timeout);
+			localStorage["timeout"] = timeout;
+		};
+		
+   		</script>
+	</body>
+</html>

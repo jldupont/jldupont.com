@@ -1,0 +1,11 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.json.JSON"/>
+	
+	<inherits name="org.jldupont.browser"/>
+	<inherits name="org.jldupont.delicious"/>
+	<inherits name="org.jldupont.web"/>
+	<inherits name="org.jldupont.localstore"/>
+	
+	<source path="system/"/>
+</module>

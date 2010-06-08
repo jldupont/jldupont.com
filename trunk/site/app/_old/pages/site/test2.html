@@ -1,0 +1,33 @@
+{% varset "script" %}
+	var loc=window.location.toString();
+	var bits=loc.split("/");
+	if (bits[2]!="www.mindmeister.com"){
+		alert("Must be @ http://www.mindmeister.com/");
+		void(0);
+	}
+	var mapid = parseInt( bits[bits.length-1] );
+	if (isNaN(mapid)){
+		alert("Cannot find numeric mapid");
+		void(0)
+	}
+	window.open("http://www.jldupont.com/mm/png/"+mapid,"_blank");
+	void(0);
+{% endvarset %}
+<h2>Export mindmap to PNG bookmarklet</h2>
+<p> Install the following bookmarklet by dragging it to your bookmarks bar:
+	<a onclick="javascript: alert('Drag this to your Bookmarks Bar to install.');return false;" 
+	href='javascript:{{ script|codestrip }}'>mm export</a>
+</p>
+	<h3>Test</h3>
+	<p>Visit a page on MindMeister: <a target="_blank" href="http://www.mindmeister.com/12619315">example map</a> and activate the installed bookmarklet.
+	</p>
+
+<script type="text/javascript" src="http://api.postrank.com/static/widget-v2.js"></script>
+<script type="text/javascript">
+var options = {
+	"feed_hash": "0acfdba8069d59b9bd076984dc3ec9b3",
+	"num":        6 ,
+	"theme":     "blueSteel" 
+};
+new PostRankWidget(options);
+</script>

@@ -1,0 +1,7 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	
+	<inherits name="org.jldupont.Lib"/>
+	
+	<entry-point class="com.jldupont.project.client.main"/>
+</module>

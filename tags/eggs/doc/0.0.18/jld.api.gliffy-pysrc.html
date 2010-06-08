@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jld.api.gliffy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="jld-module.html">Package&nbsp;jld</a> ::
+        <a href="jld.api-module.html">Package&nbsp;api</a> ::
+        Module&nbsp;gliffy
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="jld.api.gliffy-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="jld.api.gliffy-module.html">Module jld.api.gliffy</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-docstring">""" Gliffy API</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">    @author: Jean-Lou Dupont</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; c = Client()</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; result, etag = c.head(1472486)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; print result, etag # doctest:+ELLIPSIS</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">    True...</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable jld.__author__=jld-module.html#__author__,Variable jld.api.__author__=jld.api-module.html#__author__,Variable jld.api.delicious.__author__=jld.api.delicious-module.html#__author__,Variable jld.api.delicious_objects.__author__=jld.api.delicious_objects-module.html#__author__,Variable jld.api.gliffy.__author__=jld.api.gliffy-module.html#__author__,Variable jld.backup.delicious.__author__=jld.backup.delicious-module.html#__author__,Variable jld.backup.delicious_db.__author__=jld.backup.delicious_db-module.html#__author__,Variable jld.backup.delicious_defaults.__author__=jld.backup.delicious_defaults-module.html#__author__,Variable jld.backup.delicious_printer.__author__=jld.backup.delicious_printer-module.html#__author__,Variable jld.backup.delicious_ui.__author__=jld.backup.delicious_ui-module.html#__author__,Variable jld.backup.gliffy.__author__=jld.backup.gliffy-module.html#__author__,Variable jld.backup.gliffy_db.__author__=jld.backup.gliffy_db-module.html#__author__,Variable jld.backup.gliffy_defaults.__author__=jld.backup.gliffy_defaults-module.html#__author__,Variable jld.backup.gliffy_printer.__author__=jld.backup.gliffy_printer-module.html#__author__,Variable jld.backup.gliffy_ui.__author__=jld.backup.gliffy_ui-module.html#__author__,Variable jld.backup.mindmeister_db.__author__=jld.backup.mindmeister_db-module.html#__author__,Variable jld.backup.mindmeister_defaults.__author__=jld.backup.mindmeister_defaults-module.html#__author__,Variable jld.backup.mindmeister_printer.__author__=jld.backup.mindmeister_printer-module.html#__author__,Variable jld.backup.mindmeister_ui.__author__=jld.backup.mindmeister_ui-module.html#__author__,Variable jld.backup.mmd.__author__=jld.backup.mmd-module.html#__author__,Variable jld.cmd.__author__=jld.cmd-module.html#__author__,Variable jld.gdata.docs.__author__=jld.gdata.docs-module.html#__author__,Variable jld.tools.cmd_ui.__author__=jld.tools.cmd_ui-module.html#__author__,Variable jld.tools.daemon.__author__=jld.tools.daemon-module.html#__author__,Variable jld.tools.date.__author__=jld.tools.date-module.html#__author__,Variable jld.tools.db.__author__=jld.tools.db-module.html#__author__,Variable jld.tools.klass.__author__=jld.tools.klass-module.html#__author__,Variable jld.tools.logger.__author__=jld.tools.logger-module.html#__author__,Variable jld.tools.mos.__author__=jld.tools.mos-module.html#__author__,Variable jld.tools.printer.__author__=jld.tools.printer-module.html#__author__,Variable jld.tools.process.__author__=jld.tools.process-module.html#__author__"><a title="jld.__author__
+jld.api.__author__
+jld.api.delicious.__author__
+jld.api.delicious_objects.__author__
+jld.api.gliffy.__author__
+jld.backup.delicious.__author__
+jld.backup.delicious_db.__author__
+jld.backup.delicious_defaults.__author__
+jld.backup.delicious_printer.__author__
+jld.backup.delicious_ui.__author__
+jld.backup.gliffy.__author__
+jld.backup.gliffy_db.__author__
+jld.backup.gliffy_defaults.__author__
+jld.backup.gliffy_printer.__author__
+jld.backup.gliffy_ui.__author__
+jld.backup.mindmeister_db.__author__
+jld.backup.mindmeister_defaults.__author__
+jld.backup.mindmeister_printer.__author__
+jld.backup.mindmeister_ui.__author__
+jld.backup.mmd.__author__
+jld.cmd.__author__
+jld.gdata.docs.__author__
+jld.tools.cmd_ui.__author__
+jld.tools.daemon.__author__
+jld.tools.date.__author__
+jld.tools.db.__author__
+jld.tools.klass.__author__
+jld.tools.logger.__author__
+jld.tools.mos.__author__
+jld.tools.printer.__author__
+jld.tools.process.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt>  <tt class="py-op">=</tt> <tt class="py-string">"Jean-Lou Dupont"</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">"$Id: jld.api.gliffy-pysrc.html 763 2008-12-17 18:15:28Z JeanLou.Dupont $"</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">re</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">httplib</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Package jld=jld-module.html"><a title="jld" class="py-name" href="#" onclick="return doclink('link-1', 'jld', 'link-1');">jld</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package jld.api=jld.api-module.html"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-2', 'api', 'link-2');">api</a></tt> <tt class="py-keyword">as</tt> <tt id="link-3" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-3', 'api', 'link-2');">api</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"># Patterns for extracting the diagram ID</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ======================================</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-4" class="py-name" targets="Variable jld.api.gliffy._rawpatterns=jld.api.gliffy-module.html#_rawpatterns"><a title="jld.api.gliffy._rawpatterns" class="py-name" href="#" onclick="return doclink('link-4', '_rawpatterns', 'link-4');">_rawpatterns</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">             <tt class="py-string">'/publish/(\d+)/'</tt><tt class="py-op">,</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">             <tt class="py-string">'/pubdoc/(\d+)/'</tt><tt class="py-op">,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">             <tt class="py-string">'/publish/(\d+)$'</tt><tt class="py-op">,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">             <tt class="py-string">'/pubdoc/(\d+)$'</tt><tt class="py-op">,</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">             <tt class="py-op">]</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt id="link-5" class="py-name" targets="Variable jld.api.gliffy._patterns=jld.api.gliffy-module.html#_patterns"><a title="jld.api.gliffy._patterns" class="py-name" href="#" onclick="return doclink('link-5', '_patterns', 'link-5');">_patterns</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">for</tt> <tt id="link-6" class="py-name" targets="Variable jld.api.gliffy.p=jld.api.gliffy-module.html#p"><a title="jld.api.gliffy.p" class="py-name" href="#" onclick="return doclink('link-6', 'p', 'link-6');">p</a></tt> <tt class="py-keyword">in</tt> <tt id="link-7" class="py-name"><a title="jld.api.gliffy._rawpatterns" class="py-name" href="#" onclick="return doclink('link-7', '_rawpatterns', 'link-4');">_rawpatterns</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="jld.api.gliffy._patterns" class="py-name" href="#" onclick="return doclink('link-8', '_patterns', 'link-5');">_patterns</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">compile</tt><tt class="py-op">(</tt> <tt id="link-9" class="py-name"><a title="jld.api.gliffy.p" class="py-name" href="#" onclick="return doclink('link-9', 'p', 'link-6');">p</a></tt> <tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="extractIdFromURI"></a><div id="extractIdFromURI-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="extractIdFromURI-toggle" onclick="return toggle('extractIdFromURI');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy-module.html#extractIdFromURI">extractIdFromURI</a><tt class="py-op">(</tt><tt class="py-param">uri</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="extractIdFromURI-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="extractIdFromURI-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-docstring">""" Extracts the diagram ID from a URI</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        @param uri: the uri</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">        @return: the diagram id</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; tests = [ \</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">        'http://www.gliffy.com/publish/1553333/', \</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        'http://www.gliffy.com/pubdoc/1554222/L.jpg',]</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">        &gt;&gt;&gt; for t in tests: \</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        print extractIdFromURI( t )</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        1553333</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        1554222</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt id="link-10" class="py-name"><a title="jld.api.gliffy.p" class="py-name" href="#" onclick="return doclink('link-10', 'p', 'link-6');">p</a></tt> <tt class="py-keyword">in</tt> <tt id="link-11" class="py-name"><a title="jld.api.gliffy._patterns" class="py-name" href="#" onclick="return doclink('link-11', '_patterns', 'link-5');">_patterns</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">g</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="jld.api.gliffy.p" class="py-name" href="#" onclick="return doclink('link-12', 'p', 'link-6');">p</a></tt><tt class="py-op">.</tt><tt class="py-name">search</tt><tt class="py-op">(</tt> <tt class="py-name">uri</tt> <tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt>    <tt class="py-name">id</tt> <tt class="py-op">=</tt> <tt class="py-name">g</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> <tt class="py-name">id</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">id</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">id</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="extractIdFromListOfURI"></a><div id="extractIdFromListOfURI-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="extractIdFromListOfURI-toggle" onclick="return toggle('extractIdFromListOfURI');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy-module.html#extractIdFromListOfURI">extractIdFromListOfURI</a><tt class="py-op">(</tt><tt class="py-param">list</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="extractIdFromListOfURI-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="extractIdFromListOfURI-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-docstring">""" Extracts the diagram ids' from a list of URI</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">        @param list: a list of URI</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">        @return: a list of diagram ids</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; list = ['http://www.gliffy.com/pubdoc/123/L.jpg','http://www.gliffy.com/pubdoc/456/L.jpg']</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; result = extractIdFromListOfURI(list)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; print result</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    ['123', '456']</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; list = None</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; result = extractIdFromListOfURI(list)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; print result</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    []</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-name">list</tt> <tt class="py-op">=</tt> <tt class="py-name">list</tt> <tt class="py-keyword">if</tt> <tt class="py-name">list</tt> <tt class="py-keyword">else</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">item</tt> <tt class="py-keyword">in</tt> <tt class="py-name">list</tt><tt class="py-op">:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">result</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt id="link-13" class="py-name" targets="Function jld.api.gliffy.extractIdFromURI()=jld.api.gliffy-module.html#extractIdFromURI"><a title="jld.api.gliffy.extractIdFromURI" class="py-name" href="#" onclick="return doclink('link-13', 'extractIdFromURI', 'link-13');">extractIdFromURI</a></tt><tt class="py-op">(</tt><tt class="py-name">item</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-comment"># Representations</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ===============</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-14" class="py-name" targets="Variable jld.api.gliffy._api=jld.api.gliffy-module.html#_api,Variable jld.api.mindmeister.MM._api=jld.api.mindmeister.MM-class.html#_api,Variable jld.gdata.docs.RawDoc._api=jld.gdata.docs.RawDoc-class.html#_api"><a title="jld.api.gliffy._api
+jld.api.mindmeister.MM._api
+jld.gdata.docs.RawDoc._api" class="py-name" href="#" onclick="return doclink('link-14', '_api', 'link-14');">_api</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'www.gliffy.com'</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable jld.api.gliffy._representations=jld.api.gliffy-module.html#_representations"><a title="jld.api.gliffy._representations" class="py-name" href="#" onclick="return doclink('link-15', '_representations', 'link-15');">_representations</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                    <tt class="py-string">'large'</tt><tt class="py-op">:</tt> <tt class="py-string">'/pubdoc/%s/L.jpg'</tt><tt class="py-op">,</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                    <tt class="py-string">'medium'</tt><tt class="py-op">:</tt><tt class="py-string">'/pubdoc/%s/M.jpg'</tt><tt class="py-op">,</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                    <tt class="py-string">'small'</tt><tt class="py-op">:</tt> <tt class="py-string">'/pubdoc/%s/S.jpg'</tt><tt class="py-op">,</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                    <tt class="py-string">'thumb'</tt><tt class="py-op">:</tt> <tt class="py-string">'/pubdoc/%s/T.jpg'</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                    <tt class="py-op">}</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="representations"></a><div id="representations-def"><a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="representations-toggle" onclick="return toggle('representations');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy-module.html#representations">representations</a><tt class="py-op">(</tt><tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="representations-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="representations-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generator for representations</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: the source diagram id </tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        @return: URI to target representation</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">&gt;&gt;&gt; for r in representations(123): print r</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">/pubdoc/123/L.jpg</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">/pubdoc/123/S.jpg</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">/pubdoc/123/M.jpg</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">/pubdoc/123/T.jpg"""</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt><tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt id="link-16" class="py-name"><a title="jld.api.gliffy._representations" class="py-name" href="#" onclick="return doclink('link-16', '_representations', 'link-15');">_representations</a></tt><tt class="py-op">.</tt><tt class="py-name">iteritems</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">yield</tt> <tt class="py-name">v</tt> <tt class="py-op">%</tt> <tt class="py-name">id</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="Client"></a><div id="Client-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="Client-toggle" onclick="return toggle('Client');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.gliffy.Client-class.html">Client</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Client-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Client-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-docstring">""" Client API to Gliffy</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Client.head"></a><div id="Client.head-def"><a name="L97"></a><tt class="py-lineno"> 97</tt> <a class="py-toggle" href="#" id="Client.head-toggle" onclick="return toggle('Client.head');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy.Client-class.html#head">head</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">did</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Client.head-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Client.head-expanded"><a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-docstring">""" Performs an HTTP HEAD command on the specified diagram resource</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">            @param did: diagram id</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">            @return: result, etag</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">host</tt><tt class="py-op">,</tt> <tt class="py-name">uri</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method jld.api.gliffy.Client._generateURI()=jld.api.gliffy.Client-class.html#_generateURI"><a title="jld.api.gliffy.Client._generateURI" class="py-name" href="#" onclick="return doclink('link-17', '_generateURI', 'link-17');">_generateURI</a></tt><tt class="py-op">(</tt> <tt id="link-18" class="py-name" targets="Variable jld.backup.gliffy_db.Diagrams.did=jld.backup.gliffy_db.Diagrams-class.html#did"><a title="jld.backup.gliffy_db.Diagrams.did" class="py-name" href="#" onclick="return doclink('link-18', 'did', 'link-18');">did</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">req</tt> <tt class="py-op">=</tt> <tt class="py-name">httplib</tt><tt class="py-op">.</tt><tt class="py-name">HTTPConnection</tt><tt class="py-op">(</tt><tt class="py-name">host</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">request</tt><tt class="py-op">(</tt><tt class="py-string">"HEAD"</tt><tt class="py-op">,</tt> <tt class="py-name">uri</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">            <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">getresponse</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">            <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-19" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-19', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Class jld.api.ErrorNetwork=jld.api.ErrorNetwork-class.html"><a title="jld.api.ErrorNetwork" class="py-name" href="#" onclick="return doclink('link-20', 'ErrorNetwork', 'link-20');">ErrorNetwork</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">         </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">status</tt> <tt class="py-op">!=</tt> <tt class="py-number">200</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">headers</tt> <tt class="py-op">=</tt> <tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">getheaders</tt><tt class="py-op">(</tt><tt class="py-op">)</tt>         </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt id="link-21" class="py-name" targets="Variable jld.backup.gliffy_db.Diagrams.etag=jld.backup.gliffy_db.Diagrams-class.html#etag"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-21', 'etag', 'link-21');">etag</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method jld.api.gliffy.Client._extractEtag()=jld.api.gliffy.Client-class.html#_extractEtag"><a title="jld.api.gliffy.Client._extractEtag" class="py-name" href="#" onclick="return doclink('link-22', '_extractEtag', 'link-22');">_extractEtag</a></tt><tt class="py-op">(</tt><tt class="py-name">headers</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">         </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-23', 'etag', 'link-21');">etag</a></tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">         </tt>
+<a name="Client.get"></a><div id="Client.get-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="Client.get-toggle" onclick="return toggle('Client.get');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy.Client-class.html#get">get</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">did</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Client.get-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Client.get-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-docstring">""" Performs an HTTP GET command on the specified diagram resource</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">            @param did: diagram id</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">            @return: result, etag, data </tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">host</tt><tt class="py-op">,</tt> <tt class="py-name">uri</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="jld.api.gliffy.Client._generateURI" class="py-name" href="#" onclick="return doclink('link-24', '_generateURI', 'link-17');">_generateURI</a></tt><tt class="py-op">(</tt> <tt id="link-25" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.did" class="py-name" href="#" onclick="return doclink('link-25', 'did', 'link-18');">did</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">req</tt> <tt class="py-op">=</tt> <tt class="py-name">httplib</tt><tt class="py-op">.</tt><tt class="py-name">HTTPConnection</tt><tt class="py-op">(</tt><tt class="py-name">host</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">request</tt><tt class="py-op">(</tt><tt class="py-string">"GET"</tt><tt class="py-op">,</tt> <tt class="py-name">uri</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">getresponse</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-26" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-26', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="jld.api.ErrorNetwork" class="py-name" href="#" onclick="return doclink('link-27', 'ErrorNetwork', 'link-20');">ErrorNetwork</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">         </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">status</tt> <tt class="py-op">!=</tt> <tt class="py-number">200</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-name">headers</tt> <tt class="py-op">=</tt> <tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">getheaders</tt><tt class="py-op">(</tt><tt class="py-op">)</tt>         </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt id="link-28" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-28', 'etag', 'link-21');">etag</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="jld.api.gliffy.Client._extractEtag" class="py-name" href="#" onclick="return doclink('link-29', '_extractEtag', 'link-22');">_extractEtag</a></tt><tt class="py-op">(</tt><tt class="py-name">headers</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">         </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">            <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">response</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">            <tt class="py-name">req</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-30" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-30', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Class jld.api.ErrorProtocol=jld.api.ErrorProtocol-class.html"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-31', 'ErrorProtocol', 'link-31');">ErrorProtocol</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">         </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-32" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-32', 'etag', 'link-21');">etag</a></tt><tt class="py-op">,</tt> <tt class="py-name">data</tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">         </tt>
+<a name="Client._generateURI"></a><div id="Client._generateURI-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="Client._generateURI-toggle" onclick="return toggle('Client._generateURI');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy.Client-class.html#_generateURI">_generateURI</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">did</tt><tt class="py-op">,</tt> <tt class="py-param">representation</tt> <tt class="py-op">=</tt> <tt class="py-string">'large'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Client._generateURI-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Client._generateURI-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-docstring">""" Generates the URL for a specified diagram + representation</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">            @param did: diagram id</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">            @param representation: one of large, medium, small, thumb</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">            @return: HOST, URI </tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-33" class="py-name"><a title="jld.api.gliffy._api
+jld.api.mindmeister.MM._api
+jld.gdata.docs.RawDoc._api" class="py-name" href="#" onclick="return doclink('link-33', '_api', 'link-14');">_api</a></tt><tt class="py-op">,</tt> <tt id="link-34" class="py-name"><a title="jld.api.gliffy._representations" class="py-name" href="#" onclick="return doclink('link-34', '_representations', 'link-15');">_representations</a></tt><tt class="py-op">[</tt><tt class="py-name">representation</tt><tt class="py-op">]</tt> <tt class="py-op">%</tt> <tt id="link-35" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.did" class="py-name" href="#" onclick="return doclink('link-35', 'did', 'link-18');">did</a></tt> </tt>
+</div><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">         </tt>
+<a name="Client._extractEtag"></a><div id="Client._extractEtag-def"><a name="L154"></a><tt class="py-lineno">154</tt> <a class="py-toggle" href="#" id="Client._extractEtag-toggle" onclick="return toggle('Client._extractEtag');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.gliffy.Client-class.html#_extractEtag">_extractEtag</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">headers</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Client._extractEtag-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Client._extractEtag-expanded"><a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt id="link-36" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-36', 'etag', 'link-21');">etag</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-37" class="py-name" targets="Method jld.backup.delicious_printer.Delicious_Printer_Config.header()=jld.backup.delicious_printer.Delicious_Printer_Config-class.html#header,Method jld.backup.delicious_printer.Delicious_Printer_Posts.header()=jld.backup.delicious_printer.Delicious_Printer_Posts-class.html#header,Method jld.backup.gliffy_printer.Gliffy_Printer_Config.header()=jld.backup.gliffy_printer.Gliffy_Printer_Config-class.html#header,Method jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.header()=jld.backup.gliffy_printer.Gliffy_Printer_Diagrams-class.html#header,Method jld.backup.mindmeister_printer.MM_Printer_Config.header()=jld.backup.mindmeister_printer.MM_Printer_Config-class.html#header,Method jld.backup.mindmeister_printer.MM_Printer_Export.header()=jld.backup.mindmeister_printer.MM_Printer_Export-class.html#header,Method jld.backup.mindmeister_printer.MM_Printer_Maps.header()=jld.backup.mindmeister_printer.MM_Printer_Maps-class.html#header,Method jld.tools.printer.BasePrettyPrinter.header()=jld.tools.printer.BasePrettyPrinter-class.html#header"><a title="jld.backup.delicious_printer.Delicious_Printer_Config.header
+jld.backup.delicious_printer.Delicious_Printer_Posts.header
+jld.backup.gliffy_printer.Gliffy_Printer_Config.header
+jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.header
+jld.backup.mindmeister_printer.MM_Printer_Config.header
+jld.backup.mindmeister_printer.MM_Printer_Export.header
+jld.backup.mindmeister_printer.MM_Printer_Maps.header
+jld.tools.printer.BasePrettyPrinter.header" class="py-name" href="#" onclick="return doclink('link-37', 'header', 'link-37');">header</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">headers</tt><tt class="py-op">:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-38" class="py-name"><a title="jld.backup.delicious_printer.Delicious_Printer_Config.header
+jld.backup.delicious_printer.Delicious_Printer_Posts.header
+jld.backup.gliffy_printer.Gliffy_Printer_Config.header
+jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.header
+jld.backup.mindmeister_printer.MM_Printer_Config.header
+jld.backup.mindmeister_printer.MM_Printer_Export.header
+jld.backup.mindmeister_printer.MM_Printer_Maps.header
+jld.tools.printer.BasePrettyPrinter.header" class="py-name" href="#" onclick="return doclink('link-38', 'header', 'link-37');">header</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">'etag'</tt><tt class="py-op">:</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">                <tt id="link-39" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-39', 'etag', 'link-21');">etag</a></tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name"><a title="jld.backup.delicious_printer.Delicious_Printer_Config.header
+jld.backup.delicious_printer.Delicious_Printer_Posts.header
+jld.backup.gliffy_printer.Gliffy_Printer_Config.header
+jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.header
+jld.backup.mindmeister_printer.MM_Printer_Config.header
+jld.backup.mindmeister_printer.MM_Printer_Export.header
+jld.backup.mindmeister_printer.MM_Printer_Maps.header
+jld.tools.printer.BasePrettyPrinter.header" class="py-name" href="#" onclick="return doclink('link-40', 'header', 'link-37');">header</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">         </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-41" class="py-name"><a title="jld.backup.gliffy_db.Diagrams.etag" class="py-name" href="#" onclick="return doclink('link-41', 'etag', 'link-21');">etag</a></tt> </tt>
+</div></div><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">         </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">    <tt class="py-string">""" Tests</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">doctest</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-name">doctest</tt><tt class="py-op">.</tt><tt class="py-name">testmod</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Dec 17 13:12:01 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

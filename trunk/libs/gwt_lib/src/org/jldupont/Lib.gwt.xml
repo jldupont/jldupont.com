@@ -1,0 +1,16 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.json.JSON"/>
+	<inherits name="com.google.gwt.http.HTTP"/>	
+	<inherits name="com.google.gwt.gears.Gears"/>
+	
+	<inherits name="org.jldupont.system"/>
+	<inherits name="org.jldupont.web"/>
+	<inherits name="org.jldupont.browser"/>
+	<inherits name="org.jldupont.delicious"/>
+	<inherits name="org.jldupont.localstore"/>
+	<inherits name="org.jldupont.widget"/>
+	<inherits name="org.jldupont.command"/>
+	<inherits name="org.jldupont.widget_commands"/>
+	
+</module>

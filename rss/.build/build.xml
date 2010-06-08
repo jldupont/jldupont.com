@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file for creating the file 'rss.xml'
+	
+	@author Jean-Lou Dupont
+	@version $Id: build.xml 257 2007-11-16 16:13:27Z JeanLou.Dupont $
+-->
+
+<project name="jldupont" basedir="." default='all' >
+
+	<taskdef classname='JLD.PhingTools.SvnStatusTask' name='svn_status' />
+	<taskdef classname='JLD.PhingTools.SvnAddTask' name='svn_add' />
+	<taskdef classname='JLD.PhingTools.SvnPropsetTask' name='svn_propset' />
+	<taskdef classname='JLD.PhingTools.SortTask' name='sort' />
+
+	<resolvepath propertyName="rss.path" file="${project.basedir}/../" />
+
+	<target name='all'>
+		<echo>Building 'rss.xml'</echo>
+
+		<fileset dir="${rss.path}/" id='allfiles' >
+			<include name="*.xml" />
+			<exclude name="rss.xml" />
+		</fileset>
+	
+		<sort sid='allfiles' key='ctime' dir='d' tid='sortedfiles' />
+
+		<!-- 
+			T1- Delete target file 'rss.xml'
+			T2- Append xml declaration to 'rss.xml'
+			T3- Open top level tag
+			T4- Apply XSL transform
+			Get filelist from ../ directory
+			Newest first ordering
+			Extract <item> section from each file
+			Append all <item> sections
+		-->
+
+		<!-- T1 -->
+		<delete file="${rss.path}/rss.xml" />
+
+		<!-- T2 --><!-- T3 -->
+		<echo>Copying template</echo>
+		<copy file= 'rss.template.xml' tofile="${rss.path}/rss.xml" overwrite="true" />
+		
+		<echo>Appending entries</echo>
+		<append destFile="${rss.path}/rss.xml">
+<!--
+			<fileset dir="${rss.path}/" >
+				<include name="*.xml" />
+				<exclude name="rss.xml" />
+			</fileset>
+-->
+			<fileset refid='sortedfiles' />
+
+			<filterchain>
+			    <xsltfilter style="rss.xsl">
+			    </xsltfilter>
+			</filterchain>			
+		</append>
+
+		<append destFile="${rss.path}/rss.xml">
+<![CDATA[
+	</channel>
+</rss>]]>
+		</append>
+
+		<svn_status path='"${rss.path}/rss.xml"' 
+					result="rss.xml.svn" />
+		<if>
+			<contains substring="?" string="${rss.xml.svn}" />
+			<then>
+				<echo>SVN: adding 'rss.xml' to SVN</echo>
+				<svn_add path='"${rss.path}/rss.xml"' />
+				<echo>SVN: setting 'application/xml' MIME-type</echo>
+				<svn_propset path='"${rss.path}/rss.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'rss.xml' already in SVN</echo>
+			</else>
+		</if>
+	</target>
+
+</project>

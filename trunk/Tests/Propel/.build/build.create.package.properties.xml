@@ -1,0 +1,6 @@
+# PHING file
+# ----------
+# Properties related to the create package task
+#
+file.element.template  = <file baseinstalldir="Smarty" name="@@package-element@@" role="php" /> 
+file.element.template2 = @@file-element@@

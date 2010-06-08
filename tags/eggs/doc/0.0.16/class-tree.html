@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="class-tree.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.api.delicious.Api-class.html" onclick="show_private();">jld.api.delicious.Api</a></strong>:
+      <em class="summary">Low-level API to Delicious</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.cmd.BaseCmd-class.html">jld.cmd.BaseCmd</a></strong>:
+      <em class="summary">Base class for command line utilities</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_backup.Backup-class.html">jld.backup.delicious_backup.Backup</a></strong>:
+      <em class="summary">Delicious Backup class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_backup.Backup-class.html">jld.backup.mindmeister_backup.Backup</a></strong>:
+      <em class="summary">MindMeister Backup class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mmd.mmdCmd-class.html">jld.backup.mmd.mmdCmd</a></strong>:
+      <em class="summary">Handles the command line interface of this daemon</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.tools.daemon.BaseDaemon-class.html">jld.tools.daemon.BaseDaemon</a></strong>:
+      <em class="summary">Base class for daemon Implements commands: start, stop, restart, 
+        run Writes PID info in /var/run/$name.log</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.mmd.mmdDaemon-class.html">jld.backup.mmd.mmdDaemon</a></strong>:
+      <em class="summary">Daemon</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">exceptions.BaseException</strong>:
+      <em class="summary">Common base class for all exceptions</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.Exception</strong>:
+      <em class="summary">Common base class for all non-exit exceptions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorGeneric-class.html">jld.api.ErrorGeneric</a></strong>:
+      <em class="summary">Exception base class which accept parameters.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorAccess-class.html">jld.api.ErrorAccess</a></strong>:
+      <em class="summary">Generic Access error eg  restricted access</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorAuth-class.html">jld.api.ErrorAuth</a></strong>:
+      <em class="summary">Generic Authentication error</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorConfig-class.html">jld.api.ErrorConfig</a></strong>:
+      <em class="summary">Generic configuration error eg  can't load configuration from 
+        filesystem</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorDaemon-class.html">jld.api.ErrorDaemon</a></strong>:
+      <em class="summary">Generic daemon error eg  can't os.fork</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorDb-class.html">jld.api.ErrorDb</a></strong>:
+      <em class="summary">Generic Db error eg  can't open database file</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorFile-class.html">jld.api.ErrorFile</a></strong>:
+      <em class="summary">Generic filesystem error eg  can't write to filepath</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorInvalidCommand-class.html">jld.api.ErrorInvalidCommand</a></strong>:
+      <em class="summary">Generic command error eg  invalid command from cmd-line utility</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorMethod-class.html">jld.api.ErrorMethod</a></strong>:
+      <em class="summary">Generic method error eg  unavailable method for API end-point etc.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorNetwork-class.html">jld.api.ErrorNetwork</a></strong>:
+      <em class="summary">Error at the network layer eg  DNS error, no connection etc.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorObject-class.html">jld.api.ErrorObject</a></strong>:
+      <em class="summary">Generic object error eg  object not found</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorProperty-class.html">jld.api.ErrorProperty</a></strong>:
+      <em class="summary">Generic property error eg  feature X not available</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorProtocol-class.html">jld.api.ErrorProtocol</a></strong>:
+      <em class="summary">Generic protocol error eg  expecting parameter X but not found</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.ErrorValidation-class.html">jld.api.ErrorValidation</a></strong>:
+      <em class="summary">Generic validation error eg  invalid parameter</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.registry.exception.RegistryException-class.html">jld.registry.exception.RegistryException</a></strong>:
+      <em class="summary">An exception class for Registry</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.tools.printer.BasePrettyPrinter-class.html">jld.tools.printer.BasePrettyPrinter</a></strong>:
+      <em class="summary">Generic Pretty Printer</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_printer.Delicious_Printer-class.html">jld.backup.delicious_printer.Delicious_Printer</a></strong>:
+      <em class="summary">Base class</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_printer.Delicious_Printer_Config-class.html">jld.backup.delicious_printer.Delicious_Printer_Config</a></strong>:
+      <em class="summary">Prints config related info</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_printer.Delicious_Printer_Posts-class.html">jld.backup.delicious_printer.Delicious_Printer_Posts</a></strong>:
+      <em class="summary">Prints tags related info</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_printer.MM_Printer-class.html">jld.backup.mindmeister_printer.MM_Printer</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_printer.MM_Printer_Config-class.html">jld.backup.mindmeister_printer.MM_Printer_Config</a></strong>:
+      <em class="summary">Prints map related info</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_printer.MM_Printer_Export-class.html">jld.backup.mindmeister_printer.MM_Printer_Export</a></strong>:
+      <em class="summary">Prints map export related info</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_printer.MM_Printer_Maps-class.html">jld.backup.mindmeister_printer.MM_Printer_Maps</a></strong>:
+      <em class="summary">Prints map related info</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.tools.printer.SimplePrettyPrinter-class.html">jld.tools.printer.SimplePrettyPrinter</a></strong>:
+      <em class="summary">Simple Printer which uses stdout</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.delicious.Client-class.html">jld.api.delicious.Client</a></strong>:
+      <em class="summary">Higher level interface to Delicious</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_db.Db-class.html">jld.backup.delicious_db.Db</a></strong>:
+      <em class="summary">Db class; used to bootstrap SQLObject</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_db.Db-class.html">jld.backup.mindmeister_db.Db</a></strong>:
+      <em class="summary">Db class: used to bootstrap SQLObject</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.tools.defaults.Defaults-class.html">jld.tools.defaults.Defaults</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_defaults.Delicious_Defaults-class.html">jld.backup.delicious_defaults.Delicious_Defaults</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_defaults.MM_Defaults-class.html">jld.backup.mindmeister_defaults.MM_Defaults</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="sqlobject.dbconnection.Iteration-class.html">sqlobject.dbconnection.Iteration</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.registry.linux.LinuxRegistry-class.html">jld.registry.linux.LinuxRegistry</a></strong>:
+      <em class="summary">Simple Registry class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister.MM-class.html">jld.api.mindmeister.MM</a></strong>:
+      <em class="summary">MindMeister WEB API</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister.MM_Client-class.html">jld.api.mindmeister.MM_Client</a></strong>:
+      <em class="summary">High-level interface to MindMeister</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister_response.MM_ResponseBase-class.html">jld.api.mindmeister_response.MM_ResponseBase</a></strong>:
+      <em class="summary">Base class response</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister_response.MM_ResponseBasic-class.html">jld.api.mindmeister_response.MM_ResponseBasic</a></strong>:
+      <em class="summary">Basic response Used for testing purpose only</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister_response.MM_Response_getAuthToken-class.html">jld.api.mindmeister_response.MM_Response_getAuthToken</a></strong>:
+      <em class="summary">In response to mm.auth.getToken</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister_response.MM_Response_getFrob-class.html">jld.api.mindmeister_response.MM_Response_getFrob</a></strong>:
+      <em class="summary">In response to mm.auth.getFrob</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister_response.MM_Response_getList-class.html">jld.api.mindmeister_response.MM_Response_getList</a></strong>:
+      <em class="summary">In response to mm.maps.getList</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.mindmeister_response.MM_Response_getMapExport-class.html">jld.api.mindmeister_response.MM_Response_getMapExport</a></strong>:
+      <em class="summary">In response to mm.maps.export exports[image] = url</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.tools.messages.Messages-class.html">jld.tools.messages.Messages</a></strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_messages.Delicious_Messages-class.html">jld.backup.delicious_messages.Delicious_Messages</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_messages.MM_Messages-class.html">jld.backup.mindmeister_messages.MM_Messages</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mmd.mmdMessages-class.html">jld.backup.mmd.mmdMessages</a></strong>:
+      <em class="summary">Messages</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.gdata.docs.RawDoc-class.html">jld.gdata.docs.RawDoc</a></strong>:
+      <em class="summary">Retrieves a Google Documents 'doc' in raw format</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.registry.Registry-class.html">jld.registry.Registry</a></strong>:
+      <em class="summary">Facade for the cross-platform Registry Can be accessed like a 
+        dictionary: for this functionality, an instance must be constructed
+        with the 'file' parameter specified.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.gdata.docs.ResultDoc-class.html">jld.gdata.docs.ResultDoc</a></strong>:
+      <em class="summary">Result doc</em>
+    </li>
+    <li> <strong class="uidlink">sqlobject.main.SQLObject</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_db.Maps-class.html">jld.backup.mindmeister_db.Maps</a></strong>:
+      <em class="summary">MindMeister Maps database Used to store map related information</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_db.Posts-class.html">jld.backup.delicious_db.Posts</a></strong>:
+      <em class="summary">Delicious Posts database</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_db.Updates-class.html">jld.backup.delicious_db.Updates</a></strong>:
+      <em class="summary">Table for keeping track of the <i>last update</i> indicator from 
+        Delicious</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="sqlobject.sresults.SelectResults-class.html">sqlobject.sresults.SelectResults</a></strong>
+    </li>
+    <li> <strong class="uidlink">string.Template</strong>:
+      <em class="summary">A string class for supporting $-substitutions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.tools.template.ExTemplate-class.html">jld.tools.template.ExTemplate</a></strong>:
+      <em class="summary">String Template to ease integration with other string processing 
+        modules e.g.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.tools.cmd_ui.UIBase-class.html">jld.tools.cmd_ui.UIBase</a></strong>:
+      <em class="summary">Base class for Command Line UI</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_ui.Delicious_UI-class.html">jld.backup.delicious_ui.Delicious_UI</a></strong>:
+      <em class="summary">Handles user interface</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_ui.MM_UI-class.html">jld.backup.mindmeister_ui.MM_UI</a></strong>:
+      <em class="summary">Handles user interface</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mmd.mmdUI-class.html">jld.backup.mmd.mmdUI</a></strong>:
+      <em class="summary">Handles user interface</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.api.delicious.Waiter-class.html" onclick="show_private();">jld.api.delicious.Waiter</a></strong>:
+      <em class="summary">Serves as throttle to play nice with the terms of use.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.registry.windows.WindowsRegistry-class.html">jld.registry.windows.WindowsRegistry</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="int-class.html">int</a></strong>:
+      <em class="summary">int(x[, base]) -&gt; integer</em>
+    <ul>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">sqlobject.main.sqlmeta</strong>:
+      <em class="summary">This object is the object we use to keep track of all sorts of 
+        information.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_db.Posts.sqlmeta-class.html">jld.backup.delicious_db.Posts.sqlmeta</a></strong>:
+      <em class="summary">This object is the object we use to keep track of all sorts of 
+        information.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.delicious_db.Updates.sqlmeta-class.html">jld.backup.delicious_db.Updates.sqlmeta</a></strong>:
+      <em class="summary">This object is the object we use to keep track of all sorts of 
+        information.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="jld.backup.mindmeister_db.Maps.sqlmeta-class.html">jld.backup.mindmeister_db.Maps.sqlmeta</a></strong>:
+      <em class="summary">This object is the object we use to keep track of all sorts of 
+        information.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">type</strong>:
+      <em class="summary">type(object) -&gt; the object's type type(name, bases, dict) -&gt; 
+        a new type</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="sqlobject.declarative.DeclarativeMeta-class.html">sqlobject.declarative.DeclarativeMeta</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="string._TemplateMetaclass-class.html">string._TemplateMetaclass</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Dec 15 21:00:50 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

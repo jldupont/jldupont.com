@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="GWT_HOME/gwt-user.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/my_gwt_lib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/web_bloks_gwt_lib3"/>
+	<classpathentry kind="lib" path="/gwt-gears/gwt-google-apis.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

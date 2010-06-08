@@ -1,0 +1,5 @@
+# YAML based messages 
+#  just used for testing messages.py
+# ==================================
+msg1: Test1 $msg
+msg2: Test2 $msg

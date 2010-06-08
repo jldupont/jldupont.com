@@ -1,0 +1,35 @@
+<html>
+	
+	<head>
+		
+	</head>
+	
+	<body>
+		
+		<script>
+
+		loadedIE = function(){
+			alert("loaded IE");
+		}
+
+		loadedMozilla = function(){
+			alert("loaded Mozilla");
+		}
+
+		 document.write("<script id=__ie_onload onload='loadedMozilla()' defer "+
+		 				"src='http://code.jquery.com/jquery-latest.min.js'><\/script>");
+
+		 var script = document.getElementById("__ie_onload");
+		 script.onreadystatechange = function()
+		 {
+			 if (this.readyState == "complete")
+				 loadedIE(); // call the onload handler
+		 };
+
+			
+		</script>
+		
+		
+	</body>
+	
+</html>

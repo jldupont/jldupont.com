@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file for creating the 'latest.txt' files
+	
+	@author Jean-Lou Dupont
+	@version $Id: build.xml 257 2007-11-16 16:13:27Z JeanLou.Dupont $
+-->
+
+<project name="jldupont" basedir="." default='all' >
+
+	<taskdef classname='JLD.PhingTools.SvnStatusTask' name='svn_status' />
+	<taskdef classname='JLD.PhingTools.SvnAddTask' name='svn_add' />
+	<taskdef classname='JLD.PhingTools.SvnPropsetTask' name='svn_propset' />
+	<taskdef classname='JLD.PhingTools.FileSet2PropertyTask' name='fs2prop' />
+	<taskdef classname='JLD.PhingTools.Text2PngTask' name='txt2png' />
+	<taskdef classname='JLD.PhingTools.ReadFileTask' name='readfile' />
+
+	<resolvepath propertyName="r.path" file="${project.basedir}/../" />
+
+	<target name='all' >
+
+		<delete includeemptydirs="true" quiet="Yes">
+			<fileset dir="${r.path}/_all">
+				<include name="**/**" />
+			</fileset>
+			<fileset dir="${r.path}/all">
+				<include name="**/**" />
+			</fileset>
+		</delete>
+
+		<fileset dir="${r.path}/" id='allfiles' >
+			<include name="**/allreleases.xml" />
+		</fileset>
+
+		<copy todir="${r.path}/all">
+			<mapper type="glob" from="*.xml" to="*.txt"/>
+			<fileset refid="allfiles" />
+		</copy>
+	
+		<fileset dir="${r.path}/all" id='allfiles_txt' >
+			<include name="**/**" />
+		</fileset>
+
+<!--
+		<fs2prop fsid='allfiles_txt' prop='liste' />
+	
+		<echo>Liste: ${liste}</echo>
+-->
+
+		<copy todir="${r.path}/all">
+			<mapper type="regexp" from="(.*)\\allreleases\.txt" to="\1.txt" />
+			<fileset refid="allfiles_txt" />
+		</copy>
+
+
+		<delete includeemptydirs="true">
+			<fileset dir="${r.path}/all">
+				<include name="**/**" />
+				<exclude name="*.txt" />
+			</fileset>
+		</delete>
+
+		<fileset dir="${r.path}/all" id='allfiles_txt_todo' >
+			<include name="**/**" />
+		</fileset>
+
+		<copy todir="${r.path}/_all" overwrite="true" >
+			<fileset refid="allfiles_txt_todo" />
+			<filterchain>
+				<tabtospaces tablength="1" />
+
+				<linecontainsregexp>
+					<regexp pattern="\x3cv\>(.*)\x3c\/v>" />
+				</linecontainsregexp>
+
+				<replaceregexp>
+					<regexp pattern="\x3cv\>(.*)\x3c\/v>" replace="\1" />
+				</replaceregexp>
+
+				<headfilter lines="1" />
+
+				<tabtospaces tablength="1" />
+				<stripwhitespace />
+				<striplinebreaks />
+				<replaceregexp>
+					<regexp pattern="\s" replace=""/>
+				</replaceregexp>
+
+			</filterchain>			
+		</copy>
+
+		<delete includeemptydirs="true">
+			<fileset dir="${r.path}/all">
+				<include name="**/**" />
+			</fileset>
+		</delete>
+
+		<move todir="${r.path}/_all" overwrite="true">
+			<fileset dir="${r.path}/_all">
+				<include name="**/**.txt" />
+			</fileset>
+			<mapper type="glob" from="*.txt" to="*" />
+		</move>
+
+<!-- 
+		at this point, we have a directory /_all with each a file $package
+-->
+
+		<fileset dir="${r.path}/_all" id='allfiles_2' >
+			<include name="**/**" />
+		</fileset>
+	
+		<fs2prop fsid='allfiles_2' prop='liste' />
+
+		<!-- move file to /r/$package -->
+		<foreach list="${liste}" param="base_name" target="moveOne" />
+
+		<delete includeemptydirs="true">
+			<fileset dir="${r.path}/_all">
+				<include name="**/**" />
+			</fileset>
+		</delete>
+
+	</target>
+
+	<target name="moveOne" >
+		<move file="${r.path}/_all/${base_name}" tofile="${r.path}/${base_name}/latest.txt" />
+
+		<svn_status path='"${r.path}/${base_name}/latest.txt"' 
+					result="file.svn" />
+		<if>
+			<contains substring="?" string="${file.svn}" />
+			<then>
+				<svn_add path='"${r.path}/${base_name}/latest.txt"' />
+				<svn_propset path='"${r.path}/${base_name}/latest.txt"' 
+				           	propname="svn:mime-type" 
+				           	propval="text/plain" />
+			</then>
+		</if>
+
+		<readfile file="${r.path}/${base_name}/latest.txt" property="release" />
+		<txt2png	text="${release}" 
+					file="${r.path}/${base_name}/latest.png" 
+					font="3" 
+					bg="255,255,255" color="0,0,0"
+					/>
+
+		<svn_status path='"${r.path}/${base_name}/latest.png"' 
+					result="file.png.svn" />
+		<if>
+			<contains substring="?" string="${file.png.svn}" />
+			<then>
+				<svn_add path='"${r.path}/${base_name}/latest.png"' />
+				<svn_propset path='"${r.path}/${base_name}/latest.png"' 
+				           	propname="svn:mime-type" 
+				           	propval="image/png" />
+			</then>
+		</if>
+
+	</target>
+
+</project>

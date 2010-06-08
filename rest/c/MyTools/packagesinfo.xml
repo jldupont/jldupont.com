@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<f xmlns="http://pear.php.net/dtd/rest.categorypackageinfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://pear.php.net/dtd/rest.categorypackageinfo     http://pear.php.net/dtd/rest.categorypackageinfo.xsd">
+		<pi>
+			<p>
+				<n>BackupGliffy</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/MyTools">MyTools</ca>
+				<l>$license$</l>
+				<s>Gliffy backup tool</s>
+				<d>Gliffy backup tool</d>
+				<r xlink:href="/rest/r/BackupGliffy">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.0.0</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+</f>

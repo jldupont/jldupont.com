@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file for creating the basic structure of a PEAR Channel
+	
+	@author Jean-Lou Dupont
+	@version $Id: build.xml 257 2007-11-16 16:13:27Z JeanLou.Dupont $
+-->
+
+<project name="jldupont" basedir="." default='all' >
+
+	<target name='all'>
+		<echo>Building all targets</echo>
+		<phing phingfile="build.channel.xml" inheritRefs="true" target="channel" />
+	</target>
+
+</project>

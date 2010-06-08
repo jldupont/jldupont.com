@@ -1,0 +1,11 @@
+"""
+scons build file
+
+@author: Jean-Lou Dupont
+"""
+
+Import('env')
+
+artifact = env.SharedLibrary('cjld', Glob("*.c"), LIBS=[] )
+Default(artifact)
+	

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<!--
+	Test PHING build file 
+	
+	@author Jean-Lou Dupont
+	@version $Id: build.xml 905 2009-05-19 14:32:48Z JeanLou.Dupont $
+-->
+
+<project name="jldupont" basedir="." default='all' >
+
+	<target name='all'>
+
+		<delete file='test' />
+	
+		<echo file='test'>
+			This is just a test file.
+		</echo>
+
+		<echo>Adding file "test" to version control</echo>
+	 	<taskdef classname='JLD.PhingTools.SvnAddTask' name='svn_add' />
+		<svn_add path="test" />
+
+		<echo>Setting 'svn:keywords Id' on file "test"</echo>
+	 	<taskdef classname='JLD.PhingTools.SvnPropsetTask' name='svn_propset' />
+		<svn_propset path="test" 
+		           propname="svn:keywords" 
+		           propval="Id" />
+
+	</target>
+
+</project>

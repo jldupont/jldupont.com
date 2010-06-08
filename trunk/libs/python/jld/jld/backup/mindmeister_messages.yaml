@@ -1,0 +1,92 @@
+# YAML messages
+# for MindMeister backup utility
+# @author: Jean-Lou Dupont
+
+# Commands related
+cmd_auth: Authorization request with frob[$frob]
+
+# Reporting related
+report_update: cmd[updatedb] Total     [%(total)04d]   Updated[%(updated)04d]       New[%(new)04d]
+report_export: cmd[export]   Exportable[%(total)04d] Successes[%(successes)04d] Failure[%(failures)04d]
+report_maps: Total maps found[$total]
+report_auth: cmd[auth] frob[$frob]
+
+# CONFIG related
+# ==============
+config_eventmgr: configure "EventManager script" path
+config_email: configure email address
+config_secret: configure secret
+config_key: configure api key
+config_file: configure database filesystem path
+config_path: configure filesystem path for exports
+config_maxnum: configuration the maximum number of exports per run
+error_load_file: error occured whilst file [$path]
+
+show_auth_token: auth_token [$auth_token]
+
+syslog: syslog disable mode
+configuration: Please configure 'secret' and 'api_key'
+reg_update_error: Unable to update registry
+invalid_command: Invalid command [$cmd]
+use_help: Please use '-h' for help
+do_auth: Please authentication application (use 'auth' command)
+
+# Errors / Exceptions
+# ===================
+error_eventmgr: Error whilst executing the EventManager script [$path]
+error_config_type: Parameter [$key] should be of type[$type] 
+error_update_db: Error whilst updating the database
+error_cant_write: Error whilst writing to [$path]
+error_create_folder: Error whilst creating folder
+error_init_folder: Error whilst accessing folder
+error_defaults: Defaults configuration error
+error_command: Invalid command [$cmd]
+error_getmaps: Error fetching maps [$msg]
+error_db: Error whilst creating the database file [$file]
+error_daemon: Daemon error
+error_auth: Authentication error
+error_network: Network error
+error_access: Access error
+error_object: Object access error
+error_method: API method access error
+error_validation: Parameter validation error
+error_property: Property error
+error_protocol: Protocol level error
+error_registry: Registry level error
+error_validation_parameter: Parameter validation error [$param]
+missing_param: Missing parameter.
+unhandled_exception: An unhandled exception occured [$exc]
+
+# HELP
+# ====
+help_eventmgr: The EventManager script can be configured through the '-z' option
+help_defaults: The defaults file is located in the Python's sitepackages directory along with the other scripts of this command-line utility
+help_command: Use -h to review commands
+help_db: Is the filesystem path specified by the -f option accessible?
+help_auth: Please perform authentication using the 'auth' command and the -s , -k options
+help_network: Maybe check the access to the Internet?
+help_access: Is the proper access right in place?
+help_method: Has the MindMeister API changed?
+help_validation: Check documentation (missing [$param])
+help_protocol: Has the MindMeister API changed? [expecting '$param']
+help_registry_win: The registry key HKEY_LOCAL_MACHINE/Software/Python/Registry can't be accessed 
+help_registry_nix: The filesystem path /etc/python/registry can't be accessed
+
+# PRINTER related
+# ===============
+tbl_header_maps: Latest Maps
+tbl_footer_maps: ==end==
+tbl_header_export: Export Information
+tbl_footer_export: ==end==
+tbl_header_config: Configuration
+tbl_footer_config: ==end==
+
+# Daemon related
+# ==============
+cant_fork: Cannot perform fork() [$msg]
+daemon_exists: Daemon is said to already exists, pid[$pid]
+cant_find_pid: Can't find the daemon's pid in /var/run/
+daemon_start: Starting daemon
+daemon_stop: Stopping daemon
+daemon_restart: Restarting daemon
+help_daemon: Is there a stale .pid file? Is there really a daemon running? 

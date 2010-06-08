@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jld.backup.mm</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="jld-module.html">Package&nbsp;jld</a> ::
+        <a href="jld.backup-module.html">Package&nbsp;backup</a> ::
+        Module&nbsp;mm
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="jld.backup.mm-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="jld.backup.mm-module.html">Module jld.backup.mm</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-docstring">""" Backup for MindMeister mindmaps</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">    Dependencies:</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">     - module yaml   (available @ http://pyyaml.org/wiki/PyYAML)</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable jld.__author__=jld-module.html#__author__,Variable jld.api.__author__=jld.api-module.html#__author__,Variable jld.api.delicious.__author__=jld.api.delicious-module.html#__author__,Variable jld.api.delicious_objects.__author__=jld.api.delicious_objects-module.html#__author__,Variable jld.backup.delicious.__author__=jld.backup.delicious-module.html#__author__,Variable jld.backup.delicious_db.__author__=jld.backup.delicious_db-module.html#__author__,Variable jld.backup.delicious_defaults.__author__=jld.backup.delicious_defaults-module.html#__author__,Variable jld.backup.delicious_printer.__author__=jld.backup.delicious_printer-module.html#__author__,Variable jld.backup.delicious_ui.__author__=jld.backup.delicious_ui-module.html#__author__,Variable jld.backup.mindmeister_db.__author__=jld.backup.mindmeister_db-module.html#__author__,Variable jld.backup.mindmeister_defaults.__author__=jld.backup.mindmeister_defaults-module.html#__author__,Variable jld.backup.mindmeister_logger.__author__=jld.backup.mindmeister_logger-module.html#__author__,Variable jld.backup.mindmeister_printer.__author__=jld.backup.mindmeister_printer-module.html#__author__,Variable jld.backup.mindmeister_ui.__author__=jld.backup.mindmeister_ui-module.html#__author__,Variable jld.backup.mmd.__author__=jld.backup.mmd-module.html#__author__,Variable jld.cmd.__author__=jld.cmd-module.html#__author__,Variable jld.gdata.docs.__author__=jld.gdata.docs-module.html#__author__,Variable jld.tools.cmd_ui.__author__=jld.tools.cmd_ui-module.html#__author__,Variable jld.tools.daemon.__author__=jld.tools.daemon-module.html#__author__,Variable jld.tools.date.__author__=jld.tools.date-module.html#__author__,Variable jld.tools.db.__author__=jld.tools.db-module.html#__author__,Variable jld.tools.klass.__author__=jld.tools.klass-module.html#__author__,Variable jld.tools.logger.__author__=jld.tools.logger-module.html#__author__,Variable jld.tools.mos.__author__=jld.tools.mos-module.html#__author__,Variable jld.tools.printer.__author__=jld.tools.printer-module.html#__author__,Variable jld.tools.process.__author__=jld.tools.process-module.html#__author__"><a title="jld.__author__
+jld.api.__author__
+jld.api.delicious.__author__
+jld.api.delicious_objects.__author__
+jld.backup.delicious.__author__
+jld.backup.delicious_db.__author__
+jld.backup.delicious_defaults.__author__
+jld.backup.delicious_printer.__author__
+jld.backup.delicious_ui.__author__
+jld.backup.mindmeister_db.__author__
+jld.backup.mindmeister_defaults.__author__
+jld.backup.mindmeister_logger.__author__
+jld.backup.mindmeister_printer.__author__
+jld.backup.mindmeister_ui.__author__
+jld.backup.mmd.__author__
+jld.cmd.__author__
+jld.gdata.docs.__author__
+jld.tools.cmd_ui.__author__
+jld.tools.daemon.__author__
+jld.tools.date.__author__
+jld.tools.db.__author__
+jld.tools.klass.__author__
+jld.tools.logger.__author__
+jld.tools.mos.__author__
+jld.tools.printer.__author__
+jld.tools.process.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt>  <tt class="py-op">=</tt> <tt class="py-string">"Jean-Lou Dupont"</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">"$Id: jld.backup.mm-pysrc.html 733 2008-12-11 19:21:17Z jeanlou.dupont $"</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Variable jld.api.delicious.path=jld.api.delicious-module.html#path,Variable jld.backup.delicious.path=jld.backup.delicious-module.html#path,Variable jld.backup.mm.path=jld.backup.mm-module.html#path,Variable jld.backup.mmd.path=jld.backup.mmd-module.html#path"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-1', 'path', 'link-1');">path</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">types</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">optparse</tt> <tt class="py-keyword">import</tt> <tt class="py-name">OptionParser</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"># ASSUME THAT THE REQUIRED LIBS are available</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># RELATIVE to this script =&gt; simplified install</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-2" class="py-name" targets="Variable jld.api.delicious.levelsUp=jld.api.delicious-module.html#levelsUp,Variable jld.backup.delicious.levelsUp=jld.backup.delicious-module.html#levelsUp,Variable jld.backup.mm.levelsUp=jld.backup.mm-module.html#levelsUp,Variable jld.backup.mmd.levelsUp=jld.backup.mmd-module.html#levelsUp"><a title="jld.api.delicious.levelsUp
+jld.backup.delicious.levelsUp
+jld.backup.mm.levelsUp
+jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-2', 'levelsUp', 'link-2');">levelsUp</a></tt> <tt class="py-op">=</tt> <tt class="py-number">3</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt id="link-3" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-3', 'path', 'link-1');">path</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-4', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt> <tt class="py-name">__file__</tt> <tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">while</tt> <tt id="link-5" class="py-name"><a title="jld.api.delicious.levelsUp
+jld.backup.delicious.levelsUp
+jld.backup.mm.levelsUp
+jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-5', 'levelsUp', 'link-2');">levelsUp</a></tt><tt class="py-op">&gt;</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt id="link-6" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-6', 'path', 'link-1');">path</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-7', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt> <tt id="link-8" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-8', 'path', 'link-1');">path</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt id="link-9" class="py-name"><a title="jld.api.delicious.levelsUp
+jld.backup.delicious.levelsUp
+jld.backup.mm.levelsUp
+jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-9', 'levelsUp', 'link-2');">levelsUp</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="jld.api.delicious.levelsUp
+jld.backup.delicious.levelsUp
+jld.backup.mm.levelsUp
+jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-10', 'levelsUp', 'link-2');">levelsUp</a></tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt>     </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-11', 'path', 'link-1');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt id="link-12" class="py-name"><a title="jld.api.delicious.path
+jld.backup.delicious.path
+jld.backup.mm.path
+jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-12', 'path', 'link-1');">path</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-13" class="py-name" targets="Package jld=jld-module.html"><a title="jld" class="py-name" href="#" onclick="return doclink('link-13', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Package jld.api=jld.api-module.html"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-14', 'api', 'link-14');">api</a></tt> <tt class="py-keyword">as</tt> <tt id="link-15" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-15', 'api', 'link-14');">api</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-16" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-16', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Package jld.registry=jld.registry-module.html"><a title="jld.registry" class="py-name" href="#" onclick="return doclink('link-17', 'registry', 'link-17');">registry</a></tt> <tt class="py-keyword">as</tt> <tt id="link-18" class="py-name" targets="Variable jld.registry.Registry.reg=jld.registry.Registry-class.html#reg"><a title="jld.registry.Registry.reg" class="py-name" href="#" onclick="return doclink('link-18', 'reg', 'link-18');">reg</a></tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt>   <tt id="link-19" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-19', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Package jld.backup=jld.backup-module.html"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-20', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Module jld.backup.mindmeister_backup=jld.backup.mindmeister_backup-module.html"><a title="jld.backup.mindmeister_backup" class="py-name" href="#" onclick="return doclink('link-21', 'mindmeister_backup', 'link-21');">mindmeister_backup</a></tt> <tt class="py-keyword">import</tt> <tt id="link-22" class="py-name" targets="Class jld.backup.delicious_backup.Backup=jld.backup.delicious_backup.Backup-class.html,Class jld.backup.mindmeister_backup.Backup=jld.backup.mindmeister_backup.Backup-class.html"><a title="jld.backup.delicious_backup.Backup
+jld.backup.mindmeister_backup.Backup" class="py-name" href="#" onclick="return doclink('link-22', 'Backup', 'link-22');">Backup</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-23" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-23', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-24', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Module jld.backup.mindmeister_messages=jld.backup.mindmeister_messages-module.html"><a title="jld.backup.mindmeister_messages" class="py-name" href="#" onclick="return doclink('link-25', 'mindmeister_messages', 'link-25');">mindmeister_messages</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">msg</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-26" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-26', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-27', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Module jld.backup.mindmeister_ui=jld.backup.mindmeister_ui-module.html"><a title="jld.backup.mindmeister_ui" class="py-name" href="#" onclick="return doclink('link-28', 'mindmeister_ui', 'link-28');">mindmeister_ui</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">mui</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-29" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-29', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-30', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Module jld.backup.mindmeister_defaults=jld.backup.mindmeister_defaults-module.html"><a title="jld.backup.mindmeister_defaults" class="py-name" href="#" onclick="return doclink('link-31', 'mindmeister_defaults', 'link-31');">mindmeister_defaults</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">mdef</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-keyword">from</tt>   <tt id="link-32" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-32', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Package jld.tools=jld.tools-module.html"><a title="jld.tools" class="py-name" href="#" onclick="return doclink('link-33', 'tools', 'link-33');">tools</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Module jld.tools.template=jld.tools.template-module.html"><a title="jld.tools.template" class="py-name" href="#" onclick="return doclink('link-34', 'template', 'link-34');">template</a></tt> <tt class="py-keyword">import</tt> <tt id="link-35" class="py-name" targets="Class jld.tools.template.ExTemplate=jld.tools.template.ExTemplate-class.html"><a title="jld.tools.template.ExTemplate" class="py-name" href="#" onclick="return doclink('link-35', 'ExTemplate', 'link-35');">ExTemplate</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-36" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-36', 'jld', 'link-13');">jld</a></tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="jld.tools" class="py-name" href="#" onclick="return doclink('link-37', 'tools', 'link-33');">tools</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Module jld.tools.logger=jld.tools.logger-module.html,Function jld.tools.logger.logger()=jld.tools.logger-module.html#logger"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-38', 'logger', 'link-38');">logger</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">mlogger</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-comment"># ========================================================================================</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-39" class="py-name" targets="Variable jld.backup.delicious._options=jld.backup.delicious-module.html#_options,Variable jld.backup.mm._options=jld.backup.mm-module.html#_options"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-39', '_options', 'link-39');">_options</a></tt> <tt class="py-op">=</tt><tt class="py-op">[</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-s'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'secret'</tt><tt class="py-op">,</tt>        <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store'</tt><tt class="py-op">,</tt>        <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'config_secret'</tt><tt class="py-op">,</tt> <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-k'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'api_key'</tt><tt class="py-op">,</tt>       <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store'</tt><tt class="py-op">,</tt>        <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'config_key'</tt><tt class="py-op">,</tt>    <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-f'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'db_path'</tt><tt class="py-op">,</tt>       <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store'</tt><tt class="py-op">,</tt>        <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'config_file'</tt><tt class="py-op">,</tt>   <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-p'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'export_path'</tt><tt class="py-op">,</tt>   <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store'</tt><tt class="py-op">,</tt>        <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'config_path'</tt><tt class="py-op">,</tt>   <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-m'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'export_maxnum'</tt><tt class="py-op">,</tt> <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store'</tt><tt class="py-op">,</tt>        <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'config_maxnum'</tt><tt class="py-op">,</tt> <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-string">'type'</tt><tt class="py-op">:</tt><tt class="py-string">'int'</tt><tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-q'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'quiet'</tt><tt class="py-op">,</tt>         <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store_true'</tt><tt class="py-op">,</tt>   <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'quiet'</tt><tt class="py-op">,</tt>         <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt>           </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">  <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-l'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'syslog'</tt><tt class="py-op">,</tt>        <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store_true'</tt><tt class="py-op">,</tt>   <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'syslog'</tt><tt class="py-op">,</tt>        <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt>   </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-op">]</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.backup.mm-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="main-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">     </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-name">msgs</tt>   <tt class="py-op">=</tt> <tt class="py-name">msg</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Class jld.backup.mindmeister_messages.MM_Messages=jld.backup.mindmeister_messages.MM_Messages-class.html"><a title="jld.backup.mindmeister_messages.MM_Messages" class="py-name" href="#" onclick="return doclink('link-40', 'MM_Messages', 'link-40');">MM_Messages</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-name">ui</tt>     <tt class="py-op">=</tt> <tt class="py-name">mui</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Class jld.backup.mindmeister_ui.MM_UI=jld.backup.mindmeister_ui.MM_UI-class.html"><a title="jld.backup.mindmeister_ui.MM_UI" class="py-name" href="#" onclick="return doclink('link-41', 'MM_UI', 'link-41');">MM_UI</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">     </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-comment"># == Config UI ==</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># ===============</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.setParams()=jld.tools.cmd_ui.UIBase-class.html#setParams"><a title="jld.tools.cmd_ui.UIBase.setParams" class="py-name" href="#" onclick="return doclink('link-42', 'setParams', 'link-42');">setParams</a></tt><tt class="py-op">(</tt> <tt class="py-name">msgs</tt> <tt class="py-op">)</tt>     </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">     </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-comment"># all the exceptions are handled by 'ui'</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt id="link-43" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-43', 'backup', 'link-20');">backup</a></tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="jld.backup.delicious_backup.Backup
+jld.backup.mindmeister_backup.Backup" class="py-name" href="#" onclick="return doclink('link-44', 'Backup', 'link-22');">Backup</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-name">usage_template</tt> <tt class="py-op">=</tt> <tt class="py-string">"""%prog [options] command</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-string">    </tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-string">version $Id: jld.backup.mm-pysrc.html 733 2008-12-11 19:21:17Z jeanlou.dupont $ by Jean-Lou Dupont</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">*** Interface to MindMeister (http://www.mindmeister.com/) ***</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">This command-line utility requires valid 'API_KEY' and 'SECRET' parameters</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-string">obtained from MindMeister. In order to use this tool, the 'auth' command</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-string">must first be called with the said valid parameters.</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string">Usage:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-string"> Step 1) Authentication: use the 'auth' command with the '-s' and '-k' parameters</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-string"> Step 2) Update local database: use the 'updatedb' command to retrieve/update the local map database</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-string"> Step 3) Export: use the 'export' command to retrieve new maps / update existing ones </tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-string">The commands which generate log entries are flagged with (logged) below.</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-string">Commands:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string">^^{commands}"""</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">             </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">commands_help</tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-45', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method jld.cmd.BaseCmd.genCommandsHelp()=jld.cmd.BaseCmd-class.html#genCommandsHelp"><a title="jld.cmd.BaseCmd.genCommandsHelp" class="py-name" href="#" onclick="return doclink('link-46', 'genCommandsHelp', 'link-46');">genCommandsHelp</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">             </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">tpl</tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="jld.tools.template.ExTemplate" class="py-name" href="#" onclick="return doclink('link-47', 'ExTemplate', 'link-35');">ExTemplate</a></tt><tt class="py-op">(</tt> <tt class="py-name">usage_template</tt> <tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-name">usage</tt> <tt class="py-op">=</tt> <tt class="py-name">tpl</tt><tt class="py-op">.</tt><tt class="py-name">substitute</tt><tt class="py-op">(</tt> <tt class="py-op">{</tt><tt class="py-string">'commands'</tt> <tt class="py-op">:</tt> <tt class="py-name">commands_help</tt><tt class="py-op">}</tt> <tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">     </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-comment"># Use OptParse to process arguments</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.handleArguments()=jld.tools.cmd_ui.UIBase-class.html#handleArguments"><a title="jld.tools.cmd_ui.UIBase.handleArguments" class="py-name" href="#" onclick="return doclink('link-48', 'handleArguments', 'link-48');">handleArguments</a></tt><tt class="py-op">(</tt><tt class="py-name">usage</tt><tt class="py-op">,</tt> <tt id="link-49" class="py-name"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-49', '_options', 'link-39');">_options</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">         </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-comment"># Configure ourselves a logger</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">_quiet</tt>  <tt class="py-op">=</tt> <tt class="py-name">True</tt>  <tt class="py-keyword">if</tt> <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">quiet</tt>  <tt class="py-keyword">else</tt> <tt class="py-name">False</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">_syslog</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> <tt class="py-keyword">if</tt> <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">syslog</tt> <tt class="py-keyword">else</tt> <tt class="py-name">True</tt>         </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt id="link-50" class="py-name"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-50', 'logger', 'link-38');">logger</a></tt> <tt class="py-op">=</tt> <tt class="py-name">mlogger</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-51', 'logger', 'link-38');">logger</a></tt><tt class="py-op">(</tt><tt class="py-string">'mm'</tt><tt class="py-op">,</tt> <tt class="py-name">include_console</tt> <tt class="py-op">=</tt> <tt class="py-name">_quiet</tt><tt class="py-op">,</tt> <tt class="py-name">include_syslog</tt> <tt class="py-op">=</tt> <tt class="py-name">_syslog</tt> <tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt id="link-52" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-52', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-53', 'logger', 'link-38');">logger</a></tt> <tt class="py-op">=</tt> <tt id="link-54" class="py-name"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-54', 'logger', 'link-38');">logger</a></tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-55', 'logger', 'link-38');">logger</a></tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="jld.tools.logger
+jld.tools.logger.logger" class="py-name" href="#" onclick="return doclink('link-56', 'logger', 'link-38');">logger</a></tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-comment"># == configuration ==</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># Process options from the command line:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  If an option is missing from the command line, look for it</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  in the registry.Use conditional 'setKey' if we have valid </tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  overriding values (i.e. not None) to update the registry.</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  Finally, for missing parameters, look for defaults.</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># PRECEDENCE:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  1) Command Line</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  2) Registry</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  3) Defaults</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># ===================</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">r</tt> <tt class="py-op">=</tt> <tt id="link-57" class="py-name"><a title="jld.registry.Registry.reg" class="py-name" href="#" onclick="return doclink('link-57', 'reg', 'link-18');">reg</a></tt><tt class="py-op">.</tt><tt id="link-58" class="py-name" targets="Class jld.registry.Registry=jld.registry.Registry-class.html"><a title="jld.registry.Registry" class="py-name" href="#" onclick="return doclink('link-58', 'Registry', 'link-58');">Registry</a></tt><tt class="py-op">(</tt><tt class="py-string">'mindmeister'</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.updateRegistry()=jld.tools.cmd_ui.UIBase-class.html#updateRegistry"><a title="jld.tools.cmd_ui.UIBase.updateRegistry" class="py-name" href="#" onclick="return doclink('link-59', 'updateRegistry', 'link-59');">updateRegistry</a></tt><tt class="py-op">(</tt><tt class="py-name">r</tt><tt class="py-op">,</tt> <tt id="link-60" class="py-name"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-60', '_options', 'link-39');">_options</a></tt><tt class="py-op">,</tt> <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">         </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">         </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-comment"># integrate options which aren't subjected to the registry</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.integrateOptions()=jld.tools.cmd_ui.UIBase-class.html#integrateOptions"><a title="jld.tools.cmd_ui.UIBase.integrateOptions" class="py-name" href="#" onclick="return doclink('link-61', 'integrateOptions', 'link-61');">integrateOptions</a></tt><tt class="py-op">(</tt><tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt id="link-62" class="py-name"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-62', '_options', 'link-39');">_options</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">         </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-comment"># integrate default config</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">defs</tt> <tt class="py-op">=</tt> <tt class="py-name">mdef</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Class jld.backup.mindmeister_defaults.MM_Defaults=jld.backup.mindmeister_defaults.MM_Defaults-class.html"><a title="jld.backup.mindmeister_defaults.MM_Defaults" class="py-name" href="#" onclick="return doclink('link-63', 'MM_Defaults', 'link-63');">MM_Defaults</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.integrateDefaults()=jld.tools.cmd_ui.UIBase-class.html#integrateDefaults"><a title="jld.tools.cmd_ui.UIBase.integrateDefaults" class="py-name" href="#" onclick="return doclink('link-64', 'integrateDefaults', 'link-64');">integrateDefaults</a></tt><tt class="py-op">(</tt><tt class="py-name">defs</tt><tt class="py-op">,</tt> <tt class="py-name">r</tt><tt class="py-op">,</tt> <tt id="link-65" class="py-name"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-65', '_options', 'link-39');">_options</a></tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-comment"># Verify parameter type</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.verifyType()=jld.tools.cmd_ui.UIBase-class.html#verifyType"><a title="jld.tools.cmd_ui.UIBase.verifyType" class="py-name" href="#" onclick="return doclink('link-66', 'verifyType', 'link-66');">verifyType</a></tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> <tt id="link-67" class="py-name"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-67', '_options', 'link-39');">_options</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">         </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-comment"># Configure Backup cmd object</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.copyOptions()=jld.tools.cmd_ui.UIBase-class.html#copyOptions"><a title="jld.tools.cmd_ui.UIBase.copyOptions" class="py-name" href="#" onclick="return doclink('link-68', 'copyOptions', 'link-68');">copyOptions</a></tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> <tt id="link-69" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-69', 'backup', 'link-20');">backup</a></tt><tt class="py-op">,</tt> <tt id="link-70" class="py-name"><a title="jld.backup.delicious._options
+jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-70', '_options', 'link-39');">_options</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">         </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-comment"># == command validation ==</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># ========================</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt>        </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt id="link-71" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-71', 'backup', 'link-20');">backup</a></tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Method jld.cmd.BaseCmd.validateCommand()=jld.cmd.BaseCmd-class.html#validateCommand"><a title="jld.cmd.BaseCmd.validateCommand" class="py-name" href="#" onclick="return doclink('link-72', 'validateCommand', 'link-72');">validateCommand</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt><tt class="py-op">)</tt>        </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                  </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-comment"># get rid of command from the arg list</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.popArg()=jld.tools.cmd_ui.UIBase-class.html#popArg"><a title="jld.tools.cmd_ui.UIBase.popArg" class="py-name" href="#" onclick="return doclink('link-73', 'popArg', 'link-73');">popArg</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-comment"># == DISPATCHER ==</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># ================</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">getattr</tt><tt class="py-op">(</tt> <tt id="link-74" class="py-name"><a title="jld.backup" class="py-name" href="#" onclick="return doclink('link-74', 'backup', 'link-20');">backup</a></tt><tt class="py-op">,</tt> <tt class="py-string">"cmd_%s"</tt> <tt class="py-op">%</tt> <tt class="py-name">command</tt> <tt class="py-op">)</tt><tt class="py-op">(</tt><tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">         </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.handleError()=jld.tools.cmd_ui.UIBase-class.html#handleError"><a title="jld.tools.cmd_ui.UIBase.handleError" class="py-name" href="#" onclick="return doclink('link-75', 'handleError', 'link-75');">handleError</a></tt><tt class="py-op">(</tt> <tt class="py-name">e</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">         </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">    <tt class="py-comment"># === END ===</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-comment"># =======================================================================</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt><tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt>    </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt id="link-76" class="py-name" targets="Function jld.backup.delicious.main()=jld.backup.delicious-module.html#main,Function jld.backup.mm.main()=jld.backup.mm-module.html#main,Function jld.backup.mmd.main()=jld.backup.mmd-module.html#main"><a title="jld.backup.delicious.main
+jld.backup.mm.main
+jld.backup.mmd.main" class="py-name" href="#" onclick="return doclink('link-76', 'main', 'link-76');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Dec 11 14:16:36 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

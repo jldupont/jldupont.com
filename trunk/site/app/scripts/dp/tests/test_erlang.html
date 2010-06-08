@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <link type="text/css" rel="stylesheet" href="../SyntaxHighlighter.css"></link>
+</head>
+<body>
+<pre name="code" class="erlang">
+%% Author: Jean-Lou Dupont
+%% Created: 2009-06-19
+%% Description: Phidget InterfaceKit driver
+%%
+%% MESSAGES GENERATED:
+%% ===================
+%% {phidgeterror, {{Serial, Code, String},                  date(), time(), now() }}
+%% {device,       {{Serial,Type,State, Version,Name,Label}, date(), time(), now() }}
+%% {din,          {{Serial, Index, Value},                  date(), time(), now() }}
+%% {dout,         {{Serial, Index, Value},                  date(), time(), now() }}
+%% {sout,         {{Serial, Index, Value},                  date(), time(), now() }}
+%%
+%%
+%% SUBSCRIPTIONS:
+%% ==============
+-module(ifk).
+
+%%
+%% MACROS
+%%
+-define(DRV_IFK_DEBUG, "pem_drv_ifk_debug").
+-define(DRV_IFK,       "pem_drv_ifk").
+
+-define(SUBS,          [phidgetdevice]).
+
+%%
+%% Exported Functions
+%%
+-export([
+	 start_link/0,		 
+	 start_link/1,	 
+	 stop/0
+        ]).
+
+-export([
+		 loop/0,
+		 loop_handler/1,
+		 handle_phidgetdevice/2,
+		 filter_device/4,
+		 handle_ifk/3,
+		 handle_active/2,
+		 handle_active/4,
+		 handle_inactive/2,
+		 handle_inactive/4,
+		 ifk_drv/2,
+		 send_to_reflector/1,
+		 handle_crashed_driver/1,
+		 clean_driver/1
+		 ]).
+
+%% =============
+%% API Functions
+%% =============
+start_link() ->
+	start_link([]).
+
+start_link(Args) ->
+		
+	{debug, Debug}=base:kfind(debug, Args,false),
+	DrvPath = base:pole(Debug, true, false, ?DRV_IFK_DEBUG, ?DRV_IFK),			
+	LD = [{driver_path, DrvPath}],
+	NArgs = lists:append(Args, LD),
+	
+	base:ilog(?MODULE, "start_link: Args[~p]~n",[NArgs]),
+
+	Pid = spawn_link(?MODULE, loop, []),
+	register( ?MODULE, Pid ),
+	
+	?MODULE ! {args, NArgs},
+	{ok, Pid}.
+
+stop() ->
+	?MODULE ! stop.
+
+%% =====================================================
+%% MAIN LOOP
+%% =====================================================
+loop() ->
+	receive
+		
+		%% Send the 'ready' signal
+		{args, Args} ->
+			put(args, Args),
+			{driver_path, DrvPath} = base:kfind(driver_path, Args),
+			put(driver_path, DrvPath),
+			switch:subscribe(?MODULE, ?SUBS);
+		
+		%% Send the 'ready' signal
+		{switch, subscribed} ->
+			%%base:ilog(?MODULE, "subscribed~n",[]),
+			switch:publish(?MODULE, ready, self());
+		
+		
+		stop ->
+			base:ilog(?MODULE, "exiting~n", []),
+			exit(ok);
+
+		
+		%%verify that it is an "InterfaceKit" device
+		{_From, phidgetdevice, {M, Ts}} ->
+			%%base:ilog(?MODULE,"received 'phidgetdevice'~n", []),
+			handle_phidgetdevice(M, Ts);
+		
+		{driver, Serial, Port, Pid} ->
+			base:ilog(?MODULE,"received driver info, Serial[~p] Port[~p] Pid[~p]~n", [Serial, Port, Pid]),
+			put({port,  Serial}, Port),
+			put({pid,   Serial}, Pid),
+			put({serial, Port},  Serial);
+		
+		{crashed, Port} ->
+			clean_driver(Port);
+		
+		%%don't know what todo
+		Other ->
+			base:ilog(?MODULE,"received unknown msg: [~p]~n", [Other])
+	
+	end,
+	?MODULE:loop().
+
+clean_driver(undefined) ->
+	base:ilog(?MODULE, "clean_driver: received undefined", []);
+
+clean_driver(Port) ->
+	Serial = get({serial, Port}),
+	base:ilog(?MODULE, "clean_driver: Serial[~p] Port[~p]~n", [Serial, Port]),
+	erase({port, Serial}),
+	erase({pid, Serial}),
+	erase({serial, Port}).
+
+
+
+
+%% =====================
+%% HANDLER
+%% =====================
+handle_phidgetdevice(Msg, Ts) ->
+	%error_logger:info_msg("~p: handle_phidgetdevice, Msg[~p]~n", [?MODULE, Msg]),
+	{Serial, Type, State} = Msg,
+	filter_device(Serial, Type, State, Ts).
+
+% we just want the InterfaceKit devices!
+filter_device(Serial, Type, State, Ts) ->
+	case Type of
+		"PhidgetInterfaceKit" ->
+			handle_ifk(Serial, State,Ts);
+	
+		_ ->
+			notifk
+	end.
+
+%% Spawn 1 driver for each InterfaceKit device in "active" state
+%%  and get rid of detached device(s)
+handle_ifk(Serial, inactive, Ts) ->
+	handle_inactive(Serial, Ts),
+	ok;
+
+handle_ifk(Serial, active, Ts) ->
+	%error_logger:info_msg("~p: handle_ifk: Serial[~p] active~n", [?MODULE, Serial]),
+	handle_active(Serial, Ts),
+	ok;
+
+handle_ifk(Serial, State, _) ->
+	base:elog(?MODULE, "handle_ifk: Serial[~p] INVALID STATE[~p]~n", [Serial, State]),
+	ok.
+
+
+%% Open the driver if not already done
+handle_active(Serial, Ts) ->
+	Port = get({port, Serial}),
+	Pid  = get({pid,  Serial}),
+	handle_active(Serial, Port, Pid, Ts).
+
+handle_active(Serial, _, undefined, Ts) ->
+	handle_active(Serial, undefined, invalid, Ts);
+
+% not sure this one is required
+handle_active(Serial, undefined, undefined, Ts) ->
+	handle_active(Serial, undefined, invalid, Ts);
+
+
+% Not active... yet
+handle_active(Serial, undefined, invalid, _Ts) ->
+	DriverPath = get(driver_path),
+	%%error_logger:info_msg("~p: handle_active: DriverPath[~p]~n", [?MODULE, DriverPath]),
+	Pid = spawn(?MODULE, ifk_drv, [DriverPath, Serial]),
+	base:ilog(?MODULE, "handle_active: Serial[~p] Pid[~p]~n", [Serial, Pid]),	
+	ok;
+
+
+% Is it really active?
+handle_active(Serial, _Port, Pid, Ts) ->
+	Active = is_process_alive(Pid),
+	case Active of
+		true ->
+			ok;
+		false ->
+			% clean-up required!
+			erase({pid, Serial}),
+			erase({port, Serial}),
+			handle_active(Serial, undefined, undefined, Ts)
+	end.
+
+
+%% Close the driver if still active
+handle_inactive(Serial, Ts) ->
+	Port = get({port, Serial}),
+	Pid  = get({pid, Serial}),
+	handle_inactive(Serial, Port, Pid, Ts),
+	ok.
+
+%not even defined it seems... nothing much to do
+handle_inactive(_Serial, undefined, _, _) ->
+	ok;
+
+handle_inactive(_Serial, _, undefined, _) ->
+	ok;
+
+handle_inactive(Serial, Port, Pid, _Ts) ->
+	Active = is_process_alive(Pid),
+	case Active of
+		true ->
+			erlang:port_close(Port),
+			erlang:exit(Pid, kill),
+			erase({port, Serial}),
+			erase({pid,  Serial}),
+			ok;
+		false ->
+			ok
+	end,
+	ok.
+
+ifk_drv(ExtPrg, Serial) ->
+	%%error_logger:info_msg("~p:ifk_drv: Serial[~p] Pid[~p]~n",[?MODULE, Serial, self()]),
+    process_flag(trap_exit, true),
+	Param = erlang:integer_to_list(Serial),
+	Port = open_port({spawn, ExtPrg++" "++Param}, [{packet, 2}, binary, exit_status]),
+	error_logger:info_msg("~p: ifk_drv: Serial[~p] Port[~p] Pid[~p]~n",[?MODULE, Serial, Port, self()]),
+	put({port,   Serial}, Port),
+	put({serial, Port},   Serial),
+	
+	% signal back some useful mapping
+	?MODULE ! {driver, Serial, Port, self()},
+	loop_handler(Port).
+
+
+%% =====================
+%% IFK DRIVER loop
+%% =====================
+
+
+loop_handler(Port) ->
+	receive
+			
+		{Port, {exit_status, _}} ->
+			base:elog(?MODULE, "loop_handler: an ifk driver exited/could not load~n", []),
+			handle_crashed_driver(Port),
+			exit(crashed);
+			
+			
+		{Port, {data, Data}} ->
+			Decoded = binary_to_term(Data),
+			%%base:ilog(?MODULE, "loop_handler: decoded msg[~p]~n", [Decoded]),
+			send_to_reflector(Decoded);
+		
+		Msg ->
+			base:ilog(?MODULE,"loop_handler: msg[~p]~n", [Msg])
+	end,
+	loop_handler(Port).
+
+
+send_to_reflector(Decoded) ->
+	{Msgtype, Msg} = Decoded,
+	M = {Msg, {date(), time(), now()}},
+	switch:publish(?MODULE, Msgtype, M).
+
+
+%% =======================
+%% CRASHED DRIVER RECOVERY
+%% =======================
+
+
+handle_crashed_driver(Port) ->
+	error_logger:warning_msg("~p: handle_crashed_driver: Port[~p] Pid[~p]~n", [?MODULE, Port, self()]),
+	?MODULE ! {crashed, Port}.
+
+</pre>
+
+<script class="javascript" src="../shCore.js"></script>
+<script class="javascript" src="../shBrushErlang.js"></script>
+<script class="javascript">
+      if(window.isBloggerMode == true)
+      dp.SyntaxHighlighter.BloggerMode();
+      
+      dp.SyntaxHighlighter.ClipboardSwf = '../clipboard.swf';
+      dp.SyntaxHighlighter.HighlightAll('code');
+    </script>
+</body>

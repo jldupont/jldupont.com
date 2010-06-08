@@ -1,0 +1,22 @@
+<html>
+ <!--
+ 	@title  Auto-Reload
+ 	@author Jean-Lou Dupont
+ 	@desc   Background page for Auto-Reload
+  -->
+	<head>
+		<script>
+			var pageActionId = "stackoverflow";
+			var icon_id=0;
+			chrome.extension.onConnect.addListener(function(port) {
+				console.log("* Stackoverflow");
+		        chrome.pageActions.enableForTab(
+			            pageActionId, { tabId:  port.tab.id,
+			            				url:    port.tab.url,
+										title:  "Stackoverflow Tweaks",
+										iconId: icon_id});				
+			});
+
+		</script>
+	</head>
+</html>

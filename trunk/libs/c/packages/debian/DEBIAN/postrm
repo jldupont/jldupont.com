@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+"""
+	@author: Jean-Lou Dupont
+"""
+
+import os
+import sys
+
+cwd     = os.getcwd()
+id      = "$Id: postrm 915 2009-05-22 17:50:49Z JeanLou.Dupont $"
+
+print "LITM: cwd[%s] id[%s]" % (cwd, id)
+
+try:
+	command = sys.argv[1]
+	print "LITM: postrm: command[%s]" % command
+	
+	dst = '/usr/lib/liblitm.so'
+	ddst = '/usr/lib/liblitm_debug.so'
+	
+	print "LITM: removing symlink [%s]" % dst
+	os.remove( dst );
+
+	print "LITM: removing symlink [%s]" % ddst
+	os.remove( ddst );
+	
+except:
+	pass
+
+sys.exit(0)

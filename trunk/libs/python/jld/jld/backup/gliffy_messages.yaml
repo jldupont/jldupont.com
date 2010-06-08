@@ -1,0 +1,64 @@
+# YAML messages
+# for Gliffy backup utility
+# @author: Jean-Lou Dupont
+
+# Reporting related
+report_import: cmd[import] Total[%(total)04d]   Updated[%(updated)04d]  Created[%(created)04d]
+report_export: cmd[export] Total[%(total)04d] Successes[%(successes)04d] Failures[%(failures)04d]
+report_export_one: Exporting diagram[$id]
+
+# CONFIG related
+# ==============
+config_dlc_db_file: configure Delicious database filesystem path
+config_glf_db_file: configure Gliffy database filesystem path
+config_export_path: configure filesystem path for exports
+config_export_maxnum: configuration the maximum number of exports per run
+error_load_file: error occured whilst file [$path]
+
+syslog: syslog disable mode
+configuration: configuration
+reg_update_error: Unable to update registry
+invalid_command: Invalid command [$cmd]
+use_help: Please use '-h' for help
+
+# Errors / Exceptions
+# ===================
+error_expecting_href: Expecting HREF parameter in the bookmark entry
+error_config_type: Parameter [$key] should be of type[$type] 
+error_update_db: Error whilst updating the database
+error_cant_write: Error whilst writing to [$path]
+error_create_folder: Error whilst creating folder
+error_init_folder: Error whilst accessing folder
+error_config: Configuration error, parameter[$param]
+error_command: Invalid command [$cmd]
+error_db: Error whilst creating the database file [$file]
+error_network: Network error, code[$code]
+error_access: Access error
+error_object: Object access error
+error_method: API method access error
+error_validation: Parameter validation error
+error_property: Property error
+error_protocol: Protocol level error
+error_registry: Registry level error
+error_validation_parameter: Parameter validation error [$param]
+missing_param: Missing parameter.
+unhandled_exception: An unhandled exception occured [$exc]
+
+# HELP
+# ====
+help_command: Use -h to review commands
+help_db: Is the filesystem path specified by the -f option accessible?
+help_network: Maybe check the access to the Internet?
+help_access: Is the proper access right in place?
+help_method: Has the Gliffy API changed?
+help_validation: Check documentation (missing [$param])
+help_protocol: Has the MindMeister API changed? [expecting '$param']
+help_registry_win: The registry key HKEY_LOCAL_MACHINE/Software/Python/Registry can't be accessed 
+help_registry_nix: The filesystem path /etc/python/registry can't be accessed
+
+# PRINTER related
+# ===============
+tbl_header_config: Configuration
+tbl_footer_config: ==end==
+tbl_header_diagrams: Diagrams
+tbl_footer_diagrams: ==end==

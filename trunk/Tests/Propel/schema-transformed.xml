@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultPhpNamingMethod="underscore" heavyIndexing="false" name="test_propel" defaultIdMethod="native"><table skipSql="false" abstract="false" name="user" description="User Table"><column lazyLoad="false" name="id" required="true" primaryKey="true" autoIncrement="true" type="INTEGER" description="User Id"/><column primaryKey="false" autoIncrement="false" lazyLoad="false" size="255" name="name" type="VARCHAR" required="true" description="User Name"/></table></database>

@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jld.api.mindmeister_response</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="jld-module.html">Package&nbsp;jld</a> ::
+        <a href="jld.api-module.html">Package&nbsp;api</a> ::
+        Module&nbsp;mindmeister_response
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="jld.api.mindmeister_response-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="jld.api.mindmeister_response-module.html">Module jld.api.mindmeister_response</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">""" MindMeister WEB Service API</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">    Change List:</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">     - Added 'public' attribute to the getlist method</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable jld.__author__=jld-module.html#__author__,Variable jld.api.__author__=jld.api-module.html#__author__,Variable jld.api.delicious.__author__=jld.api.delicious-module.html#__author__,Variable jld.api.delicious_objects.__author__=jld.api.delicious_objects-module.html#__author__,Variable jld.backup.delicious.__author__=jld.backup.delicious-module.html#__author__,Variable jld.backup.delicious_db.__author__=jld.backup.delicious_db-module.html#__author__,Variable jld.backup.delicious_defaults.__author__=jld.backup.delicious_defaults-module.html#__author__,Variable jld.backup.delicious_printer.__author__=jld.backup.delicious_printer-module.html#__author__,Variable jld.backup.delicious_ui.__author__=jld.backup.delicious_ui-module.html#__author__,Variable jld.backup.mindmeister_db.__author__=jld.backup.mindmeister_db-module.html#__author__,Variable jld.backup.mindmeister_defaults.__author__=jld.backup.mindmeister_defaults-module.html#__author__,Variable jld.backup.mindmeister_logger.__author__=jld.backup.mindmeister_logger-module.html#__author__,Variable jld.backup.mindmeister_printer.__author__=jld.backup.mindmeister_printer-module.html#__author__,Variable jld.backup.mindmeister_ui.__author__=jld.backup.mindmeister_ui-module.html#__author__,Variable jld.backup.mmd.__author__=jld.backup.mmd-module.html#__author__,Variable jld.cmd.__author__=jld.cmd-module.html#__author__,Variable jld.gdata.docs.__author__=jld.gdata.docs-module.html#__author__,Variable jld.tools.cmd_ui.__author__=jld.tools.cmd_ui-module.html#__author__,Variable jld.tools.daemon.__author__=jld.tools.daemon-module.html#__author__,Variable jld.tools.date.__author__=jld.tools.date-module.html#__author__,Variable jld.tools.db.__author__=jld.tools.db-module.html#__author__,Variable jld.tools.klass.__author__=jld.tools.klass-module.html#__author__,Variable jld.tools.logger.__author__=jld.tools.logger-module.html#__author__,Variable jld.tools.mos.__author__=jld.tools.mos-module.html#__author__,Variable jld.tools.printer.__author__=jld.tools.printer-module.html#__author__,Variable jld.tools.process.__author__=jld.tools.process-module.html#__author__"><a title="jld.__author__
+jld.api.__author__
+jld.api.delicious.__author__
+jld.api.delicious_objects.__author__
+jld.backup.delicious.__author__
+jld.backup.delicious_db.__author__
+jld.backup.delicious_defaults.__author__
+jld.backup.delicious_printer.__author__
+jld.backup.delicious_ui.__author__
+jld.backup.mindmeister_db.__author__
+jld.backup.mindmeister_defaults.__author__
+jld.backup.mindmeister_logger.__author__
+jld.backup.mindmeister_printer.__author__
+jld.backup.mindmeister_ui.__author__
+jld.backup.mmd.__author__
+jld.cmd.__author__
+jld.gdata.docs.__author__
+jld.tools.cmd_ui.__author__
+jld.tools.daemon.__author__
+jld.tools.date.__author__
+jld.tools.db.__author__
+jld.tools.klass.__author__
+jld.tools.logger.__author__
+jld.tools.mos.__author__
+jld.tools.printer.__author__
+jld.tools.process.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Jean-Lou Dupont"</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-name">__version__</tt><tt class="py-op">=</tt> <tt class="py-string">"$Id: jld.api.mindmeister_response-pysrc.html 746 2008-12-16 01:56:07Z JeanLou.Dupont $"</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Package jld=jld-module.html"><a title="jld" class="py-name" href="#" onclick="return doclink('link-1', 'jld', 'link-1');">jld</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Package jld.api=jld.api-module.html"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-2', 'api', 'link-2');">api</a></tt> <tt class="py-keyword">as</tt> <tt id="link-3" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-3', 'api', 'link-2');">api</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">xml</tt><tt class="py-op">.</tt><tt class="py-name">dom</tt> <tt class="py-keyword">import</tt> <tt class="py-name">minidom</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="MM_ResponseBase"></a><div id="MM_ResponseBase-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="MM_ResponseBase-toggle" onclick="return toggle('MM_ResponseBase');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_ResponseBase-class.html">MM_ResponseBase</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_ResponseBase-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MM_ResponseBase-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-docstring">""" Base class response</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable jld.api.mindmeister_response.MM_ResponseBase.MM_ErrorCodes=jld.api.mindmeister_response.MM_ResponseBase-class.html#MM_ErrorCodes"><a title="jld.api.mindmeister_response.MM_ResponseBase.MM_ErrorCodes" class="py-name" href="#" onclick="return doclink('link-4', 'MM_ErrorCodes', 'link-4');">MM_ErrorCodes</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt>  </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">                     <tt class="py-string">'20'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Object not found"</tt><tt class="py-op">,</tt>                                                  <tt id="link-5" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-5', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Class jld.api.ErrorObject=jld.api.ErrorObject-class.html"><a title="jld.api.ErrorObject" class="py-name" href="#" onclick="return doclink('link-6', 'ErrorObject', 'link-6');">ErrorObject</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">                     <tt class="py-string">'21'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Collaborators and Viewers empty"</tt><tt class="py-op">,</tt>                                   <tt id="link-7" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-7', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Class jld.api.ErrorValidation=jld.api.ErrorValidation-class.html"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-8', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">                     <tt class="py-string">'22'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Invalid email"</tt><tt class="py-op">,</tt>                                                     <tt id="link-9" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-9', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-10', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt>    </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">                     <tt class="py-string">'24'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Parameter x_pos and/or y_pos"</tt><tt class="py-op">,</tt>                                      <tt id="link-11" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-11', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-12', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">                     <tt class="py-string">'25'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Not privileged: the API key is not authorized for the action"</tt><tt class="py-op">,</tt>      <tt id="link-13" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-13', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Class jld.api.ErrorAccess=jld.api.ErrorAccess-class.html"><a title="jld.api.ErrorAccess" class="py-name" href="#" onclick="return doclink('link-14', 'ErrorAccess', 'link-14');">ErrorAccess</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">                     <tt class="py-string">'26'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"User login already taken"</tt><tt class="py-op">,</tt>                                          <tt id="link-15" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-15', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-16', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">                     <tt class="py-string">'27'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Email already taken"</tt><tt class="py-op">,</tt>                                               <tt id="link-17" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-17', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-18', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">                     <tt class="py-string">'28'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Password and confirmation do not match"</tt><tt class="py-op">,</tt>                            <tt id="link-19" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-19', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-20', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">                     <tt class="py-string">'29'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Password or email too short"</tt><tt class="py-op">,</tt>                                       <tt id="link-21" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-21', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="jld.api.ErrorValidation" class="py-name" href="#" onclick="return doclink('link-22', 'ErrorValidation', 'link-8');">ErrorValidation</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">                     <tt class="py-string">'30'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Subsharing not activated for map"</tt><tt class="py-op">,</tt>                                  <tt id="link-23" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-23', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Class jld.api.ErrorProperty=jld.api.ErrorProperty-class.html"><a title="jld.api.ErrorProperty" class="py-name" href="#" onclick="return doclink('link-24', 'ErrorProperty', 'link-24');">ErrorProperty</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">                     <tt class="py-string">'31'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"No default map defined"</tt><tt class="py-op">,</tt>                                            <tt id="link-25" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-25', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="jld.api.ErrorProperty" class="py-name" href="#" onclick="return doclink('link-26', 'ErrorProperty', 'link-24');">ErrorProperty</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">                     <tt class="py-string">'32'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"No write access on map"</tt><tt class="py-op">,</tt>                                            <tt id="link-27" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-27', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="jld.api.ErrorAccess" class="py-name" href="#" onclick="return doclink('link-28', 'ErrorAccess', 'link-14');">ErrorAccess</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">                     <tt class="py-string">'95'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Not premium: user must have a premium account"</tt><tt class="py-op">,</tt>                     <tt id="link-29" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-29', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="jld.api.ErrorAccess" class="py-name" href="#" onclick="return doclink('link-30', 'ErrorAccess', 'link-14');">ErrorAccess</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">                     <tt class="py-string">'96'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Invalid signature"</tt><tt class="py-op">,</tt>                                                 <tt id="link-31" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-31', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Class jld.api.ErrorAuth=jld.api.ErrorAuth-class.html"><a title="jld.api.ErrorAuth" class="py-name" href="#" onclick="return doclink('link-32', 'ErrorAuth', 'link-32');">ErrorAuth</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">                     <tt class="py-string">'97'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Missing signature"</tt><tt class="py-op">,</tt>                                                 <tt id="link-33" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-33', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="jld.api.ErrorAuth" class="py-name" href="#" onclick="return doclink('link-34', 'ErrorAuth', 'link-32');">ErrorAuth</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">                     <tt class="py-string">'98'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"Login failed"</tt><tt class="py-op">,</tt>                                                      <tt id="link-35" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-35', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="jld.api.ErrorAuth" class="py-name" href="#" onclick="return doclink('link-36', 'ErrorAuth', 'link-32');">ErrorAuth</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">                     <tt class="py-string">'99'</tt><tt class="py-op">:</tt>  <tt class="py-op">(</tt><tt class="py-string">"The method requires authentication"</tt><tt class="py-op">,</tt>                                <tt id="link-37" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-37', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="jld.api.ErrorAuth" class="py-name" href="#" onclick="return doclink('link-38', 'ErrorAuth', 'link-32');">ErrorAuth</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">                     <tt class="py-string">'100'</tt><tt class="py-op">:</tt> <tt class="py-op">(</tt><tt class="py-string">"Invalid API key"</tt><tt class="py-op">,</tt>                                                   <tt id="link-39" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-39', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="jld.api.ErrorAuth" class="py-name" href="#" onclick="return doclink('link-40', 'ErrorAuth', 'link-32');">ErrorAuth</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">                     <tt class="py-string">'112'</tt><tt class="py-op">:</tt> <tt class="py-op">(</tt><tt class="py-string">"Method not found"</tt><tt class="py-op">,</tt>                                                  <tt id="link-41" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-41', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Class jld.api.ErrorMethod=jld.api.ErrorMethod-class.html"><a title="jld.api.ErrorMethod" class="py-name" href="#" onclick="return doclink('link-42', 'ErrorMethod', 'link-42');">ErrorMethod</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">                      </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-op">}</tt>  </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="MM_ResponseBase.__init__"></a><div id="MM_ResponseBase.__init__-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="MM_ResponseBase.__init__-toggle" onclick="return toggle('MM_ResponseBase.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_ResponseBase-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_ResponseBase.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_ResponseBase.__init__-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">code</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt>   <tt class="py-comment">#error code</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">error</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt>  <tt class="py-comment">#error message</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Method jld.api.mindmeister_response.MM_ResponseBase._extractErrorCode()=jld.api.mindmeister_response.MM_ResponseBase-class.html#_extractErrorCode"><a title="jld.api.mindmeister_response.MM_ResponseBase._extractErrorCode" class="py-name" href="#" onclick="return doclink('link-43', '_extractErrorCode', 'link-43');">_extractErrorCode</a></tt><tt class="py-op">(</tt><tt class="py-name">raw</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">         </tt>
+<a name="MM_ResponseBase._extractErrorCode"></a><div id="MM_ResponseBase._extractErrorCode-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="MM_ResponseBase._extractErrorCode-toggle" onclick="return toggle('MM_ResponseBase._extractErrorCode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_ResponseBase-class.html#_extractErrorCode">_extractErrorCode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_ResponseBase._extractErrorCode-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_ResponseBase._extractErrorCode-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-docstring">""" Extract the &lt;err code="" ..&gt; section</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">            and raises and appropriate exception if need be</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-name">e</tt> <tt class="py-op">=</tt> <tt class="py-name">minidom</tt><tt class="py-op">.</tt><tt class="py-name">parseString</tt><tt class="py-op">(</tt><tt class="py-name">raw</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">documentElement</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">            <tt class="py-name">err</tt> <tt class="py-op">=</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'err'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">code</tt> <tt class="py-op">=</tt> <tt class="py-name">err</tt><tt class="py-op">.</tt><tt class="py-name">getAttribute</tt><tt class="py-op">(</tt><tt class="py-string">'code'</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt class="py-name">err</tt><tt class="py-op">.</tt><tt class="py-name">getAttribute</tt><tt class="py-op">(</tt><tt class="py-string">'msg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-comment">#No error code found</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">         </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-comment"># generate appropriate exception</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method jld.api.mindmeister_response.MM_ResponseBase._codeToException()=jld.api.mindmeister_response.MM_ResponseBase-class.html#_codeToException"><a title="jld.api.mindmeister_response.MM_ResponseBase._codeToException" class="py-name" href="#" onclick="return doclink('link-44', '_codeToException', 'link-44');">_codeToException</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">code</tt><tt class="py-op">,</tt> <tt class="py-name">msg</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">             </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                     </tt>
+<a name="MM_ResponseBase._codeToException"></a><div id="MM_ResponseBase._codeToException-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="MM_ResponseBase._codeToException-toggle" onclick="return toggle('MM_ResponseBase._codeToException');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_ResponseBase-class.html#_codeToException">_codeToException</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">code</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_ResponseBase._codeToException-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_ResponseBase._codeToException-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-docstring">""" Raises a correlated exception</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="jld.api.mindmeister_response.MM_ResponseBase.MM_ErrorCodes" class="py-name" href="#" onclick="return doclink('link-45', 'MM_ErrorCodes', 'link-4');">MM_ErrorCodes</a></tt><tt class="py-op">.</tt><tt class="py-name">has_key</tt><tt class="py-op">(</tt> <tt class="py-name">code</tt> <tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">'Found an undocumented Exception Code [%s] [%s]'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">code</tt><tt class="py-op">,</tt><tt class="py-name">msg</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">         </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-comment">#RAISE!</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">raise</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="jld.api.mindmeister_response.MM_ResponseBase.MM_ErrorCodes" class="py-name" href="#" onclick="return doclink('link-46', 'MM_ErrorCodes', 'link-4');">MM_ErrorCodes</a></tt><tt class="py-op">[</tt><tt class="py-name">code</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">         </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">             </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">         </tt>
+<a name="MM_ResponseBasic"></a><div id="MM_ResponseBasic-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="MM_ResponseBasic-toggle" onclick="return toggle('MM_ResponseBasic');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_ResponseBasic-class.html">MM_ResponseBasic</a><tt class="py-op">(</tt><tt class="py-base-class">MM_ResponseBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_ResponseBasic-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MM_ResponseBasic-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-docstring">""" Basic response</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        Used for testing purpose only</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="MM_ResponseBasic.__init__"></a><div id="MM_ResponseBasic.__init__-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="MM_ResponseBasic.__init__-toggle" onclick="return toggle('MM_ResponseBasic.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_ResponseBasic-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_ResponseBasic.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_ResponseBasic.__init__-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt id="link-47" class="py-name" targets="Class jld.api.mindmeister_response.MM_ResponseBase=jld.api.mindmeister_response.MM_ResponseBase-class.html"><a title="jld.api.mindmeister_response.MM_ResponseBase" class="py-name" href="#" onclick="return doclink('link-47', 'MM_ResponseBase', 'link-47');">MM_ResponseBase</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method jld.api.ErrorGeneric.__init__()=jld.api.ErrorGeneric-class.html#__init__,Method jld.api.delicious.Api.__init__()=jld.api.delicious.Api-class.html#__init__,Method jld.api.delicious.Client.__init__()=jld.api.delicious.Client-class.html#__init__,Method jld.api.delicious.Waiter.__init__()=jld.api.delicious.Waiter-class.html#__init__,Method jld.api.mindmeister.MM.__init__()=jld.api.mindmeister.MM-class.html#__init__,Method jld.api.mindmeister.MM_Client.__init__()=jld.api.mindmeister.MM_Client-class.html#__init__,Method jld.api.mindmeister_response.MM_ResponseBase.__init__()=jld.api.mindmeister_response.MM_ResponseBase-class.html#__init__,Method jld.api.mindmeister_response.MM_ResponseBasic.__init__()=jld.api.mindmeister_response.MM_ResponseBasic-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getAuthToken.__init__()=jld.api.mindmeister_response.MM_Response_getAuthToken-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getFrob.__init__()=jld.api.mindmeister_response.MM_Response_getFrob-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getList.__init__()=jld.api.mindmeister_response.MM_Response_getList-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getMapExport.__init__()=jld.api.mindmeister_response.MM_Response_getMapExport-class.html#__init__,Method jld.backup.delicious_backup.Backup.__init__()=jld.backup.delicious_backup.Backup-class.html#__init__,Method jld.backup.delicious_db.Db.__init__()=jld.backup.delicious_db.Db-class.html#__init__,Method jld.backup.delicious_defaults.Delicious_Defaults.__init__()=jld.backup.delicious_defaults.Delicious_Defaults-class.html#__init__,Method jld.backup.delicious_messages.Delicious_Messages.__init__()=jld.backup.delicious_messages.Delicious_Messages-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer.__init__()=jld.backup.delicious_printer.Delicious_Printer-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer_Config.__init__()=jld.backup.delicious_printer.Delicious_Printer_Config-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer_Posts.__init__()=jld.backup.delicious_printer.Delicious_Printer_Posts-class.html#__init__,Method jld.backup.mindmeister_backup.Backup.__init__()=jld.backup.mindmeister_backup.Backup-class.html#__init__,Method jld.backup.mindmeister_db.Db.__init__()=jld.backup.mindmeister_db.Db-class.html#__init__,Method jld.backup.mindmeister_defaults.MM_Defaults.__init__()=jld.backup.mindmeister_defaults.MM_Defaults-class.html#__init__,Method jld.backup.mindmeister_messages.MM_Messages.__init__()=jld.backup.mindmeister_messages.MM_Messages-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer.__init__()=jld.backup.mindmeister_printer.MM_Printer-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Config.__init__()=jld.backup.mindmeister_printer.MM_Printer_Config-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Export.__init__()=jld.backup.mindmeister_printer.MM_Printer_Export-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Maps.__init__()=jld.backup.mindmeister_printer.MM_Printer_Maps-class.html#__init__,Method jld.backup.mmd.mmdCmd.__init__()=jld.backup.mmd.mmdCmd-class.html#__init__,Method jld.backup.mmd.mmdDaemon.__init__()=jld.backup.mmd.mmdDaemon-class.html#__init__,Method jld.backup.mmd.mmdMessages.__init__()=jld.backup.mmd.mmdMessages-class.html#__init__,Method jld.cmd.BaseCmd.__init__()=jld.cmd.BaseCmd-class.html#__init__,Method jld.gdata.docs.RawDoc.__init__()=jld.gdata.docs.RawDoc-class.html#__init__,Method jld.gdata.docs.ResultDoc.__init__()=jld.gdata.docs.ResultDoc-class.html#__init__,Method jld.registry.Registry.__init__()=jld.registry.Registry-class.html#__init__,Method jld.registry.exception.RegistryException.__init__()=jld.registry.exception.RegistryException-class.html#__init__,Method jld.registry.linux.LinuxRegistry.__init__()=jld.registry.linux.LinuxRegistry-class.html#__init__,Method jld.registry.windows.WindowsRegistry.__init__()=jld.registry.windows.WindowsRegistry-class.html#__init__,Method jld.tools.cmd_ui.UIBase.__init__()=jld.tools.cmd_ui.UIBase-class.html#__init__,Method jld.tools.daemon.BaseDaemon.__init__()=jld.tools.daemon.BaseDaemon-class.html#__init__,Method jld.tools.defaults.Defaults.__init__()=jld.tools.defaults.Defaults-class.html#__init__,Method jld.tools.messages.Messages.__init__()=jld.tools.messages.Messages-class.html#__init__,Method jld.tools.printer.BasePrettyPrinter.__init__()=jld.tools.printer.BasePrettyPrinter-class.html#__init__,Method jld.tools.template.ExTemplate.__init__()=jld.tools.template.ExTemplate-class.html#__init__"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_backup.Backup.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.mindmeister_backup.Backup.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.backup.mmd.mmdCmd.__init__
+jld.backup.mmd.mmdDaemon.__init__
+jld.backup.mmd.mmdMessages.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.linux.LinuxRegistry.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.defaults.Defaults.__init__
+jld.tools.messages.Messages.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-48', '__init__', 'link-48');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">raw</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">         </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="MM_Response_getFrob"></a><div id="MM_Response_getFrob-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="MM_Response_getFrob-toggle" onclick="return toggle('MM_Response_getFrob');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getFrob-class.html">MM_Response_getFrob</a><tt class="py-op">(</tt><tt class="py-base-class">MM_ResponseBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getFrob-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MM_Response_getFrob-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-docstring">""" In response to mm.auth.getFrob</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="MM_Response_getFrob.__init__"></a><div id="MM_Response_getFrob.__init__-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="MM_Response_getFrob.__init__-toggle" onclick="return toggle('MM_Response_getFrob.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getFrob-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getFrob.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_Response_getFrob.__init__-expanded"><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt id="link-49" class="py-name"><a title="jld.api.mindmeister_response.MM_ResponseBase" class="py-name" href="#" onclick="return doclink('link-49', 'MM_ResponseBase', 'link-47');">MM_ResponseBase</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_backup.Backup.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.mindmeister_backup.Backup.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.backup.mmd.mmdCmd.__init__
+jld.backup.mmd.mmdDaemon.__init__
+jld.backup.mmd.mmdMessages.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.linux.LinuxRegistry.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.defaults.Defaults.__init__
+jld.tools.messages.Messages.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-50', '__init__', 'link-48');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">raw</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">frob</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-name">e</tt> <tt class="py-op">=</tt> <tt class="py-name">minidom</tt><tt class="py-op">.</tt><tt class="py-name">parseString</tt><tt class="py-op">(</tt><tt class="py-name">raw</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">documentElement</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">frob</tt> <tt class="py-op">=</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'frob'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">childNodes</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">nodeValue</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-51" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-51', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Class jld.api.ErrorProtocol=jld.api.ErrorProtocol-class.html"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-52', 'ErrorProtocol', 'link-52');">ErrorProtocol</a></tt><tt class="py-op">(</tt> <tt class="py-string">'expecting parameter "frob"'</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">         </tt>
+<a name="MM_Response_getAuthToken"></a><div id="MM_Response_getAuthToken-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="MM_Response_getAuthToken-toggle" onclick="return toggle('MM_Response_getAuthToken');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getAuthToken-class.html">MM_Response_getAuthToken</a><tt class="py-op">(</tt><tt class="py-base-class">MM_ResponseBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getAuthToken-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MM_Response_getAuthToken-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-docstring">""" In response to mm.auth.getToken</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="MM_Response_getAuthToken.__init__"></a><div id="MM_Response_getAuthToken.__init__-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="MM_Response_getAuthToken.__init__-toggle" onclick="return toggle('MM_Response_getAuthToken.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getAuthToken-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getAuthToken.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_Response_getAuthToken.__init__-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt id="link-53" class="py-name"><a title="jld.api.mindmeister_response.MM_ResponseBase" class="py-name" href="#" onclick="return doclink('link-53', 'MM_ResponseBase', 'link-47');">MM_ResponseBase</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_backup.Backup.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.mindmeister_backup.Backup.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.backup.mmd.mmdCmd.__init__
+jld.backup.mmd.mmdDaemon.__init__
+jld.backup.mmd.mmdMessages.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.linux.LinuxRegistry.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.defaults.Defaults.__init__
+jld.tools.messages.Messages.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-54', '__init__', 'link-48');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">raw</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">auth_token</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">e</tt> <tt class="py-op">=</tt> <tt class="py-name">minidom</tt><tt class="py-op">.</tt><tt class="py-name">parseString</tt><tt class="py-op">(</tt><tt class="py-name">raw</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">documentElement</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">auth_token</tt> <tt class="py-op">=</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'token'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">childNodes</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">nodeValue</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-55" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-55', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-56', 'ErrorProtocol', 'link-52');">ErrorProtocol</a></tt><tt class="py-op">(</tt> <tt class="py-string">'expecting parameter "token"'</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">     </tt>
+<a name="MM_Response_getList"></a><div id="MM_Response_getList-def"><a name="L103"></a><tt class="py-lineno">103</tt> <a class="py-toggle" href="#" id="MM_Response_getList-toggle" onclick="return toggle('MM_Response_getList');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getList-class.html">MM_Response_getList</a><tt class="py-op">(</tt><tt class="py-base-class">MM_ResponseBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getList-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MM_Response_getList-expanded"><a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-docstring">""" In response to mm.maps.getList</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt id="link-57" class="py-name" targets="Variable jld.api.mindmeister_response.MM_Response_getList._attribs=jld.api.mindmeister_response.MM_Response_getList-class.html#_attribs"><a title="jld.api.mindmeister_response.MM_Response_getList._attribs" class="py-name" href="#" onclick="return doclink('link-57', '_attribs', 'link-57');">_attribs</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> <tt class="py-string">'id'</tt><tt class="py-op">,</tt> <tt class="py-string">'title'</tt><tt class="py-op">,</tt> <tt class="py-string">'created'</tt><tt class="py-op">,</tt> <tt class="py-string">'modified'</tt><tt class="py-op">,</tt> <tt class="py-string">'tags'</tt><tt class="py-op">,</tt> <tt class="py-string">'public'</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt id="link-58" class="py-name" targets="Variable jld.api.mindmeister_response.MM_Response_getList._remap=jld.api.mindmeister_response.MM_Response_getList-class.html#_remap"><a title="jld.api.mindmeister_response.MM_Response_getList._remap" class="py-name" href="#" onclick="return doclink('link-58', '_remap', 'link-58');">_remap</a></tt>   <tt class="py-op">=</tt> <tt class="py-op">{</tt> <tt class="py-string">'id'</tt><tt class="py-op">:</tt> <tt class="py-string">'mapid'</tt> <tt class="py-op">}</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">     </tt>
+<a name="MM_Response_getList.__init__"></a><div id="MM_Response_getList.__init__-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="MM_Response_getList.__init__-toggle" onclick="return toggle('MM_Response_getList.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getList-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getList.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_Response_getList.__init__-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt id="link-59" class="py-name"><a title="jld.api.mindmeister_response.MM_ResponseBase" class="py-name" href="#" onclick="return doclink('link-59', 'MM_ResponseBase', 'link-47');">MM_ResponseBase</a></tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_backup.Backup.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.mindmeister_backup.Backup.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.backup.mmd.mmdCmd.__init__
+jld.backup.mmd.mmdDaemon.__init__
+jld.backup.mmd.mmdMessages.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.linux.LinuxRegistry.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.defaults.Defaults.__init__
+jld.tools.messages.Messages.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-60', '__init__', 'link-48');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">raw</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">         </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">raw</tt> <tt class="py-op">=</tt> <tt class="py-name">raw</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pages</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> <tt class="py-op">;</tt>  <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt>  <tt class="py-op">;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maps</tt>  <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> <tt class="py-op">;</tt>  <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">error</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> <tt class="py-op">;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">error_msg</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">         </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tree</tt> <tt class="py-op">=</tt> <tt class="py-name">minidom</tt><tt class="py-op">.</tt><tt class="py-name">parseString</tt><tt class="py-op">(</tt><tt class="py-name">raw</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">documentElement</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-61" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-61', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-62', 'ErrorProtocol', 'link-52');">ErrorProtocol</a></tt><tt class="py-op">(</tt><tt class="py-string">'no XML response found'</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Method jld.api.mindmeister_response.MM_Response_getList._extractTotal()=jld.api.mindmeister_response.MM_Response_getList-class.html#_extractTotal"><a title="jld.api.mindmeister_response.MM_Response_getList._extractTotal" class="py-name" href="#" onclick="return doclink('link-63', '_extractTotal', 'link-63');">_extractTotal</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>    </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Method jld.api.mindmeister_response.MM_Response_getList._extractMaps()=jld.api.mindmeister_response.MM_Response_getList-class.html#_extractMaps"><a title="jld.api.mindmeister_response.MM_Response_getList._extractMaps" class="py-name" href="#" onclick="return doclink('link-64', '_extractMaps', 'link-64');">_extractMaps</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>          </tt>
+</div><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">         </tt>
+<a name="MM_Response_getList._extractTotal"></a><div id="MM_Response_getList._extractTotal-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="MM_Response_getList._extractTotal-toggle" onclick="return toggle('MM_Response_getList._extractTotal');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getList-class.html#_extractTotal">_extractTotal</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getList._extractTotal-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_Response_getList._extractTotal-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt>     </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">total</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tree</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'maps'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">getAttribute</tt><tt class="py-op">(</tt><tt class="py-string">'total'</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pages</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tree</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'maps'</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">getAttribute</tt><tt class="py-op">(</tt><tt class="py-string">'pages'</tt><tt class="py-op">)</tt>  </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-65" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-65', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-66', 'ErrorProtocol', 'link-52');">ErrorProtocol</a></tt><tt class="py-op">(</tt> <tt class="py-string">'expecting parameter "maps"'</tt> <tt class="py-op">)</tt> </tt>
+</div><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="MM_Response_getList._extractMaps"></a><div id="MM_Response_getList._extractMaps-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="MM_Response_getList._extractMaps-toggle" onclick="return toggle('MM_Response_getList._extractMaps');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getList-class.html#_extractMaps">_extractMaps</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getList._extractMaps-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_Response_getList._extractMaps-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-docstring">""" Returns a list of dict</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt>     </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">            <tt class="py-name">all_maps</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tree</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'map'</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">map</tt> <tt class="py-keyword">in</tt> <tt class="py-name">all_maps</tt><tt class="py-op">:</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">                <tt class="py-name">this</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">attr</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="jld.api.mindmeister_response.MM_Response_getList._attribs" class="py-name" href="#" onclick="return doclink('link-67', '_attribs', 'link-57');">_attribs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                    <tt class="py-name">value</tt> <tt class="py-op">=</tt> <tt class="py-name">map</tt><tt class="py-op">.</tt><tt class="py-name">getAttribute</tt><tt class="py-op">(</tt><tt class="py-name">attr</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-name">attr</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="jld.api.mindmeister_response.MM_Response_getList._remap" class="py-name" href="#" onclick="return doclink('link-68', '_remap', 'link-58');">_remap</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                        <tt class="py-name">attr</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="jld.api.mindmeister_response.MM_Response_getList._remap" class="py-name" href="#" onclick="return doclink('link-69', '_remap', 'link-58');">_remap</a></tt><tt class="py-op">[</tt><tt class="py-name">attr</tt><tt class="py-op">]</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                    <tt class="py-name">this</tt><tt class="py-op">[</tt><tt class="py-name">attr</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                 </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maps</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">this</tt> <tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">count</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maps</tt> <tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-70" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-70', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-71', 'ErrorProtocol', 'link-52');">ErrorProtocol</a></tt><tt class="py-op">(</tt> <tt class="py-string">'expecting parameter "map"'</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"> </tt>
+<a name="MM_Response_getMapExport"></a><div id="MM_Response_getMapExport-def"><a name="L151"></a><tt class="py-lineno">151</tt> <a class="py-toggle" href="#" id="MM_Response_getMapExport-toggle" onclick="return toggle('MM_Response_getMapExport');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getMapExport-class.html">MM_Response_getMapExport</a><tt class="py-op">(</tt><tt class="py-base-class">MM_ResponseBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getMapExport-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MM_Response_getMapExport-expanded"><a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">    <tt class="py-docstring">""" In response to mm.maps.export</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">        exports[image] = url</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="MM_Response_getMapExport.__init__"></a><div id="MM_Response_getMapExport.__init__-def"><a name="L155"></a><tt class="py-lineno">155</tt> <a class="py-toggle" href="#" id="MM_Response_getMapExport.__init__-toggle" onclick="return toggle('MM_Response_getMapExport.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.api.mindmeister_response.MM_Response_getMapExport-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">raw</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MM_Response_getMapExport.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MM_Response_getMapExport.__init__-expanded"><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt id="link-72" class="py-name"><a title="jld.api.mindmeister_response.MM_ResponseBase" class="py-name" href="#" onclick="return doclink('link-72', 'MM_ResponseBase', 'link-47');">MM_ResponseBase</a></tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_backup.Backup.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.mindmeister_backup.Backup.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.backup.mmd.mmdCmd.__init__
+jld.backup.mmd.mmdDaemon.__init__
+jld.backup.mmd.mmdMessages.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.linux.LinuxRegistry.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.defaults.Defaults.__init__
+jld.tools.messages.Messages.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-73', '__init__', 'link-48');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">raw</tt><tt class="py-op">)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exports</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">         </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">            <tt class="py-name">entry</tt><tt class="py-op">=</tt><tt class="py-op">{</tt><tt class="py-op">}</tt>             </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">            <tt class="py-name">e</tt> <tt class="py-op">=</tt> <tt class="py-name">minidom</tt><tt class="py-op">.</tt><tt class="py-name">parseString</tt><tt class="py-op">(</tt><tt class="py-name">raw</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">documentElement</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">            <tt class="py-name">images</tt> <tt class="py-op">=</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-string">'image'</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">image</tt> <tt class="py-keyword">in</tt> <tt class="py-name">images</tt><tt class="py-op">:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                <tt class="py-name">mimetype</tt><tt class="py-op">=</tt> <tt class="py-name">image</tt><tt class="py-op">.</tt><tt class="py-name">getAttribute</tt><tt class="py-op">(</tt><tt class="py-string">'mimetype'</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                <tt class="py-name">entry</tt><tt class="py-op">[</tt><tt class="py-name">mimetype</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">image</tt><tt class="py-op">.</tt><tt class="py-name">childNodes</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">nodeValue</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">            <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'pdf'</tt><tt class="py-op">,</tt> <tt class="py-string">'rtf'</tt><tt class="py-op">,</tt> <tt class="py-string">'freemind'</tt><tt class="py-op">,</tt> <tt class="py-string">'mindmeister'</tt><tt class="py-op">]</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">param</tt> <tt class="py-keyword">in</tt> <tt class="py-name">params</tt><tt class="py-op">:</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                <tt class="py-name">i</tt> <tt class="py-op">=</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">getElementsByTagName</tt><tt class="py-op">(</tt><tt class="py-name">param</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">                <tt class="py-name">entry</tt><tt class="py-op">[</tt><tt class="py-name">param</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">i</tt><tt class="py-op">.</tt><tt class="py-name">childNodes</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">nodeValue</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exports</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt class="py-name">entry</tt> <tt class="py-op">)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">             </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-74" class="py-name"><a title="jld.api" class="py-name" href="#" onclick="return doclink('link-74', 'api', 'link-2');">api</a></tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="jld.api.ErrorProtocol" class="py-name" href="#" onclick="return doclink('link-75', 'ErrorProtocol', 'link-52');">ErrorProtocol</a></tt><tt class="py-op">(</tt> <tt class="py-string">'expecting %s'</tt> <tt class="py-op">%</tt> <tt class="py-name">param</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">'param'</tt><tt class="py-op">:</tt> <tt class="py-name">param</tt><tt class="py-op">}</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-string">&lt;rsp stat="ok"&gt; </tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-string">    &lt;export&gt; </tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-string">        &lt;image mimetype="image/gif"&gt;http://www.mindmeister.com/home/converttoimage?id=6035985&amp;amp;img_format=gif&lt;/image&gt; </tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-string">        &lt;image mimetype="image/jpg"&gt;http://www.mindmeister.com/home/converttoimage?id=6035985&amp;amp;img_format=jpg&lt;/image&gt; </tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-string">        &lt;image mimetype="image/png"&gt;http://www.mindmeister.com/home/converttoimage?id=6035985&amp;amp;img_format=png&lt;/image&gt; </tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-string">        &lt;freemind&gt;http://www.mindmeister.com/home/freemind?id=6035985&lt;/freemind&gt; </tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-string">        &lt;mindmanager&gt;http://www.mindmeister.com/home/mindmanager?id=6035985&lt;/mindmanager&gt; </tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-string">        &lt;rtf&gt;http://www.mindmeister.com/home/rtf?id=6035985&lt;/rtf&gt; </tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-string">        &lt;pdf&gt;http://www.mindmeister.com/home/pdf?id=6035985&lt;/pdf&gt; </tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-string">        &lt;mindmeister&gt;http://www.mindmeister.com/home/mindmeister?id=6035985&lt;/mindmeister&gt; </tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-string">    &lt;/export&gt; </tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-string">&lt;/rsp&gt; </tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-comment"># ==========================================================</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt class="py-name">rGetList</tt> <tt class="py-op">=</tt> <tt class="py-string">"""</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-string">&lt;rsp stat="ok"&gt;</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-string">&lt;maps page="1" pages="1" perpage="100" total="2"&gt;</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-string">&lt;map id="2490" title="Copy of Freemind map" owner="3" description=""</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-string">    created="2007-06-20 06:40:04" modified="2007-06-20 06:40:04" sharedwith=""</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-string">    tags="" public="0" viewonly="0" default="0"/&gt;</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"><tt class="py-string">&lt;map id="2480" title="Freemind map" owner="3" description=""</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-string">    created="2007-06-20 06:40:03" modified="2007-06-20 06:40:03" sharedwith=""</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-string">    tags="" public="0" viewonly="0" default="0"/&gt;</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-string">&lt;/maps&gt;</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-string">&lt;/rsp&gt;</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">    <tt class="py-name">r</tt> <tt class="py-op">=</tt> <tt id="link-76" class="py-name" targets="Class jld.api.mindmeister_response.MM_Response_getList=jld.api.mindmeister_response.MM_Response_getList-class.html"><a title="jld.api.mindmeister_response.MM_Response_getList" class="py-name" href="#" onclick="return doclink('link-76', 'MM_Response_getList', 'link-76');">MM_Response_getList</a></tt><tt class="py-op">(</tt><tt class="py-name">rGetList</tt><tt class="py-op">)</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt class="py-name">total</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt class="py-name">maps</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">     </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">    <tt class="py-name">err</tt> <tt class="py-op">=</tt> <tt class="py-string">"""</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-string">&lt;rsp stat="fail"&gt; </tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-string">&lt;err code="97" msg="The call required signing but no signature was sent."/&gt; </tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-string">&lt;/rsp&gt;    </tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">    <tt class="py-name">r2</tt> <tt class="py-op">=</tt> <tt id="link-77" class="py-name" targets="Class jld.api.mindmeister_response.MM_ResponseBasic=jld.api.mindmeister_response.MM_ResponseBasic-class.html"><a title="jld.api.mindmeister_response.MM_ResponseBasic" class="py-name" href="#" onclick="return doclink('link-77', 'MM_ResponseBasic', 'link-77');">MM_ResponseBasic</a></tt><tt class="py-op">(</tt> <tt class="py-name">err</tt> <tt class="py-op">)</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Dec 15 20:52:13 2008
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

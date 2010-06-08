@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<a xmlns="http://pear.php.net/dtd/rest.allpackages"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://pear.php.net/dtd/rest.allpackages
+    http://pear.php.net/dtd/rest.allpackages.xsd">
+
+	<c>jldupont.googlecode.com/svn</c>
+	
+	<p>amazons3</p>
+	<p>backupgliffy</p>
+	<p>cache</p>
+	<p>delicious</p>
+	<p>directory</p>
+	<p>gliffy</p>
+	<p>object</p>
+	<p>peartools</p>
+	<p>phingtools</p>
+	<p>system</p>
+	<p>validate</p>
+</a>

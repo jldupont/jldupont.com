@@ -1,0 +1,141 @@
+application: jeanlou-dupont
+version: 5
+api_version: 1
+runtime: python
+
+
+handlers:
+
+### Virtual Repository Test ###
+#- url: /dists/stable/main/binary-i386/(.*)
+#  static_files: dists/stable/main/binary-i386/\1
+#  upload: dists/stable/main/binary-i386/(.*)
+
+
+
+#FriendConnect on www.jldupont.com
+- url: /canvas.html
+  static_files: res/friendconnect/canvas.html
+  upload: res/friendconnect/canvas.html
+- url: /rpc_relay.html
+  static_files: res/friendconnect/rpc_relay.html
+  upload: res/friendconnect/rpc_relay.html
+  
+
+# SERVICES
+# ========
+- url: /services/stats/(.*)
+  script: server/services/stats/v1.py
+
+- url: /services/pypi/(.*)
+  script: server/services/pypi/v2.py
+
+- url: /services/pypirss/(.*)
+  script: server/services/pypirss/v1.py
+
+- url: /mm/(.*)
+  script: server/services/mindmeister/v1.py
+  
+- url: /services/feedburner/aw/(.*)
+  script: server/services/feedburner/aw.py
+
+# iGoogle Gadgets
+# ---------------
+- url: /test_gwt_gadget/(.*)
+  static_files: apps/test_gwt_gadget/www/com.jldupont.project.main/\1
+  upload: apps/test_gwt_gadget/www/com.jldupont.project.main/(.*\.(js|html|css|gif|png|jpg|ico|xml))
+
+#BLOGGER
+#=======
+
+- url: /scripts/(.*)
+  static_files: scripts/\1
+  upload: scripts/(.*\.(css|js|gif|jpg|ico|html|png|jpeg))
+
+#SERVER
+#======
+- url: /services/test/(.*)
+  script: server/services/test/test.py
+
+# ACCESS service
+- url: /services/access/urls/(.*)/
+  script: server/services/access/access.py
+
+# ECHO service 
+#  Used with EasyDns of dynamic IP updater
+# ----------------------------------------
+- url: /services/echo/(.*)/
+  script: server/services/echo/echo.py
+
+- url: /services/delicious/v1/(.*)
+  script: server/services/delicious/v1.py
+
+#CLIENT
+#======
+
+ #[old]  site compatibility
+- url: /Main_Page
+  script: server/oldsite/wiki.py
+  
+- url: /Extension:(.*)
+  script: server/oldsite/wiki.py
+
+- url: /Category:(.*)
+  script: server/oldsite/wiki.py
+  
+- url: /Special:(.*)
+  script: server/oldsite/wiki.py
+
+- url: /Widget:(.*)
+  script: server/oldsite/wiki.py
+# [/old]
+
+# MAIN
+# ====
+
+- url: /favicon.ico
+  static_files: res/img/favicon.ico
+  upload: res/img/favicon.ico
+  expiration: "7d"
+
+# ** DO NOT CHANGE THE ORDER **
+#==============================
+
+#- url: /tasks/debian/repo_fetcher
+#  script: server/tasks/debian/repo_fetcher.py
+
+#- url: /doc/(.*)
+#  script: pages/main.py
+  
+#- url: /page/(.*)
+#  script: pages/main.py
+
+- url: /res/(.*)
+  static_files: res/\1
+  upload: res/(.*\.(js|html|css|gif|png|jpg|ico))
+  expiration: "1d"
+
+- url: /(.*)
+  script: demux.py
+  #script: pages/main.py
+  
+
+
+#==old== GWT based front-page
+#- url: /favicon.ico
+#  static_files: client/www/com.jldupont.project.main/favicon.ico
+#  upload: client/www/com.jldupont.project.main/favicon.ico
+
+#- url: /
+#  static_files: client/www/com.jldupont.project.main/main.html
+#  upload: client/www/com.jldupont.project.main/main.html
+
+#- url: /(.*\.(js|html|css|gif|png|jpg))
+#  static_files: client/www/com.jldupont.project.main/\1
+#  upload: client/www/com.jldupont.project.main/(.*\.(js|html|css|gif|png|jpg))
+
+
+# CATCH-ALL
+- url: /.*
+  static_files: server/default/not_found.html
+  upload: server/default/not_found.html

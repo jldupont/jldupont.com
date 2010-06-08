@@ -1,0 +1,11 @@
+# Gliffy Backup
+# Default Configuration
+# @author: Jean-Lou Dupont
+#
+# The '~' will be evaluated to $HOME or $HOMEDRIVE+$HOMEPATH under Windows environment
+# ====================================================================================
+
+dlc_db_path: ~/delicious/db/delicious.sqlite
+glf_db_path: ~/gliffy/db/gliffy.sqlite
+export_path: ~/gliffy
+export_maxnum: 100

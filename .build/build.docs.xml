@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file
+	Jean-Lou Dupont
+	$Id: build.docs.xml 257 2007-11-16 16:13:27Z JeanLou.Dupont $
+
+	Builds the PHP docs directories
+	* Builds /trunk/docs directory
+	* Builds /tags/docs directory
+-->
+
+<project name="docs" basedir="." default='all'>
+
+	<target name='all'>
+	</target>
+
+	<!-- 
+		Initialize the project path variable.
+	-->
+	<target name='prepare'>
+		<property name="relative_project_path" value=".." />		
+		<resolvepath propertyName="project.path" file="${relative_project_path}" />
+	</target>
+
+	<target name='trunk_docs' depends='prepare'>
+		<echo>Building /trunk/docs PHP docs</echo>
+		<echo>Build path: ${project.path}</echo>
+	</target>
+
+	<target name='tags_docs' depends='prepare'>
+		<echo>Building /tags/docs PHP docs</echo>
+		<echo>Build path: ${project.path}</echo>
+	</target>
+
+</project>

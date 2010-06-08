@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<f xmlns="http://pear.php.net/dtd/rest.categorypackageinfo"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://pear.php.net/dtd/rest.categorypackageinfo
+    http://pear.php.net/dtd/rest.categorypackageinfo.xsd">
+<pi>
+	<p>
+		 <n>AmazonS3</n>
+		 <c>jldupont.googlecode.com/svn</c>
+		 <ca xlink:href="/rest/c/Amazon">Amazon</ca>
+		 <l></l>
+		 <s>Class for handling REST request to Amazon S3</s>
+		 <d></d>
+		 <r xlink:href="/rest/r/amazons3"/>
+	</p>
+	<a>
+	 <!-- put latest release information here -->
+	 <!-- This is the information that appears when doing list-all command -->
+
+	<!--$release:AmazonS3$-->
+		<r>
+			<v>0.1.0</v>
+			<s>beta</s>
+		</r>
+	</a>
+</pi>
+</f>

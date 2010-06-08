@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# @author Jean-Lou Dupont
+#
+#
+cd ../..
+dpkg-scanpackages -m tags/deb/dists/stable/main/binary-i386 /dev/null | gzip -9c > tags/deb/dists/stable/main/binary-i386/Packages.gz

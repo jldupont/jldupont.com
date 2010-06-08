@@ -1,0 +1,11 @@
+<module>
+
+	<inherits name="com.google.gwt.user.User"/>
+	
+	<!-- list the ***PACKAGES*** -->
+	<inherits name="com.jldupont.libs.system" />
+	
+	<!-- list the ***PACKAGES*** -->
+	<source path="Delicious"/>
+	
+</module>

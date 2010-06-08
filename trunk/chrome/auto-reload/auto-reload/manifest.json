@@ -1,0 +1,26 @@
+{
+	"name": "Auto-Reload",
+	"version": "0.2",
+	"description": "Time interval page auto-reloader", 
+	"id": "2426563D45C63371E2093B9CD9C2B7D3057DD6C6",
+	"icon": "reload24.png",
+	"update_url":"http://jldupont.googlecode.com/svn/trunk/chrome/auto-reload/updates.xml",
+	"permissions": [
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+	],
+	"content_scripts": [{
+      "js": [
+        "content.js"
+      ], 
+      "matches": [
+        "http://*/*", 
+        "https://*/*"
+      ]
+    }], 
+ 
+	"toolstrips": [
+    	"toolstrip.html"
+  	] 
+}

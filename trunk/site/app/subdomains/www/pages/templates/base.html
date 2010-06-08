@@ -1,0 +1,31 @@
+{% extends "html_frame" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+		<div id="container">
+			<div id="header">
+				<h1><a href="http://www.jldupont.com/">Jean-Lou Dupont's Site</a></h1>
+				<ul id="nav-global"> 
+					{% include "nav_global" %}
+				</ul> 			
+			</div><!-- END HEADER -->
+			<div id="billboard"> 
+  				<h2><hr/></h2> 
+			</div> 		
+			<div id="columnwrap"> 	
+				<div id="content-main">
+				
+					{{ content }}
+			
+					<div id="content-secondary">
+						{% include "footer" %}
+					</div><!-- END #content-secondary --> 
+				</div><!-- END content-main -->
+				 
+				<div id="content-related" class="sidebar">
+					{% include "sidebar" %}
+				</div> <!-- END content-related , sidebar -->
+				
+			</div><!-- END columnwrap -->
+		</div><!-- END CONTAINER --> 	
+{% endblock %}

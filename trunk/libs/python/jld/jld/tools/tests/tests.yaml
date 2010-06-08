@@ -1,0 +1,9 @@
+# @author: Jean-Lou Dupont
+
+var0: 666
+var1: value1
+var2: value2
+
+msg0: message0
+msg1: message1 $msg
+msg2: message2 %s

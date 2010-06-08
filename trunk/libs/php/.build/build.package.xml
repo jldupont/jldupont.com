@@ -1,0 +1,516 @@
+<?xml version="1.0" ?>
+
+<!--
+	PHING build file for releasing a 'package' under a PEAR Channel
+	Jean-Lou Dupont
+	$Id: build.package.xml 910 2009-05-22 16:46:07Z JeanLou.Dupont $
+
+	PART I:
+	*(T11) Reads information from PEAR package.xml [name, version, stability, summary, description]
+	*(T12) Reads information from build.properties [category]
+	*(T13) Updates package.xml [date, time]
+	*(T14) Creates archive [TAR + GZIP] with name $package-$version.tgz
+	*(T15) Copies archive in /tags/$package
+	*(T16) Copies package files in /tags/$package-$version
+	*(T17) Add TAGS directory to SVN
+	*(T18) Add archive file to SVN
+	PART II: (/c)
+	*(T21) Add category directory to /c
+	 (T21b) Add category directory to SVN (if not already in)
+	*(T22) Add category to categories.xml file in /c
+	*(T23) Add package to /c/$category/info.xml  [if !exist, create]
+	*(T24) Add package release to /c/$category/packagesinfo.xml [if !exist, create]
+	*(T25) Add package's /c/categories.xml to SVN
+	*(T26) Add package's /c/$category/info.xml to SVN
+	*(T27) Add package's /c/$category/packagesinfo.xml to SVN
+	PART III: (/p)
+	*(T31) Add package's directory to /p REST structure
+	*(T31b) Add package directory to SVN (if not already in)
+	*(T32) Add package's info.xml file to REST structure
+	*(T33) Update /p/packages.xml
+	*(T34) Add '/p/packages.xml' to SVN
+	*(T35) Add '/p/$package/info.xml' to SVN
+	PART IV:
+	*(T41) Add package's releases directory to REST structure
+	 (T41b) Add package's release directory to SVN (if not already in)
+	*(T42) Copy package.xml to $package-$version.xml to /r/$package
+	*(T43) Add $version.xml to /r/$package
+	*(T44) Create deps.$version.txt serialized dependencies from $package-$version.xml
+	*(T45) Update 'allrelease.xml' file
+	*(T46) Add 'allreleases.xml' file to SVN
+	*(T47) Add '$version.xml' file to SVN
+	*(T48) Add 'package.$version.xml' file to SVN
+	*(T49) Add 'deps.$version.txt' file to SVN
+	*(T50) Setting 'application/gzip' MIME-type to deps.$version.txt
+-->
+<!--
+	/c/categories.xml
+	/c/$category/info.xml
+	/c/$category/packagesinfo.xml
+
+	/p/packages.xml
+	/p/$package/info.xml
+
+	/r/$package/$version.xml
+	/r/$package/package.$version.xml
+	/r/$package/deps.$version.txt
+	/r/$package/allreleases.xml
+-->
+<project name="PackageRelease" basedir="." default='all'>
+
+	<!--
+		The package is located 1 level 'down' from the build file.
+	-->
+	<target name='Config'>
+		<resolvepath propertyName="project.path" file="${project.basedir}/../" /> <!-- 1 level down -->
+		<property name='package.file' value='${project.path}/package.xml' />
+		<echo>Package path: ${project.path}</echo>
+	</target>
+
+	<!-- 
+		It is imperative that this task should run first;
+		this task searches the 'root' of the channel in the filesystem.
+	-->
+	<target name='FindChannelRoot' depends='Config'>
+		<taskdef classname='JLD.PearTools.phing.ChannelFindTask' name='channelfind' />
+		<channelfind RootPath='channel.root' StartPath='${project.basedir}' />
+		<echo>Channel root path: ${channel.root}</echo>
+	</target>
+	<!--
+		This task initializes the base variables for the PEAR channel.
+	-->
+	<target name='InitChannel' depends='FindChannelRoot'>
+		<taskdef classname='JLD.PearTools.phing.ChannelTask' name='channel' />
+		<echo>Initializing Channel</echo>
+		<channel path="${channel.root}" />
+		<echo>Channel name:      "${channel.name}"</echo>
+		<echo>Channel alias:     "${channel.alias}"</echo>
+		<echo>Channel TAGS path: "${channel.tags}"</echo>
+		<echo>Channel REST path: "${channel.rest}"</echo>
+	</target>
+	<!--
+		Package level initialization:
+	-->
+	<target name='ReadPackageXML' depends='InitChannel'>
+		<!-- T12 -->
+		<!--<property file="./build.properties" />-->
+		<taskdef classname='JLD.PearTools.phing.PackageReadTask' name='packageread' />
+		<!-- T11 -->
+		<packageread	propertyPackageFile="${package.file}"
+						propertyPackageName='package.name' 
+						propertyPackageNameL='package.namel' 
+						propertyPackageVersion='package.version' 
+						propertyPackageStability='package.stability' 
+						propertyPackageSummary='package.summary' 
+						propertyPackageDescription='package.description'
+						propertyPackageDeps='package.dependencies'
+						propertyPackageChangelog='package.changelog'
+		/>
+		<echo>Package name:        ${package.name}</echo>
+		<echo>Package category:    ${package.category}</echo>
+		<echo>Package version:     ${package.version}</echo>
+		<echo>Package stability:   ${package.stability}</echo>
+		<echo>Package summary:     ${package.summary}</echo>
+		<echo>Package description: ${package.description}</echo>
+		<echo>Package changelog:   ${package.changelog}</echo>
+
+		<!-- verifies the existence of the requested package version in the REST structure -->
+	 	<taskdef classname='JLD.PearTools.phing.ReleaseExistsTask' name='release_exists' />
+		<release_exists	
+					channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}" 
+					
+					packagename="${package.name}" 
+					packageversion="${package.version}" 
+					packagestability="${package.stability}" 
+					packagereleasestatus="package.releasestatus"  />
+
+		<echo>Package release status: ${package.releasestatus}</echo>
+	</target>
+
+<!--
+	<target name='ValidatePackage' depends="ReadPackageXML">
+		<if>
+			<equals arg1="1" arg2="${package.releasestatus}" />
+			<then>
+				<echo>RELEASE ALREADY EXISTS IN REST STRUCTURE... failing now</echo>
+				<fail message="This REST structure already contains a release of the requested version!" />
+			</then>
+		</if>
+	</target>
+-->
+	<target name='ValidatePackage' depends="ReadPackageXML">
+		<if>
+			<equals arg1="1" arg2="${package.releasestatus}" />
+			<then>
+				<property name='package.exists' value='1' />			
+			</then>
+		</if>
+		<if>
+			<equals arg1="1" arg2="${package.exists}" />
+			<then>
+				<input propertyname='package.reissue' validargs='y,n' defaultValue='y'>
+					Reissue release?
+				</input>
+			</then>
+		</if>
+		<if>
+			<equals arg1="n" arg2="${package.reissue}" />
+			<then>
+				<fail message="This REST structure already contains a release of the requested version!" />
+			</then>
+		</if>
+	</target>
+
+
+	<!--
+		Package level processing.
+	-->
+	<target name='DoPackage' depends='ValidatePackage'>
+		<echo>Processing package</echo>
+		<taskdef classname='JLD.PearTools.phing.PackageUpdateTask' name='packageupdate' />
+		<echo>Updating package</echo>
+		<!-- T13 -->
+		<packageupdate propertyPackageFile="${package.file}" />
+
+		<!-- T14 -->
+		<echo>Creating archive file</echo>
+		<!-- this step requires creating a temporary directory
+		-->
+		<copy todir="${project.path}/${package.name}-${package.version}" overwrite='true'>
+			<fileset dir="${project.path}/.">
+				<include name="**/**" />
+				<exclude name="package.xml" />
+				<exclude name="${project.path}/${package.name}-${package.version}/**" />
+			</fileset>
+			<filterchain>
+				<replacetokens begintoken="@@" endtoken="@@">
+				  <token key="package-version" value="${package.version}"/>
+				</replacetokens>
+			</filterchain>
+		</copy>
+		<tar destfile="${project.path}/${package.name}-${package.version}.tgz" compression='gzip'>
+			<fileset dir='${project.path}/.'>
+				<include name="${package.name}-${package.version}/**" />
+				<include name="package.xml"/>
+			</fileset>
+		</tar>
+
+		<delete dir="${project.path}/${package.name}-${package.version}" failonerror="true" includeemptydirs="true" />
+
+		<!-- T15 -->
+		<echo>Moving archive to TAGS directory</echo>
+		<move	file="${project.path}/${package.name}-${package.version}.tgz" 
+				todir="${channel.root}/${channel.tags}/${package.name}" 
+				overwrite="true">
+		</move>
+		<!-- T16 -->
+		<echo>Copying release files to TAGS directory</echo>
+		<copy	todir="${channel.root}/${channel.tags}/${package.name}/${package.version}" 
+				overwrite="true">
+			<fileset dir="${project.path}/.">
+				<include name="**/**" />
+			</fileset>
+			<filterchain>
+				<replacetokens begintoken="@@" endtoken="@@">
+				  <token key="package-version" value="${package.version}"/>
+				</replacetokens>
+			</filterchain>
+		</copy>
+
+		<taskdef classname='JLD.PhingTools.SvnStatusTask' name='svn_status' />
+		<taskdef classname='JLD.PhingTools.SvnAddTask' name='svn_add' />
+		<taskdef classname='JLD.PhingTools.SvnPropsetTask' name='svn_propset' />
+
+		<!-- T17 -->
+		<svn_status path='"${channel.root}/${channel.tags}/${package.name}/${package.version}"' 
+					result="package.tag" />
+		<if>
+			<contains substring="?" string="${package.tag}" />
+			<then>
+				<echo>Adding tagged package ${package.name}/${package.version} to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.tags}/${package.name}/${package.version}"' />
+			</then>
+			<else>
+				<echo>Tagged package ${package.name}/${package.version} already in SVN</echo>
+			</else>
+		</if>
+
+		<!-- T18 -->
+		<svn_status path='"${channel.root}/${channel.tags}/${package.name}/${package.name}-${package.version}.tgz"' 
+					result="package.archive" />
+
+		<if>
+			<contains substring="?" string="${package.archive}" />
+			<then>
+				<echo>Adding archive file to SVN</echo>		
+				<svn_add path='"${channel.root}/${channel.tags}/${package.name}/${package.name}-${package.version}.tgz"' />
+				<svn_propset path='"${channel.root}/${channel.tags}/${package.name}/${package.name}-${package.version}.tgz"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/gzip" />
+
+			</then>
+			<else>
+				<echo>Archive already in SVN</echo>
+			</else>
+		</if>
+
+		<!-- T21 -->
+		<echo>Creating the package's category directory in the /c REST structure</echo>
+		<mkdir dir="${channel.root}/${channel.rest}/c/${package.category}"/>
+
+		<!-- T21b -->
+		<svn_status path='"${channel.root}/${channel.rest}/c/${package.category}"' 
+					result="package.rest.c" />
+		<if>
+			<contains substring="?" string="${package.rest.c}" />
+			<then>
+				<echo>Adding "/c/${package.category}" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/c/${package.category}"' />
+			</then>
+			<else>
+				<echo>Package's category directory /c already in SVN</echo>
+			</else>
+		</if>
+
+		<echo>Processing categories</echo>
+		<!-- T22, T23, T24 -->
+		<echo>Adding package's category and release information to REST categories</echo>
+		<taskdef classname='JLD.PearTools.phing.ChannelCategoriesTask' name='categories' />
+		<categories	channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}"
+
+					categoryname="${package.category}" 
+					packagename="${package.name}"
+					packagesummary="${package.summary}"
+					packagedescription="${package.description}"
+					packagereleaseversion="${package.version}" 
+					packagereleasestability="${package.stability}" />
+		<!-- T25 -->
+		<svn_status path='"${channel.root}/${channel.rest}/c/categories.xml"' 
+					result="categories.xml" />
+		<if>
+			<contains substring="?" string="${categories.xml}" />
+			<then>
+				<echo>Adding "/c/categories.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/c/categories.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/c/categories.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'categories.xml' already in SVN</echo>
+			</else>
+		</if>
+		<!-- T26 -->
+		<svn_status path='"${channel.root}/${channel.rest}/c/${package.category}/info.xml"' 
+					result="c.info.xml" />
+		<if>
+			<contains substring="?" string="${c.info.xml}" />
+			<then>
+				<echo>Adding "/c/${package.category}/info.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/c/${package.category}/info.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/c/${package.category}/info.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'info.xml' already in SVN</echo>
+			</else>
+		</if>
+		<!-- T27 -->
+		<svn_status path='"${channel.root}/${channel.rest}/c/${package.category}/packagesinfo.xml"' 
+					result="c.packagesinfo.xml" />
+		<if>
+			<contains substring="?" string="${c.packagesinfo.xml}" />
+			<then>
+				<echo>Adding "/c/${package.category}/packagesinfo.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/c/${package.category}/packagesinfo.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/c/${package.category}/packagesinfo.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'packagesinfo.xml' already in SVN</echo>
+			</else>
+		</if>
+
+		<!-- T31 -->
+		<echo>Creating the package's package directory in the /p REST structure</echo>
+		<mkdir dir="${channel.root}/${channel.rest}/p/${package.namel}"/>
+
+		<!-- T31b -->
+		<svn_status path='"${channel.root}/${channel.rest}/p/${package.namel}"' 
+					result="package.rest.p" />
+		<if>
+			<contains substring="?" string="${package.rest.p}" />
+			<then>
+				<echo>Adding "/p/${package.namel}" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/p/${package.namel}"' />
+			</then>
+			<else>
+				<echo>Package's directory /p already in SVN</echo>
+			</else>
+		</if>
+
+		<!-- T32, T33 -->
+		<echo>Adding package's directory and info.xml file in REST packages</echo>
+		<taskdef classname='JLD.PearTools.phing.ChannelPackagesTask' name='packages' />
+		<packages	channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}"
+
+					categoryname="${package.category}" 
+					packagename="${package.name}" />
+
+		<!-- T34 -->
+		<svn_status path='"${channel.root}/${channel.rest}/p/packages.xml"' 
+					result="p.packages.xml" />
+		<if>
+			<contains substring="?" string="${p.packages.xml}" />
+			<then>
+				<echo>Adding "/p/packages.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/p/packages.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/p/packages.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'packages.xml' already in SVN</echo>
+			</else>
+		</if>
+		<!-- T35 -->
+		<svn_status path='"${channel.root}/${channel.rest}/p/${package.name}/info.xml"' 
+					result="p.info.xml" />
+		<if>
+			<contains substring="?" string="${p.info.xml}" />
+			<then>
+				<echo>Adding "/p/${package.name}/info.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/p/${package.name}/info.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/p/${package.name}/info.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'info.xml' already in SVN</echo>
+			</else>
+		</if>
+
+		<!-- T41 -->
+		<echo>Creating package's releases directory in /r REST structure</echo>
+		<mkdir dir="${channel.root}/${channel.rest}/r/${package.namel}"/>
+
+		<!-- T41b -->
+		<svn_status path='"${channel.root}/${channel.rest}/r/${package.namel}"' 
+					result="package.rest.r" />
+		<if>
+			<contains substring="?" string="${package.rest.r}" />
+			<then>
+				<echo>Adding "/r/${package.namel}" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/r/${package.namel}"' />
+			</then>
+			<else>
+				<echo>Package's release directory /r already in SVN</echo>
+			</else>
+		</if>
+
+		<!-- T42 -->
+		<echo>Copying "package.xml" to package-${package.version}.xml in REST directory</echo>
+		<copy	file="${project.path}/package.xml"
+				tofile="${channel.root}/${channel.rest}/r/${package.name}/package.${package.version}.xml" 
+				overwrite="true" />
+		<!-- T43, T44, T45 -->
+		<echo>Adding package's releases directory in REST packages</echo>
+		<taskdef classname='JLD.PearTools.phing.ChannelReleasesTask' name='releases' />
+		<releases	channelroot="${channel.root}" 
+					channelname="${channel.name}" 
+					channeluri="${channel.uri}" 
+					channelrest="${channel.rest}" 
+					channeltags="${channel.tags}" 
+
+					packagename="${package.name}" 
+					packageversion="${package.version}" 
+					packagestability="${package.stability}" 
+					packagedependencies="${package.dependencies}" />
+		<!-- T46 -->
+		<svn_status path='"${channel.root}/${channel.rest}/r/${package.namel}/allreleases.xml"' 
+					result="r.allreleases" />
+		<if>
+			<contains substring="?" string="${r.allreleases}" />
+			<then>
+				<echo>Adding "/r/${package.namel}/allreleases.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/r/${package.namel}/allreleases.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/r/${package.namel}/allreleases.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>'allreleases.xml' already in SVN</echo>
+			</else>
+		</if>
+		<!-- T47 -->
+		<svn_status path='"${channel.root}/${channel.rest}/r/${package.namel}/${package.version}.xml"' 
+					result="r.version" />
+		<if>
+			<contains substring="?" string="${r.version}" />
+			<then>
+				<echo>Adding "/r/${package.namel}/${package.version}.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/r/${package.namel}/${package.version}.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/r/${package.namel}/${package.version}.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>"${package.version}.xml" already in SVN</echo>
+			</else>
+		</if>
+		<!-- T48 -->
+		<svn_status path='"${channel.root}/${channel.rest}/r/${package.namel}/package.${package.version}.xml"' 
+					result="r.package.version" />
+		<if>
+			<contains substring="?" string="${r.package.version}" />
+			<then>
+				<echo>Adding "/r/${package.namel}/${package.namel}/package.${package.version}.xml" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/r/${package.namel}/package.${package.version}.xml"' />
+				<svn_propset path='"${channel.root}/${channel.rest}/r/${package.namel}/package.${package.version}.xml"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/xml" />
+			</then>
+			<else>
+				<echo>"package.${package.version}.xml" already in SVN</echo>
+			</else>
+		</if>
+		<!-- T49, T50 -->
+		<svn_status path='"${channel.root}/${channel.rest}/r/${package.namel}/deps.${package.version}.txt"' 
+					result="r.deps.version" />
+		<if>
+			<contains substring="?" string="${r.deps.version}" />
+			<then>
+				<echo>Adding "/r/${package.namel}/${package.namel}/deps.${package.version}.txt" to SVN</echo>
+				<svn_add path='"${channel.root}/${channel.rest}/r/${package.namel}/deps.${package.version}.txt"' />
+				<echo>Setting 'application/gzip' MIME-type to dependencies file</echo>
+				<svn_propset path='"${channel.root}/${channel.rest}/r/${package.namel}/deps.${package.version}.txt"' 
+				           	propname="svn:mime-type" 
+				           	propval="application/gzip" />
+			</then>
+			<else>
+				<echo>"deps.${package.version}.txt" already in SVN</echo>
+			</else>
+		</if>
+
+
+	</target>
+
+	<target name='all' depends='DoPackage'>
+		<echo>Building all</echo>
+	</target>
+
+</project>

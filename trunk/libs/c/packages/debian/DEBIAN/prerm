@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+"""
+	@author: Jean-Lou Dupont
+"""
+
+import os
+import sys
+
+cwd     = os.getcwd()
+id      = "$Id: prerm 915 2009-05-22 17:50:49Z JeanLou.Dupont $"
+
+print "LITM: cwd[%s] id[%s]" % (cwd, id)
+
+command = sys.argv[1]
+
+if command is 'remove':
+	os.system("ldconfig")
+	
+
+sys.exit(0)

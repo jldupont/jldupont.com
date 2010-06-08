@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jld.jld.backup.mmd</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;jld ::
+        Package&nbsp;jld ::
+        Package&nbsp;backup ::
+        Module&nbsp;mmd
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="jld.jld.backup.mmd-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="jld.jld.backup.mmd-module.html">Module jld.jld.backup.mmd</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-docstring">""" </tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">    MindMeister backup daemon</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">    @author: Jean-Lou Dupont</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">    Prerequisites:</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">     - the keys 'secret', 'api_key' and 'file' be properly set in the registry.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">       This filesystem path points to the Sqlite database used to</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">       store the map related information.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">      </tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable jld.__author__=jld-module.html#__author__,Variable jld.api.__author__=jld.api-module.html#__author__,Variable jld.api.delicious.__author__=jld.api.delicious-module.html#__author__,Variable jld.api.delicious_objects.__author__=jld.api.delicious_objects-module.html#__author__,Variable jld.api.gliffy.__author__=jld.api.gliffy-module.html#__author__,Variable jld.backup.delicious_db.__author__=jld.backup.delicious_db-module.html#__author__,Variable jld.backup.delicious_printer.__author__=jld.backup.delicious_printer-module.html#__author__,Variable jld.backup.delicious_ui.__author__=jld.backup.delicious_ui-module.html#__author__,Variable jld.backup.gliffy_db.__author__=jld.backup.gliffy_db-module.html#__author__,Variable jld.backup.gliffy_printer.__author__=jld.backup.gliffy_printer-module.html#__author__,Variable jld.backup.gliffy_ui.__author__=jld.backup.gliffy_ui-module.html#__author__,Variable jld.backup.mindmeister_db.__author__=jld.backup.mindmeister_db-module.html#__author__,Variable jld.backup.mindmeister_printer.__author__=jld.backup.mindmeister_printer-module.html#__author__,Variable jld.backup.mindmeister_ui.__author__=jld.backup.mindmeister_ui-module.html#__author__,Variable jld.cmd.__author__=jld.cmd-module.html#__author__,Variable jld.cmd.pypre.__author__=jld.cmd.pypre-module.html#__author__,Variable jld.gdata.docs.__author__=jld.gdata.docs-module.html#__author__,Variable jld.jld.backup.delicious.__author__=jld.jld.backup.delicious-module.html#__author__,Variable jld.jld.backup.delicious_defaults.__author__=jld.jld.backup.delicious_defaults-module.html#__author__,Variable jld.jld.backup.gliffy.__author__=jld.jld.backup.gliffy-module.html#__author__,Variable jld.jld.backup.gliffy_defaults.__author__=jld.jld.backup.gliffy_defaults-module.html#__author__,Variable jld.jld.backup.mindmeister_defaults.__author__=jld.jld.backup.mindmeister_defaults-module.html#__author__,Variable jld.jld.backup.mmd.__author__=jld.jld.backup.mmd-module.html#__author__,Variable jld.template.__author__=jld.template-module.html#__author__,Variable jld.tools.cmd_ui.__author__=jld.tools.cmd_ui-module.html#__author__,Variable jld.tools.daemon.__author__=jld.tools.daemon-module.html#__author__,Variable jld.tools.date.__author__=jld.tools.date-module.html#__author__,Variable jld.tools.db.__author__=jld.tools.db-module.html#__author__,Variable jld.tools.debug.__author__=jld.tools.debug-module.html#__author__,Variable jld.tools.klass.__author__=jld.tools.klass-module.html#__author__,Variable jld.tools.logger.__author__=jld.tools.logger-module.html#__author__,Variable jld.tools.mos.__author__=jld.tools.mos-module.html#__author__,Variable jld.tools.printer.__author__=jld.tools.printer-module.html#__author__,Variable jld.tools.process.__author__=jld.tools.process-module.html#__author__"><a title="jld.__author__
+jld.api.__author__
+jld.api.delicious.__author__
+jld.api.delicious_objects.__author__
+jld.api.gliffy.__author__
+jld.backup.delicious_db.__author__
+jld.backup.delicious_printer.__author__
+jld.backup.delicious_ui.__author__
+jld.backup.gliffy_db.__author__
+jld.backup.gliffy_printer.__author__
+jld.backup.gliffy_ui.__author__
+jld.backup.mindmeister_db.__author__
+jld.backup.mindmeister_printer.__author__
+jld.backup.mindmeister_ui.__author__
+jld.cmd.__author__
+jld.cmd.pypre.__author__
+jld.gdata.docs.__author__
+jld.jld.backup.delicious.__author__
+jld.jld.backup.delicious_defaults.__author__
+jld.jld.backup.gliffy.__author__
+jld.jld.backup.gliffy_defaults.__author__
+jld.jld.backup.mindmeister_defaults.__author__
+jld.jld.backup.mmd.__author__
+jld.template.__author__
+jld.tools.cmd_ui.__author__
+jld.tools.daemon.__author__
+jld.tools.date.__author__
+jld.tools.db.__author__
+jld.tools.debug.__author__
+jld.tools.klass.__author__
+jld.tools.logger.__author__
+jld.tools.mos.__author__
+jld.tools.printer.__author__
+jld.tools.process.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt>  <tt class="py-op">=</tt> <tt class="py-string">"Jean-Lou Dupont"</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-name">__version__</tt> <tt class="py-op">=</tt> <tt class="py-string">"$Id: jld.jld.backup.mmd-pysrc.html 775 2009-01-07 03:08:10Z JeanLou.Dupont $"</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">signal</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"># ASSUME THAT THE REQUIRED LIBS are available</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># RELATIVE to this script =&gt; simplified install</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt id="link-1" class="py-name" targets="Variable jld.api.delicious.levelsUp=jld.api.delicious-module.html#levelsUp,Variable jld.jld.backup.delicious.levelsUp=jld.jld.backup.delicious-module.html#levelsUp,Variable jld.jld.backup.gliffy.levelsUp=jld.jld.backup.gliffy-module.html#levelsUp,Variable jld.jld.backup.mm.levelsUp=jld.jld.backup.mm-module.html#levelsUp,Variable jld.jld.backup.mmd.levelsUp=jld.jld.backup.mmd-module.html#levelsUp"><a title="jld.api.delicious.levelsUp
+jld.jld.backup.delicious.levelsUp
+jld.jld.backup.gliffy.levelsUp
+jld.jld.backup.mm.levelsUp
+jld.jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-1', 'levelsUp', 'link-1');">levelsUp</a></tt> <tt class="py-op">=</tt> <tt class="py-number">3</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable jld.api.delicious.path=jld.api.delicious-module.html#path,Variable jld.jld.backup.delicious.path=jld.jld.backup.delicious-module.html#path,Variable jld.jld.backup.gliffy.path=jld.jld.backup.gliffy-module.html#path,Variable jld.jld.backup.mm.path=jld.jld.backup.mm-module.html#path,Variable jld.jld.backup.mmd.path=jld.jld.backup.mmd-module.html#path"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-2', 'path', 'link-2');">path</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-3', 'path', 'link-2');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt> <tt class="py-name">__file__</tt> <tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">while</tt> <tt id="link-4" class="py-name"><a title="jld.api.delicious.levelsUp
+jld.jld.backup.delicious.levelsUp
+jld.jld.backup.gliffy.levelsUp
+jld.jld.backup.mm.levelsUp
+jld.jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-4', 'levelsUp', 'link-1');">levelsUp</a></tt><tt class="py-op">&gt;</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">    <tt id="link-5" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-5', 'path', 'link-2');">path</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-6', 'path', 'link-2');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt> <tt id="link-7" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-7', 'path', 'link-2');">path</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt id="link-8" class="py-name"><a title="jld.api.delicious.levelsUp
+jld.jld.backup.delicious.levelsUp
+jld.jld.backup.gliffy.levelsUp
+jld.jld.backup.mm.levelsUp
+jld.jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-8', 'levelsUp', 'link-1');">levelsUp</a></tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="jld.api.delicious.levelsUp
+jld.jld.backup.delicious.levelsUp
+jld.jld.backup.gliffy.levelsUp
+jld.jld.backup.mm.levelsUp
+jld.jld.backup.mmd.levelsUp" class="py-name" href="#" onclick="return doclink('link-9', 'levelsUp', 'link-1');">levelsUp</a></tt> <tt class="py-op">-</tt> <tt class="py-number">1</tt>     </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-10', 'path', 'link-2');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt> <tt id="link-11" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-11', 'path', 'link-2');">path</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Package jld=jld-module.html"><a title="jld" class="py-name" href="#" onclick="return doclink('link-12', 'jld', 'link-12');">jld</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Package jld.tools=jld.tools-module.html"><a title="jld.tools" class="py-name" href="#" onclick="return doclink('link-13', 'tools', 'link-13');">tools</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Module jld.tools.daemon=jld.tools.daemon-module.html"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-14', 'daemon', 'link-14');">daemon</a></tt> <tt class="py-keyword">as</tt> <tt id="link-15" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-15', 'daemon', 'link-14');">daemon</a></tt> </tt>
+<a name="mmdDaemon"></a><div id="mmdDaemon-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="mmdDaemon-toggle" onclick="return toggle('mmdDaemon');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdDaemon-class.html">mmdDaemon</a><tt class="py-op">(</tt><tt class="py-base-class">daemon</tt><tt class="py-op">.</tt><tt class="py-base-class">BaseDaemon</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdDaemon-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="mmdDaemon-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-docstring">""" Daemon</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt id="link-16" class="py-name" targets="Variable jld.jld.backup.mmd.mmdDaemon._name=jld.jld.backup.mmd.mmdDaemon-class.html#_name"><a title="jld.jld.backup.mmd.mmdDaemon._name" class="py-name" href="#" onclick="return doclink('link-16', '_name', 'link-16');">_name</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'mmd'</tt> </tt>
+<a name="mmdDaemon.__init__"></a><div id="mmdDaemon.__init__-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="mmdDaemon.__init__-toggle" onclick="return toggle('mmdDaemon.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdDaemon-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdDaemon.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdDaemon.__init__-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt id="link-17" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-17', 'daemon', 'link-14');">daemon</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Class jld.tools.daemon.BaseDaemon=jld.tools.daemon.BaseDaemon-class.html"><a title="jld.tools.daemon.BaseDaemon" class="py-name" href="#" onclick="return doclink('link-18', 'BaseDaemon', 'link-18');">BaseDaemon</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method jld.api.ErrorGeneric.__init__()=jld.api.ErrorGeneric-class.html#__init__,Method jld.api.delicious.Api.__init__()=jld.api.delicious.Api-class.html#__init__,Method jld.api.delicious.Client.__init__()=jld.api.delicious.Client-class.html#__init__,Method jld.api.delicious.Waiter.__init__()=jld.api.delicious.Waiter-class.html#__init__,Method jld.api.mindmeister.MM.__init__()=jld.api.mindmeister.MM-class.html#__init__,Method jld.api.mindmeister.MM_Client.__init__()=jld.api.mindmeister.MM_Client-class.html#__init__,Method jld.api.mindmeister_response.MM_ResponseBase.__init__()=jld.api.mindmeister_response.MM_ResponseBase-class.html#__init__,Method jld.api.mindmeister_response.MM_ResponseBasic.__init__()=jld.api.mindmeister_response.MM_ResponseBasic-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getAuthToken.__init__()=jld.api.mindmeister_response.MM_Response_getAuthToken-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getFrob.__init__()=jld.api.mindmeister_response.MM_Response_getFrob-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getList.__init__()=jld.api.mindmeister_response.MM_Response_getList-class.html#__init__,Method jld.api.mindmeister_response.MM_Response_getMapExport.__init__()=jld.api.mindmeister_response.MM_Response_getMapExport-class.html#__init__,Method jld.backup.delicious_db.Db.__init__()=jld.backup.delicious_db.Db-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer.__init__()=jld.backup.delicious_printer.Delicious_Printer-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer_Config.__init__()=jld.backup.delicious_printer.Delicious_Printer_Config-class.html#__init__,Method jld.backup.delicious_printer.Delicious_Printer_Posts.__init__()=jld.backup.delicious_printer.Delicious_Printer_Posts-class.html#__init__,Method jld.backup.gliffy_db.Db.__init__()=jld.backup.gliffy_db.Db-class.html#__init__,Method jld.backup.gliffy_printer.Gliffy_Printer.__init__()=jld.backup.gliffy_printer.Gliffy_Printer-class.html#__init__,Method jld.backup.gliffy_printer.Gliffy_Printer_Config.__init__()=jld.backup.gliffy_printer.Gliffy_Printer_Config-class.html#__init__,Method jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.__init__()=jld.backup.gliffy_printer.Gliffy_Printer_Diagrams-class.html#__init__,Method jld.backup.mindmeister_db.Db.__init__()=jld.backup.mindmeister_db.Db-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer.__init__()=jld.backup.mindmeister_printer.MM_Printer-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Config.__init__()=jld.backup.mindmeister_printer.MM_Printer_Config-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Export.__init__()=jld.backup.mindmeister_printer.MM_Printer_Export-class.html#__init__,Method jld.backup.mindmeister_printer.MM_Printer_Maps.__init__()=jld.backup.mindmeister_printer.MM_Printer_Maps-class.html#__init__,Method jld.cmd.BaseCmd.__init__()=jld.cmd.BaseCmd-class.html#__init__,Method jld.gdata.docs.RawDoc.__init__()=jld.gdata.docs.RawDoc-class.html#__init__,Method jld.gdata.docs.ResultDoc.__init__()=jld.gdata.docs.ResultDoc-class.html#__init__,Method jld.jld.backup.delicious_backup.Backup.__init__()=jld.jld.backup.delicious_backup.Backup-class.html#__init__,Method jld.jld.backup.delicious_defaults.Delicious_Defaults.__init__()=jld.jld.backup.delicious_defaults.Delicious_Defaults-class.html#__init__,Method jld.jld.backup.delicious_messages.Delicious_Messages.__init__()=jld.jld.backup.delicious_messages.Delicious_Messages-class.html#__init__,Method jld.jld.backup.gliffy_backup.Backup.__init__()=jld.jld.backup.gliffy_backup.Backup-class.html#__init__,Method jld.jld.backup.gliffy_defaults.Gliffy_Defaults.__init__()=jld.jld.backup.gliffy_defaults.Gliffy_Defaults-class.html#__init__,Method jld.jld.backup.gliffy_messages.Gliffy_Messages.__init__()=jld.jld.backup.gliffy_messages.Gliffy_Messages-class.html#__init__,Method jld.jld.backup.mindmeister_backup.Backup.__init__()=jld.jld.backup.mindmeister_backup.Backup-class.html#__init__,Method jld.jld.backup.mindmeister_defaults.MM_Defaults.__init__()=jld.jld.backup.mindmeister_defaults.MM_Defaults-class.html#__init__,Method jld.jld.backup.mindmeister_messages.MM_Messages.__init__()=jld.jld.backup.mindmeister_messages.MM_Messages-class.html#__init__,Method jld.jld.backup.mmd.mmdCmd.__init__()=jld.jld.backup.mmd.mmdCmd-class.html#__init__,Method jld.jld.backup.mmd.mmdDaemon.__init__()=jld.jld.backup.mmd.mmdDaemon-class.html#__init__,Method jld.jld.backup.mmd.mmdMessages.__init__()=jld.jld.backup.mmd.mmdMessages-class.html#__init__,Method jld.jld.registry.linux.LinuxRegistry.__init__()=jld.jld.registry.linux.LinuxRegistry-class.html#__init__,Method jld.jld.tools.defaults.Defaults.__init__()=jld.jld.tools.defaults.Defaults-class.html#__init__,Method jld.jld.tools.messages.Messages.__init__()=jld.jld.tools.messages.Messages-class.html#__init__,Method jld.registry.Registry.__init__()=jld.registry.Registry-class.html#__init__,Method jld.registry.exception.RegistryException.__init__()=jld.registry.exception.RegistryException-class.html#__init__,Method jld.registry.windows.WindowsRegistry.__init__()=jld.registry.windows.WindowsRegistry-class.html#__init__,Method jld.template.Tpl.__init__()=jld.template.Tpl-class.html#__init__,Method jld.tools.cmd_ui.UIBase.__init__()=jld.tools.cmd_ui.UIBase-class.html#__init__,Method jld.tools.daemon.BaseDaemon.__init__()=jld.tools.daemon.BaseDaemon-class.html#__init__,Method jld.tools.db.BaseSQLObjectDb.__init__()=jld.tools.db.BaseSQLObjectDb-class.html#__init__,Method jld.tools.db.BaseSQLObjectDb2.__init__()=jld.tools.db.BaseSQLObjectDb2-class.html#__init__,Method jld.tools.printer.BasePrettyPrinter.__init__()=jld.tools.printer.BasePrettyPrinter-class.html#__init__,Method jld.tools.template.ExTemplate.__init__()=jld.tools.template.ExTemplate-class.html#__init__"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.gliffy_db.Db.__init__
+jld.backup.gliffy_printer.Gliffy_Printer.__init__
+jld.backup.gliffy_printer.Gliffy_Printer_Config.__init__
+jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.jld.backup.delicious_backup.Backup.__init__
+jld.jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.jld.backup.gliffy_backup.Backup.__init__
+jld.jld.backup.gliffy_defaults.Gliffy_Defaults.__init__
+jld.jld.backup.gliffy_messages.Gliffy_Messages.__init__
+jld.jld.backup.mindmeister_backup.Backup.__init__
+jld.jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.jld.backup.mmd.mmdCmd.__init__
+jld.jld.backup.mmd.mmdDaemon.__init__
+jld.jld.backup.mmd.mmdMessages.__init__
+jld.jld.registry.linux.LinuxRegistry.__init__
+jld.jld.tools.defaults.Defaults.__init__
+jld.jld.tools.messages.Messages.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.template.Tpl.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.db.BaseSQLObjectDb.__init__
+jld.tools.db.BaseSQLObjectDb2.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-19', '__init__', 'link-19');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-20" class="py-name" targets="Class jld.jld.backup.mmd.mmdDaemon=jld.jld.backup.mmd.mmdDaemon-class.html"><a title="jld.jld.backup.mmd.mmdDaemon" class="py-name" href="#" onclick="return doclink('link-20', 'mmdDaemon', 'link-20');">mmdDaemon</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="jld.jld.backup.mmd.mmdDaemon._name" class="py-name" href="#" onclick="return doclink('link-21', '_name', 'link-16');">_name</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">     </tt>
+<a name="mmdDaemon.run"></a><div id="mmdDaemon.run-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="mmdDaemon.run-toggle" onclick="return toggle('mmdDaemon.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdDaemon-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdDaemon.run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdDaemon.run-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method jld.tools.daemon.BaseDaemon.loginfo()=jld.tools.daemon.BaseDaemon-class.html#loginfo"><a title="jld.tools.daemon.BaseDaemon.loginfo" class="py-name" href="#" onclick="return doclink('link-22', 'loginfo', 'link-22');">loginfo</a></tt><tt class="py-op">(</tt><tt class="py-string">'mmd: default run()'</tt><tt class="py-op">)</tt>         </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">True</tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt class="py-name">signal</tt><tt class="py-op">.</tt><tt class="py-name">pause</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">         </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">       </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================   </tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">import</tt> <tt id="link-23" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-23', 'jld', 'link-12');">jld</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="jld.tools" class="py-name" href="#" onclick="return doclink('link-24', 'tools', 'link-13');">tools</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Module jld.tools.cmd_ui=jld.tools.cmd_ui-module.html"><a title="jld.tools.cmd_ui" class="py-name" href="#" onclick="return doclink('link-25', 'cmd_ui', 'link-25');">cmd_ui</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">ui</tt> </tt>
+<a name="mmdUI"></a><div id="mmdUI-def"><a name="L50"></a><tt class="py-lineno"> 50</tt> <a class="py-toggle" href="#" id="mmdUI-toggle" onclick="return toggle('mmdUI');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdUI-class.html">mmdUI</a><tt class="py-op">(</tt><tt class="py-base-class">ui</tt><tt class="py-op">.</tt><tt class="py-base-class">UIBase</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdUI-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="mmdUI-expanded"><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-docstring">""" Handles user interface</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt id="link-26" class="py-name" targets="Variable jld.backup.delicious_ui.Delicious_UI._map=jld.backup.delicious_ui.Delicious_UI-class.html#_map,Variable jld.backup.gliffy_ui.Gliffy_UI._map=jld.backup.gliffy_ui.Gliffy_UI-class.html#_map,Variable jld.backup.mindmeister_ui.MM_UI._map=jld.backup.mindmeister_ui.MM_UI-class.html#_map,Variable jld.jld.backup.mmd.mmdUI._map=jld.jld.backup.mmd.mmdUI-class.html#_map"><a title="jld.backup.delicious_ui.Delicious_UI._map
+jld.backup.gliffy_ui.Gliffy_UI._map
+jld.backup.mindmeister_ui.MM_UI._map
+jld.jld.backup.mmd.mmdUI._map" class="py-name" href="#" onclick="return doclink('link-26', '_map', 'link-26');">_map</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorDaemon'</tt><tt class="py-op">:</tt>          <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_daemon'</tt><tt class="py-op">,</tt>    <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_daemon'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorDb'</tt><tt class="py-op">:</tt>              <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_db'</tt><tt class="py-op">,</tt>        <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_db'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorAuth'</tt><tt class="py-op">:</tt>            <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_auth'</tt><tt class="py-op">,</tt>      <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_auth'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorNetwork'</tt><tt class="py-op">:</tt>         <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_network'</tt><tt class="py-op">,</tt>   <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_network'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorAccess'</tt><tt class="py-op">:</tt>          <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_access'</tt><tt class="py-op">,</tt>    <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_access'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorMethod'</tt><tt class="py-op">:</tt>          <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_method'</tt><tt class="py-op">,</tt>    <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_method'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorValidation'</tt><tt class="py-op">:</tt>      <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_validation'</tt><tt class="py-op">,</tt><tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_validation'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorProtocol'</tt><tt class="py-op">:</tt>        <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_protocol'</tt><tt class="py-op">,</tt>  <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_protocol'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-string">'jld.api.ErrorInvalidCommand'</tt><tt class="py-op">:</tt>  <tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_command'</tt><tt class="py-op">,</tt>   <tt class="py-string">'help'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_command'</tt><tt class="py-op">,</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-string">'jld.registry.exception.RegistryException'</tt><tt class="py-op">:</tt><tt class="py-op">{</tt> <tt class="py-string">'msg'</tt><tt class="py-op">:</tt> <tt class="py-string">'error_registry'</tt><tt class="py-op">,</tt>  <tt class="py-string">'help_win'</tt><tt class="py-op">:</tt> <tt class="py-string">'help_registry_win'</tt><tt class="py-op">,</tt> <tt class="py-string">'help_nix'</tt><tt class="py-op">:</tt><tt class="py-string">'help_registry_nix'</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">       </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-27', 'path', 'link-2');">path</a></tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-28" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-28', 'jld', 'link-12');">jld</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="jld.tools" class="py-name" href="#" onclick="return doclink('link-29', 'tools', 'link-13');">tools</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Module jld.jld.tools.messages=jld.jld.tools.messages-module.html"><a title="jld.jld.tools.messages" class="py-name" href="#" onclick="return doclink('link-30', 'messages', 'link-30');">messages</a></tt> <tt class="py-keyword">import</tt> <tt id="link-31" class="py-name" targets="Class jld.jld.tools.messages.Messages=jld.jld.tools.messages.Messages-class.html"><a title="jld.jld.tools.messages.Messages" class="py-name" href="#" onclick="return doclink('link-31', 'Messages', 'link-31');">Messages</a></tt> </tt>
+<a name="mmdMessages"></a><div id="mmdMessages-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="mmdMessages-toggle" onclick="return toggle('mmdMessages');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdMessages-class.html">mmdMessages</a><tt class="py-op">(</tt><tt class="py-base-class">Messages</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdMessages-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="mmdMessages-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-docstring">""" Messages</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt id="link-32" class="py-name" targets="Variable jld.jld.backup.delicious_messages.Delicious_Messages.filepath=jld.jld.backup.delicious_messages.Delicious_Messages-class.html#filepath,Variable jld.jld.backup.gliffy_messages.Gliffy_Messages.filepath=jld.jld.backup.gliffy_messages.Gliffy_Messages-class.html#filepath,Variable jld.jld.backup.mindmeister_messages.MM_Messages.filepath=jld.jld.backup.mindmeister_messages.MM_Messages-class.html#filepath,Variable jld.jld.backup.mmd.mmdMessages.filepath=jld.jld.backup.mmd.mmdMessages-class.html#filepath"><a title="jld.jld.backup.delicious_messages.Delicious_Messages.filepath
+jld.jld.backup.gliffy_messages.Gliffy_Messages.filepath
+jld.jld.backup.mindmeister_messages.MM_Messages.filepath
+jld.jld.backup.mmd.mmdMessages.filepath" class="py-name" href="#" onclick="return doclink('link-32', 'filepath', 'link-32');">filepath</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-33', 'path', 'link-2');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="jld.api.delicious.path
+jld.jld.backup.delicious.path
+jld.jld.backup.gliffy.path
+jld.jld.backup.mm.path
+jld.jld.backup.mmd.path" class="py-name" href="#" onclick="return doclink('link-34', 'path', 'link-2');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt> <tt class="py-name">__file__</tt> <tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">sep</tt> <tt class="py-op">+</tt> <tt class="py-string">"mindmeister_messages.yaml"</tt> </tt>
+<a name="mmdMessages.__init__"></a><div id="mmdMessages.__init__-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="mmdMessages.__init__-toggle" onclick="return toggle('mmdMessages.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdMessages-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdMessages.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdMessages.__init__-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt id="link-35" class="py-name"><a title="jld.jld.tools.messages.Messages" class="py-name" href="#" onclick="return doclink('link-35', 'Messages', 'link-31');">Messages</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.gliffy_db.Db.__init__
+jld.backup.gliffy_printer.Gliffy_Printer.__init__
+jld.backup.gliffy_printer.Gliffy_Printer_Config.__init__
+jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.jld.backup.delicious_backup.Backup.__init__
+jld.jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.jld.backup.gliffy_backup.Backup.__init__
+jld.jld.backup.gliffy_defaults.Gliffy_Defaults.__init__
+jld.jld.backup.gliffy_messages.Gliffy_Messages.__init__
+jld.jld.backup.mindmeister_backup.Backup.__init__
+jld.jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.jld.backup.mmd.mmdCmd.__init__
+jld.jld.backup.mmd.mmdDaemon.__init__
+jld.jld.backup.mmd.mmdMessages.__init__
+jld.jld.registry.linux.LinuxRegistry.__init__
+jld.jld.tools.defaults.Defaults.__init__
+jld.jld.tools.messages.Messages.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.template.Tpl.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.db.BaseSQLObjectDb.__init__
+jld.tools.db.BaseSQLObjectDb2.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-36', '__init__', 'link-19');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="jld.jld.backup.delicious_messages.Delicious_Messages.filepath
+jld.jld.backup.gliffy_messages.Gliffy_Messages.filepath
+jld.jld.backup.mindmeister_messages.MM_Messages.filepath
+jld.jld.backup.mmd.mmdMessages.filepath" class="py-name" href="#" onclick="return doclink('link-37', 'filepath', 'link-32');">filepath</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-keyword">from</tt>   <tt id="link-38" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-38', 'jld', 'link-12');">jld</a></tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Package jld.cmd=jld.cmd-module.html"><a title="jld.cmd" class="py-name" href="#" onclick="return doclink('link-39', 'cmd', 'link-39');">cmd</a></tt> <tt class="py-keyword">import</tt> <tt id="link-40" class="py-name" targets="Class jld.cmd.BaseCmd=jld.cmd.BaseCmd-class.html"><a title="jld.cmd.BaseCmd" class="py-name" href="#" onclick="return doclink('link-40', 'BaseCmd', 'link-40');">BaseCmd</a></tt> </tt>
+<a name="mmdCmd"></a><div id="mmdCmd-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="mmdCmd-toggle" onclick="return toggle('mmdCmd');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdCmd-class.html">mmdCmd</a><tt class="py-op">(</tt><tt class="py-base-class">BaseCmd</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdCmd-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="mmdCmd-expanded"><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-docstring">""" Handles the command line interface of this daemon</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="mmdCmd.__init__"></a><div id="mmdCmd.__init__-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="mmdCmd.__init__-toggle" onclick="return toggle('mmdCmd.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdCmd-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">daemon</tt><tt class="py-op">,</tt> <tt class="py-param">msgs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdCmd.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdCmd.__init__-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt id="link-41" class="py-name"><a title="jld.cmd.BaseCmd" class="py-name" href="#" onclick="return doclink('link-41', 'BaseCmd', 'link-40');">BaseCmd</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="jld.api.ErrorGeneric.__init__
+jld.api.delicious.Api.__init__
+jld.api.delicious.Client.__init__
+jld.api.delicious.Waiter.__init__
+jld.api.mindmeister.MM.__init__
+jld.api.mindmeister.MM_Client.__init__
+jld.api.mindmeister_response.MM_ResponseBase.__init__
+jld.api.mindmeister_response.MM_ResponseBasic.__init__
+jld.api.mindmeister_response.MM_Response_getAuthToken.__init__
+jld.api.mindmeister_response.MM_Response_getFrob.__init__
+jld.api.mindmeister_response.MM_Response_getList.__init__
+jld.api.mindmeister_response.MM_Response_getMapExport.__init__
+jld.backup.delicious_db.Db.__init__
+jld.backup.delicious_printer.Delicious_Printer.__init__
+jld.backup.delicious_printer.Delicious_Printer_Config.__init__
+jld.backup.delicious_printer.Delicious_Printer_Posts.__init__
+jld.backup.gliffy_db.Db.__init__
+jld.backup.gliffy_printer.Gliffy_Printer.__init__
+jld.backup.gliffy_printer.Gliffy_Printer_Config.__init__
+jld.backup.gliffy_printer.Gliffy_Printer_Diagrams.__init__
+jld.backup.mindmeister_db.Db.__init__
+jld.backup.mindmeister_printer.MM_Printer.__init__
+jld.backup.mindmeister_printer.MM_Printer_Config.__init__
+jld.backup.mindmeister_printer.MM_Printer_Export.__init__
+jld.backup.mindmeister_printer.MM_Printer_Maps.__init__
+jld.cmd.BaseCmd.__init__
+jld.gdata.docs.RawDoc.__init__
+jld.gdata.docs.ResultDoc.__init__
+jld.jld.backup.delicious_backup.Backup.__init__
+jld.jld.backup.delicious_defaults.Delicious_Defaults.__init__
+jld.jld.backup.delicious_messages.Delicious_Messages.__init__
+jld.jld.backup.gliffy_backup.Backup.__init__
+jld.jld.backup.gliffy_defaults.Gliffy_Defaults.__init__
+jld.jld.backup.gliffy_messages.Gliffy_Messages.__init__
+jld.jld.backup.mindmeister_backup.Backup.__init__
+jld.jld.backup.mindmeister_defaults.MM_Defaults.__init__
+jld.jld.backup.mindmeister_messages.MM_Messages.__init__
+jld.jld.backup.mmd.mmdCmd.__init__
+jld.jld.backup.mmd.mmdDaemon.__init__
+jld.jld.backup.mmd.mmdMessages.__init__
+jld.jld.registry.linux.LinuxRegistry.__init__
+jld.jld.tools.defaults.Defaults.__init__
+jld.jld.tools.messages.Messages.__init__
+jld.registry.Registry.__init__
+jld.registry.exception.RegistryException.__init__
+jld.registry.windows.WindowsRegistry.__init__
+jld.template.Tpl.__init__
+jld.tools.cmd_ui.UIBase.__init__
+jld.tools.daemon.BaseDaemon.__init__
+jld.tools.db.BaseSQLObjectDb.__init__
+jld.tools.db.BaseSQLObjectDb2.__init__
+jld.tools.printer.BasePrettyPrinter.__init__
+jld.tools.template.ExTemplate.__init__" class="py-name" href="#" onclick="return doclink('link-42', '__init__', 'link-19');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-43', 'daemon', 'link-14');">daemon</a></tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-44', 'daemon', 'link-14');">daemon</a></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">msgs</tt> <tt class="py-op">=</tt> <tt class="py-name">msgs</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">quiet</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+</div><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="mmdCmd.cmd_start"></a><div id="mmdCmd.cmd_start-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="mmdCmd.cmd_start-toggle" onclick="return toggle('mmdCmd.cmd_start');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdCmd-class.html#cmd_start">cmd_start</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdCmd.cmd_start-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdCmd.cmd_start-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-docstring">""" Starts the daemon """</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method jld.jld.backup.mmd.mmdCmd._sendMsg()=jld.jld.backup.mmd.mmdCmd-class.html#_sendMsg"><a title="jld.jld.backup.mmd.mmdCmd._sendMsg" class="py-name" href="#" onclick="return doclink('link-45', '_sendMsg', 'link-45');">_sendMsg</a></tt><tt class="py-op">(</tt> <tt class="py-string">'daemon_start'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">childpid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-46', 'daemon', 'link-14');">daemon</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method jld.tools.daemon.BaseDaemon.start()=jld.tools.daemon.BaseDaemon-class.html#start"><a title="jld.tools.daemon.BaseDaemon.start" class="py-name" href="#" onclick="return doclink('link-47', 'start', 'link-47');">start</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="mmdCmd.cmd_stop"></a><div id="mmdCmd.cmd_stop-def"><a name="L96"></a><tt class="py-lineno"> 96</tt> <a class="py-toggle" href="#" id="mmdCmd.cmd_stop-toggle" onclick="return toggle('mmdCmd.cmd_stop');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdCmd-class.html#cmd_stop">cmd_stop</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdCmd.cmd_stop-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdCmd.cmd_stop-expanded"><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-docstring">""" Stops the daemon """</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="jld.jld.backup.mmd.mmdCmd._sendMsg" class="py-name" href="#" onclick="return doclink('link-48', '_sendMsg', 'link-45');">_sendMsg</a></tt><tt class="py-op">(</tt> <tt class="py-string">'daemon_stop'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-49', 'daemon', 'link-14');">daemon</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method jld.tools.daemon.BaseDaemon.stop()=jld.tools.daemon.BaseDaemon-class.html#stop"><a title="jld.tools.daemon.BaseDaemon.stop" class="py-name" href="#" onclick="return doclink('link-50', 'stop', 'link-50');">stop</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">         </tt>
+<a name="mmdCmd.cmd_restart"></a><div id="mmdCmd.cmd_restart-def"><a name="L101"></a><tt class="py-lineno">101</tt> <a class="py-toggle" href="#" id="mmdCmd.cmd_restart-toggle" onclick="return toggle('mmdCmd.cmd_restart');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdCmd-class.html#cmd_restart">cmd_restart</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdCmd.cmd_restart-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdCmd.cmd_restart-expanded"><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-docstring">""" Restarts the daemon """</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="jld.jld.backup.mmd.mmdCmd._sendMsg" class="py-name" href="#" onclick="return doclink('link-51', '_sendMsg', 'link-45');">_sendMsg</a></tt><tt class="py-op">(</tt> <tt class="py-string">'daemon_restart'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-52', 'daemon', 'link-14');">daemon</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Method jld.tools.daemon.BaseDaemon.restart()=jld.tools.daemon.BaseDaemon-class.html#restart"><a title="jld.tools.daemon.BaseDaemon.restart" class="py-name" href="#" onclick="return doclink('link-53', 'restart', 'link-53');">restart</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="mmdCmd._sendMsg"></a><div id="mmdCmd._sendMsg-def"><a name="L106"></a><tt class="py-lineno">106</tt> <a class="py-toggle" href="#" id="mmdCmd._sendMsg-toggle" onclick="return toggle('mmdCmd._sendMsg');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd.mmdCmd-class.html#_sendMsg">_sendMsg</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mmdCmd._sendMsg-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="mmdCmd._sendMsg-expanded"><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-op">(</tt><tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">quiet</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">msgs</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Method jld.jld.tools.messages.Messages.render()=jld.jld.tools.messages.Messages-class.html#render,Method jld.template.Tpl.render()=jld.template.Tpl-class.html#render"><a title="jld.jld.tools.messages.Messages.render
+jld.template.Tpl.render" class="py-name" href="#" onclick="return doclink('link-54', 'render', 'link-54');">render</a></tt><tt class="py-op">(</tt> <tt class="py-name">msg</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-keyword">from</tt>   <tt id="link-55" class="py-name"><a title="jld" class="py-name" href="#" onclick="return doclink('link-55', 'jld', 'link-12');">jld</a></tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="jld.tools" class="py-name" href="#" onclick="return doclink('link-56', 'tools', 'link-13');">tools</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Package jld.template=jld.template-module.html,Module jld.tools.template=jld.tools.template-module.html"><a title="jld.template
+jld.tools.template" class="py-name" href="#" onclick="return doclink('link-57', 'template', 'link-57');">template</a></tt> <tt class="py-keyword">import</tt> <tt id="link-58" class="py-name" targets="Class jld.tools.template.ExTemplate=jld.tools.template.ExTemplate-class.html"><a title="jld.tools.template.ExTemplate" class="py-name" href="#" onclick="return doclink('link-58', 'ExTemplate', 'link-58');">ExTemplate</a></tt> </tt>
+<a name="main"></a><div id="main-def"><a name="L114"></a><tt class="py-lineno">114</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="jld.jld.backup.mmd-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="main-expanded"><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt class="py-docstring">""" Entry point</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">        - Performs command line processing</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">        -- start:   verifies required configuration</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">        -- stop:    finds process, sends TERM</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">        -- restart: performs stop, performs start</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-name">msgs</tt>   <tt class="py-op">=</tt> <tt id="link-59" class="py-name" targets="Class jld.jld.backup.mmd.mmdMessages=jld.jld.backup.mmd.mmdMessages-class.html"><a title="jld.jld.backup.mmd.mmdMessages" class="py-name" href="#" onclick="return doclink('link-59', 'mmdMessages', 'link-59');">mmdMessages</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-name">ui</tt>     <tt class="py-op">=</tt> <tt id="link-60" class="py-name" targets="Class jld.jld.backup.mmd.mmdUI=jld.jld.backup.mmd.mmdUI-class.html"><a title="jld.jld.backup.mmd.mmdUI" class="py-name" href="#" onclick="return doclink('link-60', 'mmdUI', 'link-60');">mmdUI</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">     </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-comment"># == Config UI ==</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-comment"># ===============</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-comment"></tt>    <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.setParams()=jld.tools.cmd_ui.UIBase-class.html#setParams"><a title="jld.tools.cmd_ui.UIBase.setParams" class="py-name" href="#" onclick="return doclink('link-61', 'setParams', 'link-61');">setParams</a></tt><tt class="py-op">(</tt> <tt class="py-name">msgs</tt> <tt class="py-op">)</tt>     </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt id="link-62" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-62', 'daemon', 'link-14');">daemon</a></tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name"><a title="jld.jld.backup.mmd.mmdDaemon" class="py-name" href="#" onclick="return doclink('link-63', 'mmdDaemon', 'link-20');">mmdDaemon</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">         </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt id="link-64" class="py-name"><a title="jld.cmd" class="py-name" href="#" onclick="return doclink('link-64', 'cmd', 'link-39');">cmd</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name" targets="Class jld.jld.backup.mmd.mmdCmd=jld.jld.backup.mmd.mmdCmd-class.html"><a title="jld.jld.backup.mmd.mmdCmd" class="py-name" href="#" onclick="return doclink('link-65', 'mmdCmd', 'link-65');">mmdCmd</a></tt><tt class="py-op">(</tt><tt id="link-66" class="py-name"><a title="jld.tools.daemon" class="py-name" href="#" onclick="return doclink('link-66', 'daemon', 'link-14');">daemon</a></tt><tt class="py-op">,</tt> <tt class="py-name">msgs</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">usage_template</tt> <tt class="py-op">=</tt> <tt class="py-string">"""%prog [options] command</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-string">    </tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-string">version $Id: jld.jld.backup.mmd-pysrc.html 775 2009-01-07 03:08:10Z JeanLou.Dupont $ by Jean-Lou Dupont</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-string">*** Interface to MindMeister (http://www.mindmeister.com/) ***</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-string">Commands:</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-string">^^{commands}"""</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">             </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-name">commands_help</tt> <tt class="py-op">=</tt> <tt id="link-67" class="py-name"><a title="jld.cmd" class="py-name" href="#" onclick="return doclink('link-67', 'cmd', 'link-39');">cmd</a></tt><tt class="py-op">.</tt><tt id="link-68" class="py-name" targets="Method jld.cmd.BaseCmd.genCommandsHelp()=jld.cmd.BaseCmd-class.html#genCommandsHelp"><a title="jld.cmd.BaseCmd.genCommandsHelp" class="py-name" href="#" onclick="return doclink('link-68', 'genCommandsHelp', 'link-68');">genCommandsHelp</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">             </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">tpl</tt> <tt class="py-op">=</tt> <tt id="link-69" class="py-name"><a title="jld.tools.template.ExTemplate" class="py-name" href="#" onclick="return doclink('link-69', 'ExTemplate', 'link-58');">ExTemplate</a></tt><tt class="py-op">(</tt> <tt class="py-name">usage_template</tt> <tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-name">usage</tt> <tt class="py-op">=</tt> <tt class="py-name">tpl</tt><tt class="py-op">.</tt><tt class="py-name">substitute</tt><tt class="py-op">(</tt> <tt class="py-op">{</tt><tt class="py-string">'commands'</tt> <tt class="py-op">:</tt> <tt class="py-name">commands_help</tt><tt class="py-op">}</tt> <tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">     </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">        <tt id="link-70" class="py-name" targets="Variable jld.cmd.pypre._options=jld.cmd.pypre-module.html#_options,Variable jld.jld.backup.delicious._options=jld.jld.backup.delicious-module.html#_options,Variable jld.jld.backup.gliffy._options=jld.jld.backup.gliffy-module.html#_options,Variable jld.jld.backup.mm._options=jld.jld.backup.mm-module.html#_options"><a title="jld.cmd.pypre._options
+jld.jld.backup.delicious._options
+jld.jld.backup.gliffy._options
+jld.jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-70', '_options', 'link-70');">_options</a></tt> <tt class="py-op">=</tt><tt class="py-op">[</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">          <tt class="py-comment">#{'o1':'-s', 'var':'secret', 'action':'store',        'help':'config_secret', 'reg': True, 'default': None},</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">          <tt class="py-comment">#{'o1':'-k', 'var':'api_key','action':'store',        'help':'config_key',    'reg': True, 'default': None},</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">          <tt class="py-comment">#{'o1':'-f', 'var':'file',   'action':'store',        'help':'config_file',   'reg': True, 'default': None},</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">          <tt class="py-op">{</tt><tt class="py-string">'o1'</tt><tt class="py-op">:</tt><tt class="py-string">'-q'</tt><tt class="py-op">,</tt> <tt class="py-string">'var'</tt><tt class="py-op">:</tt><tt class="py-string">'quiet'</tt><tt class="py-op">,</tt>  <tt class="py-string">'action'</tt><tt class="py-op">:</tt><tt class="py-string">'store_true'</tt><tt class="py-op">,</tt>   <tt class="py-string">'help'</tt><tt class="py-op">:</tt><tt class="py-string">'quiet'</tt><tt class="py-op">,</tt>         <tt class="py-string">'reg'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-string">'default'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt> <tt class="py-op">}</tt><tt class="py-op">,</tt>           </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-op">]</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">     </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.handleArguments()=jld.tools.cmd_ui.UIBase-class.html#handleArguments"><a title="jld.tools.cmd_ui.UIBase.handleArguments" class="py-name" href="#" onclick="return doclink('link-71', 'handleArguments', 'link-71');">handleArguments</a></tt><tt class="py-op">(</tt><tt class="py-name">usage</tt><tt class="py-op">,</tt> <tt id="link-72" class="py-name"><a title="jld.cmd.pypre._options
+jld.jld.backup.delicious._options
+jld.jld.backup.gliffy._options
+jld.jld.backup.mm._options" class="py-name" href="#" onclick="return doclink('link-72', '_options', 'link-70');">_options</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-comment"># == command validation ==</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># ========================</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-keyword">try</tt><tt class="py-op">:</tt>    <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt id="link-73" class="py-name"><a title="jld.cmd" class="py-name" href="#" onclick="return doclink('link-73', 'cmd', 'link-39');">cmd</a></tt><tt class="py-op">.</tt><tt id="link-74" class="py-name" targets="Method jld.cmd.BaseCmd.validateCommand()=jld.cmd.BaseCmd-class.html#validateCommand"><a title="jld.cmd.BaseCmd.validateCommand" class="py-name" href="#" onclick="return doclink('link-74', 'validateCommand', 'link-74');">validateCommand</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">         </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-comment"># get rid of command from the arg list</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.popArg()=jld.tools.cmd_ui.UIBase-class.html#popArg"><a title="jld.tools.cmd_ui.UIBase.popArg" class="py-name" href="#" onclick="return doclink('link-75', 'popArg', 'link-75');">popArg</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">          </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-comment"># Configuration cmd</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-76" class="py-name"><a title="jld.cmd" class="py-name" href="#" onclick="return doclink('link-76', 'cmd', 'link-39');">cmd</a></tt><tt class="py-op">.</tt><tt class="py-name">quiet</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt> <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">,</tt> <tt class="py-string">'quiet'</tt> <tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">          </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-comment"># == DISPATCHER ==</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># ================</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">getattr</tt><tt class="py-op">(</tt> <tt id="link-77" class="py-name"><a title="jld.cmd" class="py-name" href="#" onclick="return doclink('link-77', 'cmd', 'link-39');">cmd</a></tt><tt class="py-op">,</tt> <tt class="py-string">"cmd_%s"</tt> <tt class="py-op">%</tt> <tt class="py-name">command</tt> <tt class="py-op">)</tt><tt class="py-op">(</tt><tt class="py-name">ui</tt><tt class="py-op">.</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt><tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-name">ui</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name" targets="Method jld.tools.cmd_ui.UIBase.handleError()=jld.tools.cmd_ui.UIBase-class.html#handleError"><a title="jld.tools.cmd_ui.UIBase.handleError" class="py-name" href="#" onclick="return doclink('link-78', 'handleError', 'link-78');">handleError</a></tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># ==============================================</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">    <tt id="link-79" class="py-name" targets="Function jld.cmd.pypre.main()=jld.cmd.pypre-module.html#main,Function jld.jld.backup.delicious.main()=jld.jld.backup.delicious-module.html#main,Function jld.jld.backup.gliffy.main()=jld.jld.backup.gliffy-module.html#main,Function jld.jld.backup.mm.main()=jld.jld.backup.mm-module.html#main,Function jld.jld.backup.mmd.main()=jld.jld.backup.mmd-module.html#main"><a title="jld.cmd.pypre.main
+jld.jld.backup.delicious.main
+jld.jld.backup.gliffy.main
+jld.jld.backup.mm.main
+jld.jld.backup.mmd.main" class="py-name" href="#" onclick="return doclink('link-79', 'main', 'link-79');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="jld-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jan 06 22:07:41 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

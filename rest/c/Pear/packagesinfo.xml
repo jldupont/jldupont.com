@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<f xmlns="http://pear.php.net/dtd/rest.categorypackageinfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://pear.php.net/dtd/rest.categorypackageinfo     http://pear.php.net/dtd/rest.categorypackageinfo.xsd">
+		<pi>
+			<p>
+				<n>PearTools</n>
+				<c>jldupont.googlecode.com/svn</c>
+				<ca xlink:href="/rest/c/Pear">Pear</ca>
+				<l>$license$</l>
+				<s>PEAR tools</s>
+				<d>PHING tasks, PEAR REST channel objects etc.</d>
+				<r xlink:href="/rest/r/PearTools">
+				</r>
+			</p>
+			<a>
+				<r>
+					<v>1.2.0</v>
+					<s>stable</s>
+				</r>
+			</a>
+		</pi>
+</f>

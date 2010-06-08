@@ -1,0 +1,14 @@
+	<pi>
+		<p>
+			 <n>$package_name$</n>
+			 <c>$channel_name$</c>
+			 <ca xlink:href="$base_rest$$base_categories$/$category_name$">$category_name$</ca>
+			 <l>$license$</l>
+			 <s>$summary$</s>
+			 <d>$description$</d>
+			 <r xlink:href="$base_rest$$base_releases$/$package_name$"/>
+		</p>
+		<a>
+			$all_releases$
+		</a>
+	</pi>

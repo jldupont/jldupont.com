@@ -1,0 +1,8 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.gears.Gears"/>
+		
+	<inherits name="org.jldupont.system"/>
+	
+	<source path="localstore/"/>
+</module>

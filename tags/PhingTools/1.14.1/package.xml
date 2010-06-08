@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.0" 
+		version="2.0" 
+		xmlns="http://pear.php.net/dtd/package-2.0" 
+		xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd 
+		http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+
+  <!-- $Id: package.xml 905 2009-05-19 14:32:48Z JeanLou.Dupont $ -->
+ <name>PhingTools</name>
+ <channel>jldupont.googlecode.com/svn</channel>
+ <summary>PHING tools</summary>
+ <description>PearPathTask, JsMinTask, SvnAddTask, SvnPropsetTask, DateTask, TrimTask, SortTask etc.</description>
+
+ <lead>
+  <name>Jean-Lou Dupont</name>
+  <user>jldupont</user>
+  <email>jldupont@jldupont.com</email>
+  <active>yes</active>
+ </lead>
+
+ <date>2009-05-19</date>
+ <time>14:28:41</time>
+
+ <version>
+  <release>1.14.1</release>
+  <api>1.0.0</api>
+ </version>
+ 
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+
+ <license uri="http://www.php.net/license">PHP License</license>
+
+ <notes>$notes$</notes>
+
+ <contents>
+  <dir name="/">
+
+	<!-- file list begin {{ -->
+	<!-- baseinstalldir: the target directory on the target machine -->
+   <file baseinstalldir="JLD/PhingTools" name="Task.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="SvnAddTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="SvnAdd2Task.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="SvnAddBatchTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="SvnPropsetTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="SvnStatusTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="TrimTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="DateTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="FileSet2PropertyTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="SortTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="/Sorter/DataTypeSorter.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="/Sorter/FileSetSorter.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="Text2PngTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="ReadFileTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="/jsmin/jsmin.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="/jsmin/JsMinTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="PathInfoTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="PearPathTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="FindFileTask.php" role="php" />
+   <file baseinstalldir="JLD/PhingTools" name="FindDirTask.php" role="php" />   
+    <!-- }} -->
+
+  </dir>
+ </contents>
+ 
+ <dependencies>
+  <required>
+
+   <php>
+    <min>5.1.0</min><!-- because of __isset / __unset -->
+    <max>6.0.0</max>
+   </php>
+
+   <pearinstaller>
+    <min>1.6.2</min>
+   </pearinstaller>
+ 
+	<package>
+		<name>phing</name>
+		<channel>pear.phing.info</channel>
+		<min>2.3.0</min>
+	</package>
+
+	<!-- required for FindFileTask -->
+	<package>
+		<name>validate</name>
+		<channel>jldupont.googlecode.com/svn</channel>
+		<min>1.0.0</min>
+	</package>
+
+  </required>
+ </dependencies>
+
+ <phprelease>
+  <installconditions>
+   <os>
+    <name>*</name>
+   </os>
+  </installconditions>
+ </phprelease>
+
+<changelog>
+	<release>
+		<license uri="http://www.php.net/license">PHP License</license>
+		<notes>Added support for file/dir version in PathInfoTask
+		</notes>
+	</release>
+</changelog>
+
+</package>
