@@ -19,18 +19,19 @@ import sys
 import logging
 from types import *
 
+curdir=os.path.dirname(__file__)
+sys.path.insert(0, curdir)
+
 import wsgiref.handlers
 from google.appengine.ext import webapp
-
-import import_wrapper
 
 import libs.webapi as webapi
 import libs.pypi.proxy as proxy
 import libs.system as system
 from libs.system.datetimeutils import datetimeToRFC822
 
-import services.pypirss.rss as feed
-import services.pypirss.messages as msg
+import rss as feed
+import messages as msg
 
 class ServiceMessageOutput(object):
     """ Wrapper used along with Exception Handler
@@ -125,6 +126,7 @@ class ServicePypiRss( webapi.WebApi ):
         if result.unchanged:
             logging.info("ip[%s] pkg[%s] UNCHANGED" % (ip, package_name))
             self._output(304, '', "application/rss+xml")
+            return
 
         self.doBaseResponse(result.result, result.etag, "application/rss+xml", 200)
         logging.info("ip[%s] match[%s] pkg[%s] release[%s] downloads[%s]" % (ip, if_none_match, package_name, result.release, result.downloads))        
@@ -170,8 +172,13 @@ class ServicePypiRss( webapi.WebApi ):
 
         itemGUID = "[%s][%s][%s]" % (package, latest, downloads)
         
+        
+        
         # same as before?
         etag = ref_etag.strip('"')
+        
+        #logging.info("etag(%s) itemGUID(%s)" % (etag, itemGUID))
+        
         try:
             if etag == itemGUID:
                 return MethodRssResult(True, '', etag)

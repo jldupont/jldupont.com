@@ -14,8 +14,6 @@ import wsgiref.handlers
 from google.appengine.ext import webapp
 from google.appengine.api import urlfetch
 
-import import_wrapper
-
 import libs.markup as markup
 import libs.webapi as webapi
 
