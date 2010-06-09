@@ -13,6 +13,8 @@
     * Pypi RPC API change eg. the 'downloads' attribute is not found
     * Wrong format requested
     * ALL OTHERS
+    
+    - 09June2010: fixed incorrect link URL
 """
 import os
 import sys

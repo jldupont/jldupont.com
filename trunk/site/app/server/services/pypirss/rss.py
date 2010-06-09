@@ -30,7 +30,7 @@ _item_template = """
         <item>
             <title>Pypi statistics for [$package]</title>
             <description>Release[$release] Downloads[$downloads]</description>
-            <link>http://pypi.python.org/pypi/pypp/$package</link>
+            <link>http://pypi.python.org/pypi/$package</link>
             <pubDate>$itemPubDate</pubDate>
             <guid isPermaLink='false'>$itemGUID</guid>
         </item>
