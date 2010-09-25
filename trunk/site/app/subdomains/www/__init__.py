@@ -136,9 +136,11 @@ class Main( Base ):
         Base.__init__(self)
 
     def get( self, page = None ):
-        logging.info(self.request.environ["HTTP_HOST"])
-        self._doIPCount()
-        self._output_page(page)
+        self.redirect("http://www.systemical.com/")
+        
+        #logging.info(self.request.environ["HTTP_HOST"])
+        #self._doIPCount()
+        #self._output_page(page)
 
                 
 class Doc( Base ):
